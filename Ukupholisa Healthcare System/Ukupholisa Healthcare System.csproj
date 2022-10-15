@@ -53,6 +53,13 @@
     <Compile Include="Business Logic Layer\Policy.cs" />
     <Compile Include="Business Logic Layer\Product.cs" />
     <Compile Include="Business Logic Layer\Provider.cs" />
+    <Compile Include="Data Access Layer\CallData.cs" />
+    <Compile Include="Data Access Layer\ClientData.cs" />
+    <Compile Include="Data Access Layer\DependentData.cs" />
+    <Compile Include="Data Access Layer\HospitalData.cs" />
+    <Compile Include="Data Access Layer\PolicyData.cs" />
+    <Compile Include="Data Access Layer\ProductData.cs" />
+    <Compile Include="Data Access Layer\ProviderData.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +90,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data Access Layer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
