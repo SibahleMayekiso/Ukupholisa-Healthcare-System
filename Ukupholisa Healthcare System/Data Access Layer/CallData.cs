@@ -19,14 +19,14 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //Create Methods
         //Read Methods
 
-        public SqlDataAdapter ViewCallLogs()
+        public SqlDataAdapter ReadCallLogs()
         {
             string query = @"SELECT * FROM CallCenter";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             return adapter;
         }
 
-        public SqlDataAdapter ViewClientCallLogs(Client client)
+        public SqlDataAdapter ReadClientCallLogs(Client client)
         {
             string query = string.Format(@"SELECT * FROM CallCenter WHERE ClientID = {0}", client.ClientID);
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
