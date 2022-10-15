@@ -18,7 +18,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //CRUD Operations and Methods
         //Create Methods
         //Read Methods
-
+        #region Read Methods
         public SqlDataAdapter ReadCallLogs()
         {
             string query = @"SELECT * FROM CallCenter";
@@ -32,6 +32,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             return adapter;
         }
+        #endregion Read Methods
         //Update Methods
         //Delete Methods
     }
