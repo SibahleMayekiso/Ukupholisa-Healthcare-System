@@ -62,6 +62,57 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         #endregion
         //Update Methods
+        #region Update Methods
+        public string UpdateClientPolicyDetails(Policy policy)
+        {
+            string queryStateMessage = "";
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+
+            try
+            {
+                //Parameters here
+                SqlParameter policyID = new SqlParameter("@policyID", SqlDbType.Int);
+                parameterList.Add(policyID);
+                SqlParameter startDate = new SqlParameter("@startdate", SqlDbType.VarChar);
+                parameterList.Add(startDate);
+                SqlParameter endDate = new SqlParameter("@enddate", SqlDbType.VarChar);
+                parameterList.Add(endDate);
+                SqlParameter product = new SqlParameter("@productID", SqlDbType.NVarChar);
+                parameterList.Add(product);
+
+                //Setting Parameter values
+                policyID.Value = policy.PolicyID;
+                startDate.Value = policy.StartDate;
+                endDate.Value = policy.EndDate;
+                product.Value = policy.ProductID;
+
+                //Adding Parameter to SqlCommand
+                parameterList.ForEach(x => { cmd.Parameters.Add(x); });
+
+                //Executing Query
+                queryString = string.Format(
+                    @"UPDATE ClientPolicy
+                    SET StartDate = @startdate, EndDate = @enddate, Product = @productID
+                    WHERE ClientPolicyID = @policyID"
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+        }
+
+        #endregion
         //Delete Methods
     }
 }
