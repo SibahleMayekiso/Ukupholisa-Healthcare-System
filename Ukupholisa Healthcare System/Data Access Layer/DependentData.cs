@@ -16,6 +16,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         SqlCommand cmd;
         string queryString;
 
+
         //CRUD Operations and Methods
         //Create Methods
         //Read Methods
@@ -39,6 +40,110 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         #endregion
         //Update Methods
+        #region Update Methods
+        public string UpdateDependentDetails(Dependent dependent)
+        {
+            string queryStateMessage = "";
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+
+            try
+            {
+                //Parameters here
+                SqlParameter dependentID = new SqlParameter("@dependentID", SqlDbType.Int);
+                parameterList.Add(dependentID);
+                SqlParameter firstname = new SqlParameter("@firstname", SqlDbType.NVarChar);
+                parameterList.Add(firstname);
+                SqlParameter lastname = new SqlParameter("@surname", SqlDbType.NVarChar);
+                parameterList.Add(lastname);
+                SqlParameter cellNum = new SqlParameter("@cellNo", SqlDbType.VarChar);
+                parameterList.Add(cellNum);
+                SqlParameter email = new SqlParameter("@email", SqlDbType.NVarChar);
+                parameterList.Add(email);
+                SqlParameter relation = new SqlParameter("@relation", SqlDbType.VarChar);
+                parameterList.Add(relation);
+                SqlParameter coverage = new SqlParameter("@perc", SqlDbType.Int);
+                parameterList.Add(coverage);
+
+                //Setting Parameter values
+                dependentID.Value = dependent.DependentID;
+                firstname.Value = dependent.FirstName;
+                lastname.Value = dependent.Lastname;
+                cellNum.Value = dependent.CellphoneNum;
+                email.Value = dependent.Email;
+                relation.Value = dependent.RelationToClient;
+                coverage.Value = dependent.CoveragePercentage;
+
+                //Adding Parameter to SqlCommand
+                parameterList.ForEach(x => { cmd.Parameters.Add(x); });
+
+                //Executing Query
+                queryString = string.Format(
+                    @"UPDATE ClientDependent
+                    SET FirstName = @name, LastName = @surname, CellPhoneNum = @cellno, Email = @email, RelationToClient = @relation, CoveragePercentage = @perc
+                    WHERE DependentID = @dependentID"
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+        }
+
+        public string UpdateDependentClient(Dependent dependent)
+        {
+            //Method is used to change a dependent's client/policy holder to someone else (in the case of family seperation )
+            string queryStateMessage = "";
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+
+            try
+            {
+                //Parameters here
+                SqlParameter dependentID = new SqlParameter("@dependentID", SqlDbType.Int);
+                parameterList.Add(dependentID);
+                SqlParameter clientID = new SqlParameter("@clientID", SqlDbType.NVarChar);
+                parameterList.Add(clientID);
+
+                //Setting Parameter values
+                dependentID.Value = dependent.DependentID;
+                clientID.Value = dependent.ClientID;
+                
+                //Adding Parameter to SqlCommand
+                parameterList.ForEach(x => { cmd.Parameters.Add(x); });
+
+                //Executing Query
+                queryString = string.Format(
+                    @"UPDATE ClientDependent
+                    SET ClientID = @clintID
+                    WHERE DependentID = @dependentID"
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+        }
+
+        #endregion
         //Delete Methods
     }
 }
