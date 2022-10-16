@@ -50,56 +50,6 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         #endregion
         //Update Methods
-        #region Update Methods
-        public string UpdateHospitalDetails(Hospital hospital)
-        {
-            string queryStateMessage = "";
-            List<SqlParameter> parameterList = new List<SqlParameter>();
-
-            try
-            {
-                //Parameters here
-                SqlParameter hospitalID = new SqlParameter("@hospitalID", SqlDbType.Int);
-                parameterList.Add(hospitalID);
-                SqlParameter hospitalname = new SqlParameter("@hospitalname", SqlDbType.VarChar);
-                parameterList.Add(hospitalname);
-                SqlParameter street = new SqlParameter("@address", SqlDbType.VarChar);
-                parameterList.Add(street);
-                SqlParameter region = new SqlParameter("@regionId", SqlDbType.Int);
-                parameterList.Add(region);
-
-                //Setting Parameter values
-                hospitalID.Value = hospital.HospitalID;
-                hospitalname.Value = hospital.HospitalName;
-                street.Value = hospital.Street;
-                region.Value = hospital.RegionID;
-
-                //Adding Parameter to SqlCommand
-                parameterList.ForEach(x => { cmd.Parameters.Add(x); });
-
-                //Executing Query
-                queryString = string.Format(
-                    @"UPDATE Hospital
-                    SET Street = @address, HospitalName = @hospitalname, Region = @regionId
-                    WHERE HospitalID = @hospitalID"
-                    );
-                cmd = new SqlCommand(queryString, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
-
-            }
-            finally
-            {
-                queryStateMessage = string.Format("Update Successful");
-                conn.Close();
-            }
-            return queryStateMessage;
-        }
-        #endregion
         //Delete Methods
     }
 }
