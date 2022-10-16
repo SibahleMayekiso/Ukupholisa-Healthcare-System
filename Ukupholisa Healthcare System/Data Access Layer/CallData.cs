@@ -39,6 +39,11 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         #endregion Read Methods
         //Update Methods
+        /*
+         * Updating this Table is not ideal due to it nature and purpose. 
+         * NOTE: Call Logs should not be updated because they act as legal records of calls. Being able to
+         * update this table could potentially interfere with certain business ethics.
+         */
         //Delete Methods
     }
 }

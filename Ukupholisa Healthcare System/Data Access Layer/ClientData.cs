@@ -54,6 +54,60 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         #endregion
         //Update Methods
-        //Delete Methods
-    }
+        #region Update Methods
+        public string UpdateClientDetails(Client client)
+        {
+            string queryStateMessage = "";
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+
+            try
+            {
+                //Parameters here
+                SqlParameter clientID = new SqlParameter("@clientID", SqlDbType.Int);
+                parameterList.Add(clientID);
+                SqlParameter firstname = new SqlParameter("@firstname", SqlDbType.VarChar);
+                parameterList.Add(firstname);
+                SqlParameter lastname = new SqlParameter("@surname", SqlDbType.VarChar);
+                parameterList.Add(lastname);
+                SqlParameter cellNum = new SqlParameter("@cellNo", SqlDbType.NVarChar);
+                parameterList.Add(cellNum);
+                SqlParameter email = new SqlParameter("@email", SqlDbType.NVarChar);
+                parameterList.Add(email);
+
+                //Setting Parameter values
+                clientID.Value = client.ClientID;
+                firstname.Value = client.FirstName;
+                lastname.Value = client.Lastname;
+                cellNum.Value = client.CellphoneNum;
+                email.Value = client.Email;
+
+                //Adding Parameter to SqlCommand
+                parameterList.ForEach(x => { cmd.Parameters.Add(x); });
+                
+                //Executing Query
+                queryString = string.Format(
+                    @"UPDATE Client
+                    SET FirstName = @firstname, LastName = @surname, CellPhoneNum = @cellNo, Email = @email
+                    WHERE ClientID = @clientID"
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+                
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+        }
+        
+        #endregion
+    //Delete Methods
+}
 }
