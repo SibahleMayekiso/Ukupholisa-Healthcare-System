@@ -8,12 +8,12 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 {
     class Hospital
     {
-        private int hospitalID;
-        private string street, suburb, city, region;
+        private int hospitalID, regionID;
+        private string hospitalName, street, suburb, city, region;
         private string medical_condition, type_of_Treatment, insurance_Provider_for_Client;
         private int price_Of_Treatment, amount_Due;
 
-        public Hospital(int hospitalID, string street, string suburb, string city, string region, string medical_condition, string type_of_Treatment, string insurance_Provider_for_Client, int price_Of_Treatment, int amount_Due)
+        public Hospital(int hospitalID, string street, string suburb, string city, string region, string medical_condition, string type_of_Treatment, string insurance_Provider_for_Client, int price_Of_Treatment, int amount_Due, string hospitalName, int regionID)
         {
             this.hospitalID = hospitalID;
             this.street = street;
@@ -25,6 +25,8 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             this.insurance_Provider_for_Client = insurance_Provider_for_Client;
             this.price_Of_Treatment = price_Of_Treatment;
             this.amount_Due = amount_Due;
+            this.hospitalName = hospitalName;
+            this.regionID = regionID;
         }
 
         public int HospitalID { get => hospitalID; set => hospitalID = value; }
@@ -37,5 +39,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public string Insurance_Provider_for_Client { get => insurance_Provider_for_Client; set => insurance_Provider_for_Client = value; }
         public int Price_Of_Treatment { get => price_Of_Treatment; set => price_Of_Treatment = value; }
         public int Amount_Due { get => amount_Due; set => amount_Due = value; }
+        public string HospitalName { get => hospitalName; set => hospitalName = value; }
+        public int RegionID { get => regionID; set => regionID = value; }
     }
 }
