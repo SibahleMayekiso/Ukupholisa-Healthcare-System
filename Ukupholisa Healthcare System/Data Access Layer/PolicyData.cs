@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,8 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 INNER JOIN Product
                 ON ClientPolicy.Product = Product.ProductID";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
             return adapter;
         }
         /*
@@ -36,6 +39,8 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         // Method can be used to aggregate data. Can be implemented later in the project when we use Stored Procedures
             string query = @"SELECT * FROM ClientPolicy";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        DataTable table = new DataTable();
+            adapter.Fill(table);
             return adapter;
         }
         */
@@ -51,6 +56,8 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 ON ClientPolicy.Product = Product.ProductID
                 WHERE ClientPolicy.ClientID = {0}", client.ClientID);
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
             return adapter;
         }
         #endregion

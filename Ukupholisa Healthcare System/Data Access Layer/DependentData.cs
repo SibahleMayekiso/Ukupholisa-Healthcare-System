@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         {
             string query = @"SELECT * FROM ClientDependent";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
             return adapter;
         }
 
@@ -30,6 +33,8 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         {
             string query = string.Format(@"SELECT * FROM ClientDependent WHERE DependentID = {0}", dependent.DependentID);
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
             return adapter;
         }
         #endregion
