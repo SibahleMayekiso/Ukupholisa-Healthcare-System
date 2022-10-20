@@ -60,14 +60,71 @@
     <Compile Include="Data Access Layer\PolicyData.cs" />
     <Compile Include="Data Access Layer\ProductData.cs" />
     <Compile Include="Data Access Layer\ProviderData.cs" />
-    <Compile Include="Presentation Layer\Form1.cs">
+    <Compile Include="Presentation Layer\ClientUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Presentation Layer\ClientUI.Designer.cs">
+      <DependentUpon>ClientUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\MedicalUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\MedicalUI.Designer.cs">
+      <DependentUpon>MedicalUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\PolicyUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\PolicyUI.Designer.cs">
+      <DependentUpon>PolicyUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CallCentreUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CallCentreUI.Designer.cs">
+      <DependentUpon>CallCentreUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\DataBaseUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\DataBaseUI.Designer.cs">
+      <DependentUpon>DataBaseUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\WarningUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\WarningUI.Designer.cs">
+      <DependentUpon>WarningUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CallerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CallerUI.Designer.cs">
+      <DependentUpon>CallerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation Layer\ClientUI.resx">
+      <DependentUpon>ClientUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\MedicalUI.resx">
+      <DependentUpon>MedicalUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\PolicyUI.resx">
+      <DependentUpon>PolicyUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CallCentreUI.resx">
+      <DependentUpon>CallCentreUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\DataBaseUI.resx">
+      <DependentUpon>DataBaseUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\WarningUI.resx">
+      <DependentUpon>WarningUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CallerUI.resx">
+      <DependentUpon>CallerUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
