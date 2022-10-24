@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
-    public partial class CallCentreUI : Form
+    public partial class frmCallCentreUI : Form
     {
-        public CallCentreUI()
+        public frmCallCentreUI()
         {
             InitializeComponent();
         }
