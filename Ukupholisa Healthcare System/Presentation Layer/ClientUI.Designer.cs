@@ -36,28 +36,40 @@
             this.ClientSuburb2 = new System.Windows.Forms.Label();
             this.ClientCity2 = new System.Windows.Forms.Label();
             this.ClientStreetName2 = new System.Windows.Forms.Label();
-            this.ClientName = new System.Windows.Forms.TextBox();
-            this.ClientSurname = new System.Windows.Forms.TextBox();
-            this.CleintNumber = new System.Windows.Forms.TextBox();
-            this.ClientCondition = new System.Windows.Forms.TextBox();
-            this.ClientHouseNumber = new System.Windows.Forms.TextBox();
-            this.ClientStreetName = new System.Windows.Forms.TextBox();
-            this.ClientSuburb = new System.Windows.Forms.TextBox();
-            this.ClientCity = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtClientName = new System.Windows.Forms.TextBox();
+            this.txtClientSurname = new System.Windows.Forms.TextBox();
+            this.txtClientNumber = new System.Windows.Forms.TextBox();
+            this.txtClientCondition = new System.Windows.Forms.TextBox();
+            this.txtClientHouseNumber = new System.Windows.Forms.TextBox();
+            this.txtClientStreetName = new System.Windows.Forms.TextBox();
+            this.txtClientSuburb = new System.Windows.Forms.TextBox();
+            this.txtClientCity = new System.Windows.Forms.TextBox();
+            this.btnCallCentre = new System.Windows.Forms.Button();
+            this.btnDatabaseClient = new System.Windows.Forms.Button();
+            this.btnPolicyClient = new System.Windows.Forms.Button();
+            this.btnMedicalClient = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gbxClientForm = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pbxLogoClient = new System.Windows.Forms.PictureBox();
+            this.gbxClientView = new System.Windows.Forms.GroupBox();
+            this.btnViewAllClients = new System.Windows.Forms.Button();
+            this.btnViewClientDependent = new System.Windows.Forms.Button();
+            this.btnClientSubmit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblRightsClient = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.gbxClientForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogoClient)).BeginInit();
+            this.gbxClientView.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // CleintName2
             // 
             this.CleintName2.AutoSize = true;
-            this.CleintName2.Location = new System.Drawing.Point(605, 82);
+            this.CleintName2.Location = new System.Drawing.Point(17, 46);
             this.CleintName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CleintName2.Name = "CleintName2";
             this.CleintName2.Size = new System.Drawing.Size(80, 16);
@@ -67,7 +79,7 @@
             // CleintSurName2
             // 
             this.CleintSurName2.AutoSize = true;
-            this.CleintSurName2.Location = new System.Drawing.Point(605, 110);
+            this.CleintSurName2.Location = new System.Drawing.Point(17, 74);
             this.CleintSurName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CleintSurName2.Name = "CleintSurName2";
             this.CleintSurName2.Size = new System.Drawing.Size(97, 16);
@@ -77,7 +89,7 @@
             // CleintNumber2
             // 
             this.CleintNumber2.AutoSize = true;
-            this.CleintNumber2.Location = new System.Drawing.Point(605, 144);
+            this.CleintNumber2.Location = new System.Drawing.Point(17, 108);
             this.CleintNumber2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CleintNumber2.Name = "CleintNumber2";
             this.CleintNumber2.Size = new System.Drawing.Size(91, 16);
@@ -87,7 +99,7 @@
             // CleintCondition2
             // 
             this.CleintCondition2.AutoSize = true;
-            this.CleintCondition2.Location = new System.Drawing.Point(605, 176);
+            this.CleintCondition2.Location = new System.Drawing.Point(17, 140);
             this.CleintCondition2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CleintCondition2.Name = "CleintCondition2";
             this.CleintCondition2.Size = new System.Drawing.Size(99, 16);
@@ -97,7 +109,7 @@
             // ClientHouseNumber2
             // 
             this.ClientHouseNumber2.AutoSize = true;
-            this.ClientHouseNumber2.Location = new System.Drawing.Point(605, 206);
+            this.ClientHouseNumber2.Location = new System.Drawing.Point(17, 170);
             this.ClientHouseNumber2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientHouseNumber2.Name = "ClientHouseNumber2";
             this.ClientHouseNumber2.Size = new System.Drawing.Size(134, 16);
@@ -107,7 +119,7 @@
             // ClientSuburb2
             // 
             this.ClientSuburb2.AutoSize = true;
-            this.ClientSuburb2.Location = new System.Drawing.Point(605, 269);
+            this.ClientSuburb2.Location = new System.Drawing.Point(17, 233);
             this.ClientSuburb2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientSuburb2.Name = "ClientSuburb2";
             this.ClientSuburb2.Size = new System.Drawing.Size(86, 16);
@@ -117,7 +129,7 @@
             // ClientCity2
             // 
             this.ClientCity2.AutoSize = true;
-            this.ClientCity2.Location = new System.Drawing.Point(605, 296);
+            this.ClientCity2.Location = new System.Drawing.Point(17, 260);
             this.ClientCity2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientCity2.Name = "ClientCity2";
             this.ClientCity2.Size = new System.Drawing.Size(65, 16);
@@ -127,130 +139,152 @@
             // ClientStreetName2
             // 
             this.ClientStreetName2.AutoSize = true;
-            this.ClientStreetName2.Location = new System.Drawing.Point(605, 238);
+            this.ClientStreetName2.Location = new System.Drawing.Point(17, 202);
             this.ClientStreetName2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ClientStreetName2.Name = "ClientStreetName2";
             this.ClientStreetName2.Size = new System.Drawing.Size(118, 16);
             this.ClientStreetName2.TabIndex = 7;
             this.ClientStreetName2.Text = "Client Street Name";
             // 
-            // ClientName
+            // txtClientName
             // 
-            this.ClientName.Location = new System.Drawing.Point(718, 73);
-            this.ClientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ClientName.Name = "ClientName";
-            this.ClientName.Size = new System.Drawing.Size(132, 22);
-            this.ClientName.TabIndex = 8;
+            this.txtClientName.Location = new System.Drawing.Point(167, 37);
+            this.txtClientName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientName.Name = "txtClientName";
+            this.txtClientName.Size = new System.Drawing.Size(132, 22);
+            this.txtClientName.TabIndex = 8;
             // 
-            // ClientSurname
+            // txtClientSurname
             // 
-            this.ClientSurname.Location = new System.Drawing.Point(718, 101);
-            this.ClientSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ClientSurname.Name = "ClientSurname";
-            this.ClientSurname.Size = new System.Drawing.Size(132, 22);
-            this.ClientSurname.TabIndex = 9;
+            this.txtClientSurname.Location = new System.Drawing.Point(167, 65);
+            this.txtClientSurname.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientSurname.Name = "txtClientSurname";
+            this.txtClientSurname.Size = new System.Drawing.Size(132, 22);
+            this.txtClientSurname.TabIndex = 9;
             // 
-            // CleintNumber
+            // txtClientNumber
             // 
-            this.CleintNumber.Location = new System.Drawing.Point(718, 141);
-            this.CleintNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.CleintNumber.Name = "CleintNumber";
-            this.CleintNumber.Size = new System.Drawing.Size(132, 22);
-            this.CleintNumber.TabIndex = 10;
+            this.txtClientNumber.Location = new System.Drawing.Point(167, 105);
+            this.txtClientNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientNumber.Name = "txtClientNumber";
+            this.txtClientNumber.Size = new System.Drawing.Size(132, 22);
+            this.txtClientNumber.TabIndex = 10;
             // 
-            // ClientCondition
+            // txtClientCondition
             // 
-            this.ClientCondition.Location = new System.Drawing.Point(718, 173);
-            this.ClientCondition.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ClientCondition.Name = "ClientCondition";
-            this.ClientCondition.Size = new System.Drawing.Size(132, 22);
-            this.ClientCondition.TabIndex = 11;
+            this.txtClientCondition.Location = new System.Drawing.Point(167, 137);
+            this.txtClientCondition.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientCondition.Name = "txtClientCondition";
+            this.txtClientCondition.Size = new System.Drawing.Size(132, 22);
+            this.txtClientCondition.TabIndex = 11;
             // 
-            // ClientHouseNumber
+            // txtClientHouseNumber
             // 
-            this.ClientHouseNumber.Location = new System.Drawing.Point(755, 202);
-            this.ClientHouseNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ClientHouseNumber.Name = "ClientHouseNumber";
-            this.ClientHouseNumber.Size = new System.Drawing.Size(132, 22);
-            this.ClientHouseNumber.TabIndex = 12;
+            this.txtClientHouseNumber.Location = new System.Drawing.Point(167, 166);
+            this.txtClientHouseNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientHouseNumber.Name = "txtClientHouseNumber";
+            this.txtClientHouseNumber.Size = new System.Drawing.Size(132, 22);
+            this.txtClientHouseNumber.TabIndex = 12;
             // 
-            // ClientStreetName
+            // txtClientStreetName
             // 
-            this.ClientStreetName.Location = new System.Drawing.Point(755, 234);
-            this.ClientStreetName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ClientStreetName.Name = "ClientStreetName";
-            this.ClientStreetName.Size = new System.Drawing.Size(132, 22);
-            this.ClientStreetName.TabIndex = 13;
+            this.txtClientStreetName.Location = new System.Drawing.Point(167, 198);
+            this.txtClientStreetName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientStreetName.Name = "txtClientStreetName";
+            this.txtClientStreetName.Size = new System.Drawing.Size(132, 22);
+            this.txtClientStreetName.TabIndex = 13;
             // 
-            // ClientSuburb
+            // txtClientSuburb
             // 
-            this.ClientSuburb.Location = new System.Drawing.Point(755, 265);
-            this.ClientSuburb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ClientSuburb.Name = "ClientSuburb";
-            this.ClientSuburb.Size = new System.Drawing.Size(132, 22);
-            this.ClientSuburb.TabIndex = 14;
+            this.txtClientSuburb.Location = new System.Drawing.Point(167, 229);
+            this.txtClientSuburb.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientSuburb.Name = "txtClientSuburb";
+            this.txtClientSuburb.Size = new System.Drawing.Size(132, 22);
+            this.txtClientSuburb.TabIndex = 14;
             // 
-            // ClientCity
+            // txtClientCity
             // 
-            this.ClientCity.Location = new System.Drawing.Point(755, 292);
-            this.ClientCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ClientCity.Name = "ClientCity";
-            this.ClientCity.Size = new System.Drawing.Size(132, 22);
-            this.ClientCity.TabIndex = 15;
+            this.txtClientCity.Location = new System.Drawing.Point(167, 257);
+            this.txtClientCity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientCity.Name = "txtClientCity";
+            this.txtClientCity.Size = new System.Drawing.Size(132, 22);
+            this.txtClientCity.TabIndex = 15;
             // 
-            // button1
+            // btnCallCentre
             // 
-            this.button1.Location = new System.Drawing.Point(431, 479);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Call Centre";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCallCentre.Location = new System.Drawing.Point(-1, 106);
+            this.btnCallCentre.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCallCentre.Name = "btnCallCentre";
+            this.btnCallCentre.Size = new System.Drawing.Size(200, 55);
+            this.btnCallCentre.TabIndex = 16;
+            this.btnCallCentre.Text = "Call Centre";
+            this.btnCallCentre.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDatabaseClient
             // 
-            this.button2.Location = new System.Drawing.Point(539, 479);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Database";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDatabaseClient.Location = new System.Drawing.Point(-1, 169);
+            this.btnDatabaseClient.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDatabaseClient.Name = "btnDatabaseClient";
+            this.btnDatabaseClient.Size = new System.Drawing.Size(200, 55);
+            this.btnDatabaseClient.TabIndex = 17;
+            this.btnDatabaseClient.Text = "Database";
+            this.btnDatabaseClient.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPolicyClient
             // 
-            this.button3.Location = new System.Drawing.Point(647, 479);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Policy";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPolicyClient.Location = new System.Drawing.Point(-1, 232);
+            this.btnPolicyClient.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPolicyClient.Name = "btnPolicyClient";
+            this.btnPolicyClient.Size = new System.Drawing.Size(200, 55);
+            this.btnPolicyClient.TabIndex = 18;
+            this.btnPolicyClient.Text = "Policy";
+            this.btnPolicyClient.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnMedicalClient
             // 
-            this.button4.Location = new System.Drawing.Point(755, 479);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 28);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Medical";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnMedicalClient.Location = new System.Drawing.Point(-1, 295);
+            this.btnMedicalClient.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMedicalClient.Name = "btnMedicalClient";
+            this.btnMedicalClient.Size = new System.Drawing.Size(200, 55);
+            this.btnMedicalClient.TabIndex = 19;
+            this.btnMedicalClient.Text = "Medical";
+            this.btnMedicalClient.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
+            this.panel1.Controls.Add(this.pbxLogoClient);
+            this.panel1.Controls.Add(this.btnCallCentre);
+            this.panel1.Controls.Add(this.btnDatabaseClient);
+            this.panel1.Controls.Add(this.btnMedicalClient);
+            this.panel1.Controls.Add(this.btnPolicyClient);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 557);
+            this.panel1.Size = new System.Drawing.Size(200, 374);
             this.panel1.TabIndex = 20;
             // 
             // gbxClientForm
             // 
+            this.gbxClientForm.Controls.Add(this.btnClientSubmit);
+            this.gbxClientForm.Controls.Add(this.txtClientCity);
+            this.gbxClientForm.Controls.Add(this.CleintName2);
+            this.gbxClientForm.Controls.Add(this.CleintSurName2);
+            this.gbxClientForm.Controls.Add(this.CleintNumber2);
+            this.gbxClientForm.Controls.Add(this.CleintCondition2);
+            this.gbxClientForm.Controls.Add(this.ClientHouseNumber2);
+            this.gbxClientForm.Controls.Add(this.ClientSuburb2);
+            this.gbxClientForm.Controls.Add(this.txtClientSuburb);
+            this.gbxClientForm.Controls.Add(this.ClientCity2);
+            this.gbxClientForm.Controls.Add(this.txtClientStreetName);
+            this.gbxClientForm.Controls.Add(this.ClientStreetName2);
+            this.gbxClientForm.Controls.Add(this.txtClientHouseNumber);
+            this.gbxClientForm.Controls.Add(this.txtClientName);
+            this.gbxClientForm.Controls.Add(this.txtClientCondition);
+            this.gbxClientForm.Controls.Add(this.txtClientSurname);
+            this.gbxClientForm.Controls.Add(this.txtClientNumber);
             this.gbxClientForm.Location = new System.Drawing.Point(206, 12);
             this.gbxClientForm.Name = "gbxClientForm";
-            this.gbxClientForm.Size = new System.Drawing.Size(246, 428);
+            this.gbxClientForm.Size = new System.Drawing.Size(334, 360);
             this.gbxClientForm.TabIndex = 21;
             this.gbxClientForm.TabStop = false;
             this.gbxClientForm.Text = "Client Details";
@@ -258,48 +292,101 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(740, 322);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(497, 287);
             this.dataGridView1.TabIndex = 22;
+            // 
+            // pbxLogoClient
+            // 
+            this.pbxLogoClient.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pbxLogoClient.Location = new System.Drawing.Point(0, 0);
+            this.pbxLogoClient.Name = "pbxLogoClient";
+            this.pbxLogoClient.Size = new System.Drawing.Size(200, 86);
+            this.pbxLogoClient.TabIndex = 17;
+            this.pbxLogoClient.TabStop = false;
+            // 
+            // gbxClientView
+            // 
+            this.gbxClientView.Controls.Add(this.btnViewClientDependent);
+            this.gbxClientView.Controls.Add(this.btnViewAllClients);
+            this.gbxClientView.Controls.Add(this.dataGridView1);
+            this.gbxClientView.Location = new System.Drawing.Point(546, 12);
+            this.gbxClientView.Name = "gbxClientView";
+            this.gbxClientView.Size = new System.Drawing.Size(509, 360);
+            this.gbxClientView.TabIndex = 23;
+            this.gbxClientView.TabStop = false;
+            this.gbxClientView.Text = "groupBox1";
+            // 
+            // btnViewAllClients
+            // 
+            this.btnViewAllClients.Location = new System.Drawing.Point(6, 314);
+            this.btnViewAllClients.Name = "btnViewAllClients";
+            this.btnViewAllClients.Size = new System.Drawing.Size(115, 35);
+            this.btnViewAllClients.TabIndex = 23;
+            this.btnViewAllClients.Text = "View All Clients";
+            this.btnViewAllClients.UseVisualStyleBackColor = true;
+            // 
+            // btnViewClientDependent
+            // 
+            this.btnViewClientDependent.Location = new System.Drawing.Point(129, 314);
+            this.btnViewClientDependent.Name = "btnViewClientDependent";
+            this.btnViewClientDependent.Size = new System.Drawing.Size(141, 33);
+            this.btnViewClientDependent.TabIndex = 24;
+            this.btnViewClientDependent.Text = "View Dependents";
+            this.btnViewClientDependent.UseVisualStyleBackColor = true;
+            // 
+            // btnClientSubmit
+            // 
+            this.btnClientSubmit.Location = new System.Drawing.Point(20, 314);
+            this.btnClientSubmit.Name = "btnClientSubmit";
+            this.btnClientSubmit.Size = new System.Drawing.Size(115, 35);
+            this.btnClientSubmit.TabIndex = 16;
+            this.btnClientSubmit.Text = "Submit";
+            this.btnClientSubmit.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel2.Controls.Add(this.lblRightsClient);
+            this.panel2.Location = new System.Drawing.Point(0, 378);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1067, 40);
+            this.panel2.TabIndex = 24;
+            // 
+            // lblRightsClient
+            // 
+            this.lblRightsClient.AutoSize = true;
+            this.lblRightsClient.Location = new System.Drawing.Point(430, 9);
+            this.lblRightsClient.Name = "lblRightsClient";
+            this.lblRightsClient.Size = new System.Drawing.Size(227, 16);
+            this.lblRightsClient.TabIndex = 0;
+            this.lblRightsClient.Text = "Powered by Belgium Campus Alumni";
             // 
             // frmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1067, 418);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.gbxClientView);
             this.Controls.Add(this.gbxClientForm);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.ClientCity);
-            this.Controls.Add(this.ClientSuburb);
-            this.Controls.Add(this.ClientStreetName);
-            this.Controls.Add(this.ClientHouseNumber);
-            this.Controls.Add(this.ClientCondition);
-            this.Controls.Add(this.CleintNumber);
-            this.Controls.Add(this.ClientSurname);
-            this.Controls.Add(this.ClientName);
-            this.Controls.Add(this.ClientStreetName2);
-            this.Controls.Add(this.ClientCity2);
-            this.Controls.Add(this.ClientSuburb2);
-            this.Controls.Add(this.ClientHouseNumber2);
-            this.Controls.Add(this.CleintCondition2);
-            this.Controls.Add(this.CleintNumber2);
-            this.Controls.Add(this.CleintSurName2);
-            this.Controls.Add(this.CleintName2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClient";
             this.Text = "Client";
+            this.panel1.ResumeLayout(false);
+            this.gbxClientForm.ResumeLayout(false);
+            this.gbxClientForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogoClient)).EndInit();
+            this.gbxClientView.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -313,18 +400,28 @@
         private System.Windows.Forms.Label ClientSuburb2;
         private System.Windows.Forms.Label ClientCity2;
         private System.Windows.Forms.Label ClientStreetName2;
-        private System.Windows.Forms.TextBox ClientName;
-        private System.Windows.Forms.TextBox ClientSurname;
-        private System.Windows.Forms.TextBox CleintNumber;
-        private System.Windows.Forms.TextBox ClientCondition;
-        private System.Windows.Forms.TextBox ClientHouseNumber;
-        private System.Windows.Forms.TextBox ClientStreetName;
-        private System.Windows.Forms.TextBox ClientSuburb;
-        private System.Windows.Forms.TextBox ClientCity;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtClientName;
+        private System.Windows.Forms.TextBox txtClientSurname;
+        private System.Windows.Forms.TextBox txtClientNumber;
+        private System.Windows.Forms.TextBox txtClientCondition;
+        private System.Windows.Forms.TextBox txtClientHouseNumber;
+        private System.Windows.Forms.TextBox txtClientStreetName;
+        private System.Windows.Forms.TextBox txtClientSuburb;
+        private System.Windows.Forms.TextBox txtClientCity;
+        private System.Windows.Forms.Button btnCallCentre;
+        private System.Windows.Forms.Button btnDatabaseClient;
+        private System.Windows.Forms.Button btnPolicyClient;
+        private System.Windows.Forms.Button btnMedicalClient;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox gbxClientForm;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pbxLogoClient;
+        private System.Windows.Forms.GroupBox gbxClientView;
+        private System.Windows.Forms.Button btnClientSubmit;
+        private System.Windows.Forms.Button btnViewClientDependent;
+        private System.Windows.Forms.Button btnViewAllClients;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblRightsClient;
     }
 }
 
