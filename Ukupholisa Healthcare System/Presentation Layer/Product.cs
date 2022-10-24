@@ -16,5 +16,25 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         {
             InitializeComponent();
         }
+
+        private void btnClientPolicy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCallCentrePolicy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDatabasePolicy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMedicalPolicy_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

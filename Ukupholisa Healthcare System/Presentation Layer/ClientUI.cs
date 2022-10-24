@@ -16,5 +16,10 @@ namespace Ukupholisa_Healthcare_System
         {
             InitializeComponent();
         }
+
+        private void CleintCondition2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
