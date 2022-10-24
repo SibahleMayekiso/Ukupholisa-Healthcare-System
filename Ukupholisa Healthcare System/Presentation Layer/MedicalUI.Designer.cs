@@ -1,7 +1,7 @@
 ﻿
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
-    partial class MedicalUI
+    partial class frmMedicalUI
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,9 +59,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -75,7 +75,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(0, 311);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(200, 55);
             this.button4.TabIndex = 23;
@@ -85,7 +85,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(0, 240);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(200, 55);
             this.button3.TabIndex = 22;
@@ -95,7 +95,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(0, 177);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(200, 55);
             this.button2.TabIndex = 21;
@@ -105,7 +105,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 113);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 55);
             this.button1.TabIndex = 20;
@@ -115,7 +115,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // ClientSurname
             // 
             this.ClientSurname.Location = new System.Drawing.Point(236, 62);
-            this.ClientSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSurname.Margin = new System.Windows.Forms.Padding(4);
             this.ClientSurname.Name = "ClientSurname";
             this.ClientSurname.Size = new System.Drawing.Size(132, 22);
             this.ClientSurname.TabIndex = 27;
@@ -123,7 +123,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // ClientName
             // 
             this.ClientName.Location = new System.Drawing.Point(236, 34);
-            this.ClientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientName.Margin = new System.Windows.Forms.Padding(4);
             this.ClientName.Name = "ClientName";
             this.ClientName.Size = new System.Drawing.Size(132, 22);
             this.ClientName.TabIndex = 26;
@@ -151,7 +151,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(236, 124);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 31;
@@ -159,7 +159,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(236, 94);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 22);
             this.textBox2.TabIndex = 30;
@@ -187,7 +187,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(236, 161);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 22);
             this.textBox4.TabIndex = 34;
@@ -243,6 +243,15 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medical Conditions";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(6, 193);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(110, 35);
+            this.button5.TabIndex = 35;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button6);
@@ -262,6 +271,23 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Treatments";
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(6, 193);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(110, 35);
+            this.button6.TabIndex = 34;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(236, 165);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(132, 24);
+            this.comboBox1.TabIndex = 33;
             // 
             // label1
             // 
@@ -345,32 +371,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label5.TabIndex = 29;
             this.label5.Text = "Details of Condition";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(236, 165);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 24);
-            this.comboBox1.TabIndex = 33;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(6, 193);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 35);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(6, 193);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(110, 35);
-            this.button6.TabIndex = 34;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
@@ -409,7 +409,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label6.TabIndex = 0;
             this.label6.Text = "Powered by Belgium Campus Alumni";
             // 
-            // MedicalUI
+            // frmMedicalUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -420,8 +420,8 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "MedicalUI";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmMedicalUI";
             this.Text = "Medical";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

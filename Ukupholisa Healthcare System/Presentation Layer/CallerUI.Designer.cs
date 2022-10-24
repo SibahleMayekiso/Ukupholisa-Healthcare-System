@@ -1,7 +1,7 @@
 ﻿
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
-    partial class CallerUI
+    partial class frmCallerUI
     {
         /// <summary>
         /// Required designer variable.
@@ -36,18 +36,20 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(285, 183);
+            this.button1.Location = new System.Drawing.Point(380, 225);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 0;
             this.button1.Text = "Answer";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(366, 183);
+            this.button2.Location = new System.Drawing.Point(488, 225);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 1;
             this.button2.Text = "Reject";
             this.button2.UseVisualStyleBackColor = true;
@@ -55,21 +57,23 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 147);
+            this.label1.Location = new System.Drawing.Point(445, 181);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Client Calling";
             // 
-            // CallerUI
+            // frmCallerUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "CallerUI";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmCallerUI";
             this.Text = "Caller";
             this.ResumeLayout(false);
             this.PerformLayout();

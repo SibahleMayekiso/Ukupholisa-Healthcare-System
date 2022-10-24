@@ -72,11 +72,11 @@
     <Compile Include="Presentation Layer\MedicalUI.Designer.cs">
       <DependentUpon>MedicalUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\PolicyUI.cs">
+    <Compile Include="Presentation Layer\Product.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\PolicyUI.Designer.cs">
-      <DependentUpon>PolicyUI.cs</DependentUpon>
+    <Compile Include="Presentation Layer\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\CallCentreUI.cs">
       <SubType>Form</SubType>
@@ -84,11 +84,11 @@
     <Compile Include="Presentation Layer\CallCentreUI.Designer.cs">
       <DependentUpon>CallCentreUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\DataBaseUI.cs">
+    <Compile Include="Presentation Layer\ProviderUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\DataBaseUI.Designer.cs">
-      <DependentUpon>DataBaseUI.cs</DependentUpon>
+    <Compile Include="Presentation Layer\ProviderUI.Designer.cs">
+      <DependentUpon>ProviderUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\WarningUI.cs">
       <SubType>Form</SubType>
@@ -110,14 +110,14 @@
     <EmbeddedResource Include="Presentation Layer\MedicalUI.resx">
       <DependentUpon>MedicalUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\PolicyUI.resx">
-      <DependentUpon>PolicyUI.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CallCentreUI.resx">
       <DependentUpon>CallCentreUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\DataBaseUI.resx">
-      <DependentUpon>DataBaseUI.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\ProviderUI.resx">
+      <DependentUpon>ProviderUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\WarningUI.resx">
       <DependentUpon>WarningUI.cs</DependentUpon>

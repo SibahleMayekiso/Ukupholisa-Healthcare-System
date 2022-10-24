@@ -1,7 +1,7 @@
 ﻿
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
-    partial class PolicyUI
+    partial class frmPolicyUI
     {
         /// <summary>
         /// Required designer variable.
@@ -42,12 +42,12 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.txtPolicyPrice = new System.Windows.Forms.TextBox();
             this.txtPolicyMembers = new System.Windows.Forms.TextBox();
             this.gbxPolicyDetails = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnPolicySubmit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbvPolicyView = new System.Windows.Forms.GroupBox();
             this.dgvPolicyDetailsView = new System.Windows.Forms.DataGridView();
-            this.btnPolicySubmit = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRights = new System.Windows.Forms.Label();
             this.gbxPolicyDetails.SuspendLayout();
@@ -61,7 +61,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // btnClientPolicy
             // 
             this.btnClientPolicy.Location = new System.Drawing.Point(0, 94);
-            this.btnClientPolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClientPolicy.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientPolicy.Name = "btnClientPolicy";
             this.btnClientPolicy.Size = new System.Drawing.Size(200, 55);
             this.btnClientPolicy.TabIndex = 27;
@@ -71,7 +71,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // btnMedicalPolicy
             // 
             this.btnMedicalPolicy.Location = new System.Drawing.Point(0, 283);
-            this.btnMedicalPolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMedicalPolicy.Margin = new System.Windows.Forms.Padding(4);
             this.btnMedicalPolicy.Name = "btnMedicalPolicy";
             this.btnMedicalPolicy.Size = new System.Drawing.Size(200, 55);
             this.btnMedicalPolicy.TabIndex = 26;
@@ -81,7 +81,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // btnDatabasePolicy
             // 
             this.btnDatabasePolicy.Location = new System.Drawing.Point(0, 220);
-            this.btnDatabasePolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDatabasePolicy.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatabasePolicy.Name = "btnDatabasePolicy";
             this.btnDatabasePolicy.Size = new System.Drawing.Size(200, 55);
             this.btnDatabasePolicy.TabIndex = 25;
@@ -91,7 +91,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // btnCallCentrePolicy
             // 
             this.btnCallCentrePolicy.Location = new System.Drawing.Point(0, 157);
-            this.btnCallCentrePolicy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCallCentrePolicy.Margin = new System.Windows.Forms.Padding(4);
             this.btnCallCentrePolicy.Name = "btnCallCentrePolicy";
             this.btnCallCentrePolicy.Size = new System.Drawing.Size(200, 55);
             this.btnCallCentrePolicy.TabIndex = 24;
@@ -141,7 +141,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtPolicyName
             // 
             this.txtPolicyName.Location = new System.Drawing.Point(126, 24);
-            this.txtPolicyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPolicyName.Margin = new System.Windows.Forms.Padding(4);
             this.txtPolicyName.Name = "txtPolicyName";
             this.txtPolicyName.Size = new System.Drawing.Size(190, 22);
             this.txtPolicyName.TabIndex = 32;
@@ -149,7 +149,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtPolicyDetials
             // 
             this.txtPolicyDetials.Location = new System.Drawing.Point(126, 56);
-            this.txtPolicyDetials.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPolicyDetials.Margin = new System.Windows.Forms.Padding(4);
             this.txtPolicyDetials.Name = "txtPolicyDetials";
             this.txtPolicyDetials.Size = new System.Drawing.Size(190, 22);
             this.txtPolicyDetials.TabIndex = 33;
@@ -157,7 +157,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtPolicyPrice
             // 
             this.txtPolicyPrice.Location = new System.Drawing.Point(126, 89);
-            this.txtPolicyPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPolicyPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPolicyPrice.Name = "txtPolicyPrice";
             this.txtPolicyPrice.Size = new System.Drawing.Size(190, 22);
             this.txtPolicyPrice.TabIndex = 34;
@@ -165,7 +165,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtPolicyMembers
             // 
             this.txtPolicyMembers.Location = new System.Drawing.Point(126, 121);
-            this.txtPolicyMembers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPolicyMembers.Margin = new System.Windows.Forms.Padding(4);
             this.txtPolicyMembers.Name = "txtPolicyMembers";
             this.txtPolicyMembers.Size = new System.Drawing.Size(190, 22);
             this.txtPolicyMembers.TabIndex = 35;
@@ -188,6 +188,24 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.gbxPolicyDetails.TabIndex = 36;
             this.gbxPolicyDetails.TabStop = false;
             this.gbxPolicyDetails.Text = "Policy details";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(152, 154);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(125, 35);
+            this.btnClear.TabIndex = 37;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnPolicySubmit
+            // 
+            this.btnPolicySubmit.Location = new System.Drawing.Point(10, 154);
+            this.btnPolicySubmit.Name = "btnPolicySubmit";
+            this.btnPolicySubmit.Size = new System.Drawing.Size(125, 35);
+            this.btnPolicySubmit.TabIndex = 36;
+            this.btnPolicySubmit.Text = "Submit";
+            this.btnPolicySubmit.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -230,24 +248,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.dgvPolicyDetailsView.Size = new System.Drawing.Size(767, 207);
             this.dgvPolicyDetailsView.TabIndex = 0;
             // 
-            // btnPolicySubmit
-            // 
-            this.btnPolicySubmit.Location = new System.Drawing.Point(10, 154);
-            this.btnPolicySubmit.Name = "btnPolicySubmit";
-            this.btnPolicySubmit.Size = new System.Drawing.Size(125, 35);
-            this.btnPolicySubmit.TabIndex = 36;
-            this.btnPolicySubmit.Text = "Submit";
-            this.btnPolicySubmit.UseVisualStyleBackColor = true;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(152, 154);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(125, 35);
-            this.btnClear.TabIndex = 37;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
@@ -266,7 +266,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.lblRights.TabIndex = 0;
             this.lblRights.Text = "Powered by Begium Campus Alumni";
             // 
-            // PolicyUI
+            // frmPolicyUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -276,8 +276,8 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbvPolicyView);
             this.Controls.Add(this.gbxPolicyDetails);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "PolicyUI";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "frmPolicyUI";
             this.Text = "Policy";
             this.gbxPolicyDetails.ResumeLayout(false);
             this.gbxPolicyDetails.PerformLayout();

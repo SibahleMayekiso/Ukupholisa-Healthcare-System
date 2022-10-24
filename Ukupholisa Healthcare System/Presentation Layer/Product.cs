@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
-    public partial class PolicyUI : Form
+    public partial class frmPolicyUI : Form
     {
-        public PolicyUI()
+        public frmPolicyUI()
         {
             InitializeComponent();
         }
