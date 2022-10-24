@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ukupholisa_Healthcare_System
 {
-    public partial class Form1 : Form
+    public partial class frmClient : Form
     {
-        public Form1()
+        public frmClient()
         {
             InitializeComponent();
         }
