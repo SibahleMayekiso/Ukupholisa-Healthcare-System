@@ -46,21 +46,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbxLogoClient = new System.Windows.Forms.PictureBox();
             this.gbxClientForm = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnAddPerson = new System.Windows.Forms.Button();
+            this.txtClientCity = new System.Windows.Forms.TextBox();
+            this.ClientSuburb2 = new System.Windows.Forms.Label();
+            this.txtClientSuburb = new System.Windows.Forms.TextBox();
+            this.ClientCity2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gbxClientView = new System.Windows.Forms.GroupBox();
             this.btnViewClientDependent = new System.Windows.Forms.Button();
             this.btnViewAllClients = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRightsClient = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.ClientCity2 = new System.Windows.Forms.Label();
-            this.txtClientCity = new System.Windows.Forms.TextBox();
-            this.txtClientSuburb = new System.Windows.Forms.TextBox();
-            this.ClientSuburb2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -80,8 +82,6 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoClient)).BeginInit();
             this.gbxClientForm.SuspendLayout();
@@ -235,6 +235,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.SystemColors.Menu;
             this.panel1.Controls.Add(this.pbxLogoClient);
             this.panel1.Controls.Add(this.btnCallCentre);
@@ -243,7 +244,7 @@
             this.panel1.Controls.Add(this.btnPolicyClient);
             this.panel1.Location = new System.Drawing.Point(0, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 565);
+            this.panel1.Size = new System.Drawing.Size(203, 565);
             this.panel1.TabIndex = 20;
             // 
             // pbxLogoClient
@@ -284,6 +285,45 @@
             this.gbxClientForm.TabStop = false;
             this.gbxClientForm.Text = "Add Person Details";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(167, 221);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(161, 24);
+            this.comboBox1.TabIndex = 19;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(194, 29);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(95, 20);
+            this.radioButton2.TabIndex = 18;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Dependent";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(127, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(61, 20);
+            this.radioButton1.TabIndex = 18;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Client";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Person Type";
+            // 
             // btnAddPerson
             // 
             this.btnAddPerson.Location = new System.Drawing.Point(105, 309);
@@ -292,6 +332,42 @@
             this.btnAddPerson.TabIndex = 16;
             this.btnAddPerson.Text = "Add Person";
             this.btnAddPerson.UseVisualStyleBackColor = true;
+            // 
+            // txtClientCity
+            // 
+            this.txtClientCity.Location = new System.Drawing.Point(167, 280);
+            this.txtClientCity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientCity.Name = "txtClientCity";
+            this.txtClientCity.Size = new System.Drawing.Size(161, 22);
+            this.txtClientCity.TabIndex = 15;
+            // 
+            // ClientSuburb2
+            // 
+            this.ClientSuburb2.AutoSize = true;
+            this.ClientSuburb2.Location = new System.Drawing.Point(17, 255);
+            this.ClientSuburb2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ClientSuburb2.Name = "ClientSuburb2";
+            this.ClientSuburb2.Size = new System.Drawing.Size(42, 16);
+            this.ClientSuburb2.TabIndex = 5;
+            this.ClientSuburb2.Text = "Street";
+            // 
+            // txtClientSuburb
+            // 
+            this.txtClientSuburb.Location = new System.Drawing.Point(167, 252);
+            this.txtClientSuburb.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClientSuburb.Name = "txtClientSuburb";
+            this.txtClientSuburb.Size = new System.Drawing.Size(161, 22);
+            this.txtClientSuburb.TabIndex = 14;
+            // 
+            // ClientCity2
+            // 
+            this.ClientCity2.AutoSize = true;
+            this.ClientCity2.Location = new System.Drawing.Point(17, 283);
+            this.ClientCity2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ClientCity2.Name = "ClientCity2";
+            this.ClientCity2.Size = new System.Drawing.Size(67, 16);
+            this.ClientCity2.TabIndex = 6;
+            this.ClientCity2.Text = "Region ID";
             // 
             // dataGridView1
             // 
@@ -351,73 +427,6 @@
             this.lblRightsClient.TabIndex = 0;
             this.lblRightsClient.Text = "Powered by Belgium Campus Alumni";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Person Type";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(127, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(61, 20);
-            this.radioButton1.TabIndex = 18;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Client";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(194, 29);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(95, 20);
-            this.radioButton2.TabIndex = 18;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Dependent";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // ClientCity2
-            // 
-            this.ClientCity2.AutoSize = true;
-            this.ClientCity2.Location = new System.Drawing.Point(17, 283);
-            this.ClientCity2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ClientCity2.Name = "ClientCity2";
-            this.ClientCity2.Size = new System.Drawing.Size(67, 16);
-            this.ClientCity2.TabIndex = 6;
-            this.ClientCity2.Text = "Region ID";
-            // 
-            // txtClientCity
-            // 
-            this.txtClientCity.Location = new System.Drawing.Point(167, 280);
-            this.txtClientCity.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClientCity.Name = "txtClientCity";
-            this.txtClientCity.Size = new System.Drawing.Size(161, 22);
-            this.txtClientCity.TabIndex = 15;
-            // 
-            // txtClientSuburb
-            // 
-            this.txtClientSuburb.Location = new System.Drawing.Point(167, 252);
-            this.txtClientSuburb.Margin = new System.Windows.Forms.Padding(4);
-            this.txtClientSuburb.Name = "txtClientSuburb";
-            this.txtClientSuburb.Size = new System.Drawing.Size(161, 22);
-            this.txtClientSuburb.TabIndex = 14;
-            // 
-            // ClientSuburb2
-            // 
-            this.ClientSuburb2.AutoSize = true;
-            this.ClientSuburb2.Location = new System.Drawing.Point(17, 255);
-            this.ClientSuburb2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ClientSuburb2.Name = "ClientSuburb2";
-            this.ClientSuburb2.Size = new System.Drawing.Size(42, 16);
-            this.ClientSuburb2.TabIndex = 5;
-            this.ClientSuburb2.Text = "Street";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -446,6 +455,14 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Person Details";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(167, 221);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(161, 24);
+            this.comboBox2.TabIndex = 19;
             // 
             // radioButton3
             // 
@@ -625,22 +642,6 @@
             this.textBox8.Size = new System.Drawing.Size(161, 22);
             this.textBox8.TabIndex = 10;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(167, 221);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(161, 24);
-            this.comboBox1.TabIndex = 19;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(167, 221);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(161, 24);
-            this.comboBox2.TabIndex = 19;
-            // 
             // frmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -666,6 +667,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
