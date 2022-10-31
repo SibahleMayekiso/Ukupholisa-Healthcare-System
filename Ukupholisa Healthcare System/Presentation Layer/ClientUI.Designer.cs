@@ -55,7 +55,7 @@
             this.ClientSuburb2 = new System.Windows.Forms.Label();
             this.txtClientSuburb = new System.Windows.Forms.TextBox();
             this.ClientCity2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvClientView = new System.Windows.Forms.DataGridView();
             this.gbxClientView = new System.Windows.Forms.GroupBox();
             this.btnViewClientDependent = new System.Windows.Forms.Button();
             this.btnViewAllClients = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoClient)).BeginInit();
             this.gbxClientForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientView)).BeginInit();
             this.gbxClientView.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -369,20 +369,20 @@
             this.ClientCity2.TabIndex = 6;
             this.ClientCity2.Text = "Region ID";
             // 
-            // dataGridView1
+            // dgvClientView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(673, 81);
-            this.dataGridView1.TabIndex = 22;
+            this.dgvClientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientView.Location = new System.Drawing.Point(6, 63);
+            this.dgvClientView.Name = "dgvClientView";
+            this.dgvClientView.RowHeadersWidth = 51;
+            this.dgvClientView.RowTemplate.Height = 24;
+            this.dgvClientView.Size = new System.Drawing.Size(673, 81);
+            this.dgvClientView.TabIndex = 22;
             // 
             // gbxClientView
             // 
             this.gbxClientView.Controls.Add(this.btnViewClientDependent);
-            this.gbxClientView.Controls.Add(this.dataGridView1);
+            this.gbxClientView.Controls.Add(this.dgvClientView);
             this.gbxClientView.Controls.Add(this.btnViewAllClients);
             this.gbxClientView.Location = new System.Drawing.Point(206, 378);
             this.gbxClientView.Name = "gbxClientView";
@@ -656,11 +656,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClient";
             this.Text = "Client";
+            this.Load += new System.EventHandler(this.frmClient_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoClient)).EndInit();
             this.gbxClientForm.ResumeLayout(false);
             this.gbxClientForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientView)).EndInit();
             this.gbxClientView.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -690,7 +691,7 @@
         private System.Windows.Forms.Button btnMedicalClient;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox gbxClientForm;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvClientView;
         private System.Windows.Forms.PictureBox pbxLogoClient;
         private System.Windows.Forms.GroupBox gbxClientView;
         private System.Windows.Forms.Button btnAddPerson;

@@ -5,11 +5,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 {
-    class CallData
+    class MedicalData
     {
         //Connection to a local Database that will be used by the application
         SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog = UkupholisaHealthcareDB; Integrated Security = SSPI");
@@ -19,31 +18,24 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //CRUD Operations and Methods
         //Create Methods
         //Read Methods
-        #region Read Methods
-        public DataTable ReadCallLogs()
+        #region Read methods
+        public DataTable ReadAllMedicalConditions()
         {
-            string query = @"SELECT * FROM CallCenter";
+            string query = @"SELECT * FROM MedicalCondition";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
         }
 
-        public DataTable ReadClientCallLogs(Client client)
+        public DataTable ReadAllMedicalTreatments()
         {
-            string query = string.Format(@"SELECT * FROM CallCenter WHERE ClientID = {0}", client.ClientID);
+            string query = @"SELECT * FROM Treatment";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
         }
-        #endregion Read Methods
-        //Update Methods
-        /*
-         * Updating this Table is not ideal due to it nature and purpose. 
-         * NOTE: Call Logs should not be updated because they act as legal records of calls. Being able to
-         * update this table could potentially interfere with certain business ethics.
-         */
-        //Delete Methods
+        #endregion
     }
 }

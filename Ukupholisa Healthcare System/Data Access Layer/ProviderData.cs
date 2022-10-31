@@ -20,13 +20,13 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //Create Methods
         //Read Methods
         #region Read Methods
-        public SqlDataAdapter ReadAllProviders()
+        public DataTable ReadAllProviders()
         {
             string query = @"SELECT * FROM Provider";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            return adapter;
+            return table;
         }
         #endregion
         //Update Methods

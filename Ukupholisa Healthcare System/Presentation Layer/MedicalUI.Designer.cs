@@ -39,37 +39,37 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numMedicalId = new System.Windows.Forms.NumericUpDown();
+            this.cmbSeverity = new System.Windows.Forms.ComboBox();
+            this.btnUpdateCondition = new System.Windows.Forms.Button();
             this.btnAddCondition = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numDuration = new System.Windows.Forms.NumericUpDown();
+            this.numTreatmentId = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnUpdateTreatment = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnAddTreatment = new System.Windows.Forms.Button();
             this.txtTreamentName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnViewConditionsNTreatments = new System.Windows.Forms.Button();
+            this.btnViewTreatments = new System.Windows.Forms.Button();
+            this.btnViewMedicalConditons = new System.Windows.Forms.Button();
             this.dgvViewMedTreatments = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnUpdateCondition = new System.Windows.Forms.Button();
-            this.cmbSeverity = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numMedicalId = new System.Windows.Forms.NumericUpDown();
-            this.btnAddTreatment = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnUpdateTreatment = new System.Windows.Forms.Button();
-            this.numTreatmentId = new System.Windows.Forms.NumericUpDown();
-            this.numDuration = new System.Windows.Forms.NumericUpDown();
-            this.btnViewMedicalConditons = new System.Windows.Forms.Button();
-            this.btnViewTreatments = new System.Windows.Forms.Button();
-            this.btnViewConditionsNTreatments = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedicalId)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTreatmentId)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewMedTreatments)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMedicalId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTreatmentId)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProvider
@@ -178,6 +178,30 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Medical Condition Manager";
             // 
+            // numMedicalId
+            // 
+            this.numMedicalId.Location = new System.Drawing.Point(144, 140);
+            this.numMedicalId.Name = "numMedicalId";
+            this.numMedicalId.Size = new System.Drawing.Size(120, 22);
+            this.numMedicalId.TabIndex = 37;
+            // 
+            // cmbSeverity
+            // 
+            this.cmbSeverity.FormattingEnabled = true;
+            this.cmbSeverity.Location = new System.Drawing.Point(236, 63);
+            this.cmbSeverity.Name = "cmbSeverity";
+            this.cmbSeverity.Size = new System.Drawing.Size(132, 24);
+            this.cmbSeverity.TabIndex = 36;
+            // 
+            // btnUpdateCondition
+            // 
+            this.btnUpdateCondition.Location = new System.Drawing.Point(276, 136);
+            this.btnUpdateCondition.Name = "btnUpdateCondition";
+            this.btnUpdateCondition.Size = new System.Drawing.Size(110, 28);
+            this.btnUpdateCondition.TabIndex = 35;
+            this.btnUpdateCondition.Text = "Update";
+            this.btnUpdateCondition.UseVisualStyleBackColor = true;
+            // 
             // btnAddCondition
             // 
             this.btnAddCondition.Location = new System.Drawing.Point(127, 94);
@@ -186,6 +210,16 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnAddCondition.TabIndex = 35;
             this.btnAddCondition.Text = "Add";
             this.btnAddCondition.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 142);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(130, 16);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Medical Condition ID";
             // 
             // groupBox2
             // 
@@ -204,6 +238,20 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Treatments";
             // 
+            // numDuration
+            // 
+            this.numDuration.Location = new System.Drawing.Point(265, 67);
+            this.numDuration.Name = "numDuration";
+            this.numDuration.Size = new System.Drawing.Size(103, 22);
+            this.numDuration.TabIndex = 37;
+            // 
+            // numTreatmentId
+            // 
+            this.numTreatmentId.Location = new System.Drawing.Point(144, 140);
+            this.numTreatmentId.Name = "numTreatmentId";
+            this.numTreatmentId.Size = new System.Drawing.Size(120, 22);
+            this.numTreatmentId.TabIndex = 37;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -213,6 +261,15 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 24;
             this.label2.Text = "Treatment Name";
+            // 
+            // btnUpdateTreatment
+            // 
+            this.btnUpdateTreatment.Location = new System.Drawing.Point(276, 136);
+            this.btnUpdateTreatment.Name = "btnUpdateTreatment";
+            this.btnUpdateTreatment.Size = new System.Drawing.Size(110, 28);
+            this.btnUpdateTreatment.TabIndex = 35;
+            this.btnUpdateTreatment.Text = "Update";
+            this.btnUpdateTreatment.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -224,6 +281,15 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label3.TabIndex = 25;
             this.label3.Text = "Treatment Duration (weeks)";
             // 
+            // btnAddTreatment
+            // 
+            this.btnAddTreatment.Location = new System.Drawing.Point(149, 94);
+            this.btnAddTreatment.Name = "btnAddTreatment";
+            this.btnAddTreatment.Size = new System.Drawing.Size(105, 35);
+            this.btnAddTreatment.TabIndex = 35;
+            this.btnAddTreatment.Text = "Add";
+            this.btnAddTreatment.UseVisualStyleBackColor = true;
+            // 
             // txtTreamentName
             // 
             this.txtTreamentName.Location = new System.Drawing.Point(149, 34);
@@ -231,6 +297,16 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.txtTreamentName.Name = "txtTreamentName";
             this.txtTreamentName.Size = new System.Drawing.Size(219, 22);
             this.txtTreamentName.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 142);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Treatment ID";
             // 
             // groupBox3
             // 
@@ -244,6 +320,33 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "View";
+            // 
+            // btnViewConditionsNTreatments
+            // 
+            this.btnViewConditionsNTreatments.Location = new System.Drawing.Point(490, 22);
+            this.btnViewConditionsNTreatments.Name = "btnViewConditionsNTreatments";
+            this.btnViewConditionsNTreatments.Size = new System.Drawing.Size(294, 28);
+            this.btnViewConditionsNTreatments.TabIndex = 2;
+            this.btnViewConditionsNTreatments.Text = "View Conditions with Treatments";
+            this.btnViewConditionsNTreatments.UseVisualStyleBackColor = true;
+            // 
+            // btnViewTreatments
+            // 
+            this.btnViewTreatments.Location = new System.Drawing.Point(265, 22);
+            this.btnViewTreatments.Name = "btnViewTreatments";
+            this.btnViewTreatments.Size = new System.Drawing.Size(219, 28);
+            this.btnViewTreatments.TabIndex = 2;
+            this.btnViewTreatments.Text = "View Treatments";
+            this.btnViewTreatments.UseVisualStyleBackColor = true;
+            // 
+            // btnViewMedicalConditons
+            // 
+            this.btnViewMedicalConditons.Location = new System.Drawing.Point(6, 22);
+            this.btnViewMedicalConditons.Name = "btnViewMedicalConditons";
+            this.btnViewMedicalConditons.Size = new System.Drawing.Size(253, 28);
+            this.btnViewMedicalConditons.TabIndex = 1;
+            this.btnViewMedicalConditons.Text = "View Medical Conditons";
+            this.btnViewMedicalConditons.UseVisualStyleBackColor = true;
             // 
             // dgvViewMedTreatments
             // 
@@ -273,109 +376,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label6.TabIndex = 0;
             this.label6.Text = "Powered by Belgium Campus Alumni";
             // 
-            // btnUpdateCondition
-            // 
-            this.btnUpdateCondition.Location = new System.Drawing.Point(276, 136);
-            this.btnUpdateCondition.Name = "btnUpdateCondition";
-            this.btnUpdateCondition.Size = new System.Drawing.Size(110, 28);
-            this.btnUpdateCondition.TabIndex = 35;
-            this.btnUpdateCondition.Text = "Update";
-            this.btnUpdateCondition.UseVisualStyleBackColor = true;
-            // 
-            // cmbSeverity
-            // 
-            this.cmbSeverity.FormattingEnabled = true;
-            this.cmbSeverity.Location = new System.Drawing.Point(236, 63);
-            this.cmbSeverity.Name = "cmbSeverity";
-            this.cmbSeverity.Size = new System.Drawing.Size(132, 24);
-            this.cmbSeverity.TabIndex = 36;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 142);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 16);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Medical Condition ID";
-            // 
-            // numMedicalId
-            // 
-            this.numMedicalId.Location = new System.Drawing.Point(144, 140);
-            this.numMedicalId.Name = "numMedicalId";
-            this.numMedicalId.Size = new System.Drawing.Size(120, 22);
-            this.numMedicalId.TabIndex = 37;
-            // 
-            // btnAddTreatment
-            // 
-            this.btnAddTreatment.Location = new System.Drawing.Point(149, 94);
-            this.btnAddTreatment.Name = "btnAddTreatment";
-            this.btnAddTreatment.Size = new System.Drawing.Size(105, 35);
-            this.btnAddTreatment.TabIndex = 35;
-            this.btnAddTreatment.Text = "Add";
-            this.btnAddTreatment.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 142);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 16);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Treatment ID";
-            // 
-            // btnUpdateTreatment
-            // 
-            this.btnUpdateTreatment.Location = new System.Drawing.Point(276, 136);
-            this.btnUpdateTreatment.Name = "btnUpdateTreatment";
-            this.btnUpdateTreatment.Size = new System.Drawing.Size(110, 28);
-            this.btnUpdateTreatment.TabIndex = 35;
-            this.btnUpdateTreatment.Text = "Update";
-            this.btnUpdateTreatment.UseVisualStyleBackColor = true;
-            // 
-            // numTreatmentId
-            // 
-            this.numTreatmentId.Location = new System.Drawing.Point(144, 140);
-            this.numTreatmentId.Name = "numTreatmentId";
-            this.numTreatmentId.Size = new System.Drawing.Size(120, 22);
-            this.numTreatmentId.TabIndex = 37;
-            // 
-            // numDuration
-            // 
-            this.numDuration.Location = new System.Drawing.Point(265, 67);
-            this.numDuration.Name = "numDuration";
-            this.numDuration.Size = new System.Drawing.Size(103, 22);
-            this.numDuration.TabIndex = 37;
-            // 
-            // btnViewMedicalConditons
-            // 
-            this.btnViewMedicalConditons.Location = new System.Drawing.Point(6, 22);
-            this.btnViewMedicalConditons.Name = "btnViewMedicalConditons";
-            this.btnViewMedicalConditons.Size = new System.Drawing.Size(253, 28);
-            this.btnViewMedicalConditons.TabIndex = 1;
-            this.btnViewMedicalConditons.Text = "View Medical Conditons";
-            this.btnViewMedicalConditons.UseVisualStyleBackColor = true;
-            // 
-            // btnViewTreatments
-            // 
-            this.btnViewTreatments.Location = new System.Drawing.Point(265, 22);
-            this.btnViewTreatments.Name = "btnViewTreatments";
-            this.btnViewTreatments.Size = new System.Drawing.Size(219, 28);
-            this.btnViewTreatments.TabIndex = 2;
-            this.btnViewTreatments.Text = "View Treatments";
-            this.btnViewTreatments.UseVisualStyleBackColor = true;
-            // 
-            // btnViewConditionsNTreatments
-            // 
-            this.btnViewConditionsNTreatments.Location = new System.Drawing.Point(490, 22);
-            this.btnViewConditionsNTreatments.Name = "btnViewConditionsNTreatments";
-            this.btnViewConditionsNTreatments.Size = new System.Drawing.Size(294, 28);
-            this.btnViewConditionsNTreatments.TabIndex = 2;
-            this.btnViewConditionsNTreatments.Text = "View Conditions with Treatments";
-            this.btnViewConditionsNTreatments.UseVisualStyleBackColor = true;
-            // 
             // frmMedicalUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -390,19 +390,20 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMedicalUI";
             this.Text = "Medical";
+            this.Load += new System.EventHandler(this.frmMedicalUI_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numMedicalId)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTreatmentId)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewMedTreatments)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMedicalId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTreatmentId)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDuration)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -38,31 +38,31 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.PolicyPrice = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.gbxPolicyDetails = new System.Windows.Forms.GroupBox();
+            this.rdbUnlimited = new System.Windows.Forms.RadioButton();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.btnAddProduct = new System.Windows.Forms.Button();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtProductType = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbvPolicyView = new System.Windows.Forms.GroupBox();
+            this.btnViewAllProducts = new System.Windows.Forms.Button();
             this.dgvPolicyDetailsView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRights = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lvwReport = new System.Windows.Forms.ListView();
             this.btnReportGen = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
-            this.txtProductType = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lvwReport = new System.Windows.Forms.ListView();
             this.numProductId = new System.Windows.Forms.NumericUpDown();
-            this.rdbUnlimited = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdbUpdateUnlimited = new System.Windows.Forms.RadioButton();
             this.btnUpdateAvailability = new System.Windows.Forms.Button();
+            this.dtpUpdateEnd = new System.Windows.Forms.DateTimePicker();
+            this.dtpUpdateStart = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpUpdateStart = new System.Windows.Forms.DateTimePicker();
-            this.dtpUpdateEnd = new System.Windows.Forms.DateTimePicker();
-            this.rdbUpdateUnlimited = new System.Windows.Forms.RadioButton();
-            this.btnViewAllProducts = new System.Windows.Forms.Button();
             this.gbxPolicyDetails.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,6 +175,24 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.gbxPolicyDetails.TabStop = false;
             this.gbxPolicyDetails.Text = "Product details";
             // 
+            // rdbUnlimited
+            // 
+            this.rdbUnlimited.AutoSize = true;
+            this.rdbUnlimited.Location = new System.Drawing.Point(126, 117);
+            this.rdbUnlimited.Name = "rdbUnlimited";
+            this.rdbUnlimited.Size = new System.Drawing.Size(115, 20);
+            this.rdbUnlimited.TabIndex = 41;
+            this.rdbUnlimited.TabStop = true;
+            this.rdbUnlimited.Text = "Unlimited Offer";
+            this.rdbUnlimited.UseVisualStyleBackColor = true;
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Location = new System.Drawing.Point(126, 143);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(190, 22);
+            this.dtpEndDate.TabIndex = 38;
+            // 
             // btnAddProduct
             // 
             this.btnAddProduct.Location = new System.Drawing.Point(95, 216);
@@ -183,6 +201,41 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnAddProduct.TabIndex = 36;
             this.btnAddProduct.Text = "Add";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Location = new System.Drawing.Point(126, 87);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(190, 22);
+            this.dtpStartDate.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 59);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Product Type";
+            // 
+            // txtProductType
+            // 
+            this.txtProductType.Location = new System.Drawing.Point(126, 56);
+            this.txtProductType.Margin = new System.Windows.Forms.Padding(4);
+            this.txtProductType.Name = "txtProductType";
+            this.txtProductType.Size = new System.Drawing.Size(190, 22);
+            this.txtProductType.TabIndex = 34;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "End Date";
             // 
             // panel1
             // 
@@ -215,6 +268,15 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.gbvPolicyView.TabIndex = 36;
             this.gbvPolicyView.TabStop = false;
             this.gbvPolicyView.Text = "View";
+            // 
+            // btnViewAllProducts
+            // 
+            this.btnViewAllProducts.Location = new System.Drawing.Point(6, 22);
+            this.btnViewAllProducts.Name = "btnViewAllProducts";
+            this.btnViewAllProducts.Size = new System.Drawing.Size(171, 23);
+            this.btnViewAllProducts.TabIndex = 1;
+            this.btnViewAllProducts.Text = "View All Products";
+            this.btnViewAllProducts.UseVisualStyleBackColor = true;
             // 
             // dgvPolicyDetailsView
             // 
@@ -255,15 +317,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Summary";
             // 
-            // lvwReport
-            // 
-            this.lvwReport.HideSelection = false;
-            this.lvwReport.Location = new System.Drawing.Point(116, 14);
-            this.lvwReport.Name = "lvwReport";
-            this.lvwReport.Size = new System.Drawing.Size(328, 109);
-            this.lvwReport.TabIndex = 0;
-            this.lvwReport.UseCompatibleStateImageBehavior = false;
-            // 
             // btnReportGen
             // 
             this.btnReportGen.Location = new System.Drawing.Point(6, 45);
@@ -273,47 +326,14 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnReportGen.Text = "Generate Report";
             this.btnReportGen.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lvwReport
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 148);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "End Date";
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.Location = new System.Drawing.Point(126, 87);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(190, 22);
-            this.dtpStartDate.TabIndex = 38;
-            // 
-            // dtpEndDate
-            // 
-            this.dtpEndDate.Location = new System.Drawing.Point(126, 143);
-            this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(190, 22);
-            this.dtpEndDate.TabIndex = 38;
-            // 
-            // txtProductType
-            // 
-            this.txtProductType.Location = new System.Drawing.Point(126, 56);
-            this.txtProductType.Margin = new System.Windows.Forms.Padding(4);
-            this.txtProductType.Name = "txtProductType";
-            this.txtProductType.Size = new System.Drawing.Size(190, 22);
-            this.txtProductType.TabIndex = 34;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Product Type";
+            this.lvwReport.HideSelection = false;
+            this.lvwReport.Location = new System.Drawing.Point(116, 14);
+            this.lvwReport.Name = "lvwReport";
+            this.lvwReport.Size = new System.Drawing.Size(328, 109);
+            this.lvwReport.TabIndex = 0;
+            this.lvwReport.UseCompatibleStateImageBehavior = false;
             // 
             // numProductId
             // 
@@ -321,17 +341,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.numProductId.Name = "numProductId";
             this.numProductId.Size = new System.Drawing.Size(120, 22);
             this.numProductId.TabIndex = 39;
-            // 
-            // rdbUnlimited
-            // 
-            this.rdbUnlimited.AutoSize = true;
-            this.rdbUnlimited.Location = new System.Drawing.Point(126, 117);
-            this.rdbUnlimited.Name = "rdbUnlimited";
-            this.rdbUnlimited.Size = new System.Drawing.Size(115, 20);
-            this.rdbUnlimited.TabIndex = 41;
-            this.rdbUnlimited.TabStop = true;
-            this.rdbUnlimited.Text = "Unlimited Offer";
-            this.rdbUnlimited.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -350,6 +359,17 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Product Availability";
             // 
+            // rdbUpdateUnlimited
+            // 
+            this.rdbUpdateUnlimited.AutoSize = true;
+            this.rdbUpdateUnlimited.Location = new System.Drawing.Point(240, 59);
+            this.rdbUpdateUnlimited.Name = "rdbUpdateUnlimited";
+            this.rdbUpdateUnlimited.Size = new System.Drawing.Size(115, 20);
+            this.rdbUpdateUnlimited.TabIndex = 41;
+            this.rdbUpdateUnlimited.TabStop = true;
+            this.rdbUpdateUnlimited.Text = "Unlimited Offer";
+            this.rdbUpdateUnlimited.UseVisualStyleBackColor = true;
+            // 
             // btnUpdateAvailability
             // 
             this.btnUpdateAvailability.Location = new System.Drawing.Point(6, 90);
@@ -358,6 +378,20 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnUpdateAvailability.TabIndex = 0;
             this.btnUpdateAvailability.Text = "Update";
             this.btnUpdateAvailability.UseVisualStyleBackColor = true;
+            // 
+            // dtpUpdateEnd
+            // 
+            this.dtpUpdateEnd.Location = new System.Drawing.Point(240, 85);
+            this.dtpUpdateEnd.Name = "dtpUpdateEnd";
+            this.dtpUpdateEnd.Size = new System.Drawing.Size(190, 22);
+            this.dtpUpdateEnd.TabIndex = 38;
+            // 
+            // dtpUpdateStart
+            // 
+            this.dtpUpdateStart.Location = new System.Drawing.Point(240, 29);
+            this.dtpUpdateStart.Name = "dtpUpdateStart";
+            this.dtpUpdateStart.Size = new System.Drawing.Size(190, 22);
+            this.dtpUpdateStart.TabIndex = 38;
             // 
             // label3
             // 
@@ -379,40 +413,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label4.TabIndex = 29;
             this.label4.Text = "End Date";
             // 
-            // dtpUpdateStart
-            // 
-            this.dtpUpdateStart.Location = new System.Drawing.Point(240, 29);
-            this.dtpUpdateStart.Name = "dtpUpdateStart";
-            this.dtpUpdateStart.Size = new System.Drawing.Size(190, 22);
-            this.dtpUpdateStart.TabIndex = 38;
-            // 
-            // dtpUpdateEnd
-            // 
-            this.dtpUpdateEnd.Location = new System.Drawing.Point(240, 85);
-            this.dtpUpdateEnd.Name = "dtpUpdateEnd";
-            this.dtpUpdateEnd.Size = new System.Drawing.Size(190, 22);
-            this.dtpUpdateEnd.TabIndex = 38;
-            // 
-            // rdbUpdateUnlimited
-            // 
-            this.rdbUpdateUnlimited.AutoSize = true;
-            this.rdbUpdateUnlimited.Location = new System.Drawing.Point(240, 59);
-            this.rdbUpdateUnlimited.Name = "rdbUpdateUnlimited";
-            this.rdbUpdateUnlimited.Size = new System.Drawing.Size(115, 20);
-            this.rdbUpdateUnlimited.TabIndex = 41;
-            this.rdbUpdateUnlimited.TabStop = true;
-            this.rdbUpdateUnlimited.Text = "Unlimited Offer";
-            this.rdbUpdateUnlimited.UseVisualStyleBackColor = true;
-            // 
-            // btnViewAllProducts
-            // 
-            this.btnViewAllProducts.Location = new System.Drawing.Point(6, 22);
-            this.btnViewAllProducts.Name = "btnViewAllProducts";
-            this.btnViewAllProducts.Size = new System.Drawing.Size(171, 23);
-            this.btnViewAllProducts.TabIndex = 1;
-            this.btnViewAllProducts.Text = "View All Products";
-            this.btnViewAllProducts.UseVisualStyleBackColor = true;
-            // 
             // frmPolicyUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -428,6 +428,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPolicyUI";
             this.Text = "Policy";
+            this.Load += new System.EventHandler(this.frmPolicyUI_Load);
             this.gbxPolicyDetails.ResumeLayout(false);
             this.gbxPolicyDetails.PerformLayout();
             this.panel1.ResumeLayout(false);

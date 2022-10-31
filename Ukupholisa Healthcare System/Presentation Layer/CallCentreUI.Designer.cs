@@ -349,6 +349,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCallCentreUI";
             this.Text = "Call Centre";
+            this.Load += new System.EventHandler(this.frmCallCentreUI_Load);
             this.pnlCallCentreMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.gbxDetails.ResumeLayout(false);

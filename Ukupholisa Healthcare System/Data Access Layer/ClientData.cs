@@ -20,25 +20,25 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //Create Methods
         //Read Methods
         #region Read Methods
-        public SqlDataAdapter ReadAllClients()
+        public DataTable ReadAllClients()
         {
             string query = @"SELECT * FROM Client";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            return adapter;
+            return table;
         }
 
-        public SqlDataAdapter ReadClientDetails(Client client)
+        public DataTable ReadClientDetails(Client client)
         {
             string query = string.Format(@"SELECT * FROM Client WHERE ClientID = {0}", client.ClientID);
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            return adapter;
+            return table;
         }
 
-        public SqlDataAdapter ReadClientDependents(Client client)
+        public DataTable ReadClientDependents(Client client)
         {
             string query = string.Format(
                 @"SELECT Client.ClientID, ClientDependent.DependentID, ClientDependent.FirstName, ClientDependent.LastName
@@ -50,7 +50,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            return adapter;
+            return table;
         }
         #endregion
         //Update Methods

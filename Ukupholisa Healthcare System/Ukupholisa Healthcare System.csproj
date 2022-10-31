@@ -57,6 +57,7 @@
     <Compile Include="Data Access Layer\ClientData.cs" />
     <Compile Include="Data Access Layer\DependentData.cs" />
     <Compile Include="Data Access Layer\HospitalData.cs" />
+    <Compile Include="Data Access Layer\MedicalData.cs" />
     <Compile Include="Data Access Layer\PolicyData.cs" />
     <Compile Include="Data Access Layer\ProductData.cs" />
     <Compile Include="Data Access Layer\ProviderData.cs" />

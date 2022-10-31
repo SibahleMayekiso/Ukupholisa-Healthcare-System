@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -15,6 +16,14 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         public frmProviderUI()
         {
             InitializeComponent();
+        }
+
+        private void frmProviderUI_Load(object sender, EventArgs e)
+        {
+            ProviderData provider = new ProviderData();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = provider.ReadAllProviders();
+            dgvProviderUiView.DataSource = bindingSource;
         }
     }
 }
