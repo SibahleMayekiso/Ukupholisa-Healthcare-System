@@ -132,6 +132,7 @@
             this.btnClientNav.TabIndex = 1;
             this.btnClientNav.Text = "Client";
             this.btnClientNav.UseVisualStyleBackColor = true;
+            this.btnClientNav.Click += new System.EventHandler(this.btnClientNav_Click);
             // 
             // pictureBox1
             // 

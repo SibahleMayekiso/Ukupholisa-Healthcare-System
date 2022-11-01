@@ -342,6 +342,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnViewTreatments.TabIndex = 2;
             this.btnViewTreatments.Text = "View Treatments";
             this.btnViewTreatments.UseVisualStyleBackColor = true;
+            this.btnViewTreatments.Click += new System.EventHandler(this.btnViewTreatments_Click);
             // 
             // btnViewMedicalConditons
             // 
@@ -351,6 +352,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnViewMedicalConditons.TabIndex = 1;
             this.btnViewMedicalConditons.Text = "View Medical Conditons";
             this.btnViewMedicalConditons.UseVisualStyleBackColor = true;
+            this.btnViewMedicalConditons.Click += new System.EventHandler(this.btnViewMedicalConditons_Click);
             // 
             // dgvViewMedTreatments
             // 

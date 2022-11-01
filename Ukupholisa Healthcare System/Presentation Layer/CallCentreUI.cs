@@ -25,5 +25,29 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             bindingSource.DataSource = call.ReadCallLogs();
             dgvDetailsCallCentre.DataSource = bindingSource;
         }
+
+        private void btnClientNavCallCentre_Click(object sender, EventArgs e)
+        {
+            frmClient client = new frmClient();
+            client.Show();
+        }
+
+        private void btnPolicyCallCentre_Click(object sender, EventArgs e)
+        {
+            frmPolicyUI policy = new frmPolicyUI();
+            policy.Show();
+        }
+
+        private void btnProviderCallCentre_Click(object sender, EventArgs e)
+        {
+            frmProviderUI provider = new frmProviderUI();
+            provider.Show();
+        }
+
+        private void btnMedicalCallCentre_Click(object sender, EventArgs e)
+        {
+            frmMedicalUI medical = new frmMedicalUI();
+            medical.Show();
+        }
     }
 }

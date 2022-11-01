@@ -202,6 +202,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnClientNavCallCentre.TabIndex = 45;
             this.btnClientNavCallCentre.Text = "Client";
             this.btnClientNavCallCentre.UseVisualStyleBackColor = false;
+            this.btnClientNavCallCentre.Click += new System.EventHandler(this.btnClientNavCallCentre_Click);
             // 
             // btnPolicyCallCentre
             // 
@@ -214,6 +215,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnPolicyCallCentre.TabIndex = 44;
             this.btnPolicyCallCentre.Text = "Policy";
             this.btnPolicyCallCentre.UseVisualStyleBackColor = false;
+            this.btnPolicyCallCentre.Click += new System.EventHandler(this.btnPolicyCallCentre_Click);
             // 
             // btnProviderCallCentre
             // 
@@ -226,6 +228,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnProviderCallCentre.TabIndex = 43;
             this.btnProviderCallCentre.Text = "Provider";
             this.btnProviderCallCentre.UseVisualStyleBackColor = false;
+            this.btnProviderCallCentre.Click += new System.EventHandler(this.btnProviderCallCentre_Click);
             // 
             // btnMedicalCallCentre
             // 
@@ -238,6 +241,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnMedicalCallCentre.TabIndex = 42;
             this.btnMedicalCallCentre.Text = "Medical";
             this.btnMedicalCallCentre.UseVisualStyleBackColor = false;
+            this.btnMedicalCallCentre.Click += new System.EventHandler(this.btnMedicalCallCentre_Click);
             // 
             // btnEndCallCentre
             // 

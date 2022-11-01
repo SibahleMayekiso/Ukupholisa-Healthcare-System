@@ -25,5 +25,12 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             bindingSource.DataSource = provider.ReadAllProviders();
             dgvProviderUiView.DataSource = bindingSource;
         }
+
+        private void btnClientNav_Click(object sender, EventArgs e)
+        {
+            frmClient client = new frmClient();
+            client.Show();
+            this.Close();
+        }
     }
 }

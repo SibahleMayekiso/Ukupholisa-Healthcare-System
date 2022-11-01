@@ -26,5 +26,21 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             bindingSource.DataSource = medical.ReadAllMedicalTreatments();
             dgvViewMedTreatments.DataSource = bindingSource;
         }
+
+        private void btnViewMedicalConditons_Click(object sender, EventArgs e)
+        {
+            MedicalData medical = new MedicalData();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = medical.ReadAllMedicalConditions();
+            dgvViewMedTreatments.DataSource = bindingSource;
+        }
+
+        private void btnViewTreatments_Click(object sender, EventArgs e)
+        {
+            MedicalData medical = new MedicalData();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = medical.ReadAllMedicalTreatments();
+            dgvViewMedTreatments.DataSource = bindingSource;
+        }
     }
 }
