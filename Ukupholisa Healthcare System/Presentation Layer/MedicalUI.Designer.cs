@@ -29,9 +29,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnProvider = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMedicalUI));
+            this.btnClient = new System.Windows.Forms.Button();
             this.btnPolicy = new System.Windows.Forms.Button();
-            this.btnProduct = new System.Windows.Forms.Button();
+            this.btnProvider = new System.Windows.Forms.Button();
             this.btnCallCentre = new System.Windows.Forms.Button();
             this.txtConditionName = new System.Windows.Forms.TextBox();
             this.CleintSurNameMed = new System.Windows.Forms.Label();
@@ -72,15 +73,15 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnProvider
+            // btnClient
             // 
-            this.btnProvider.Location = new System.Drawing.Point(0, 176);
-            this.btnProvider.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProvider.Name = "btnProvider";
-            this.btnProvider.Size = new System.Drawing.Size(200, 55);
-            this.btnProvider.TabIndex = 23;
-            this.btnProvider.Text = "Client";
-            this.btnProvider.UseVisualStyleBackColor = true;
+            this.btnClient.Location = new System.Drawing.Point(0, 176);
+            this.btnClient.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(200, 55);
+            this.btnClient.TabIndex = 23;
+            this.btnClient.Text = "Client";
+            this.btnClient.UseVisualStyleBackColor = true;
             // 
             // btnPolicy
             // 
@@ -92,15 +93,16 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnPolicy.Text = "Policies";
             this.btnPolicy.UseVisualStyleBackColor = true;
             // 
-            // btnProduct
+            // btnProvider
             // 
-            this.btnProduct.Location = new System.Drawing.Point(0, 247);
-            this.btnProduct.Margin = new System.Windows.Forms.Padding(4);
-            this.btnProduct.Name = "btnProduct";
-            this.btnProduct.Size = new System.Drawing.Size(200, 55);
-            this.btnProduct.TabIndex = 21;
-            this.btnProduct.Text = "Products";
-            this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProvider.Location = new System.Drawing.Point(0, 247);
+            this.btnProvider.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProvider.Name = "btnProvider";
+            this.btnProvider.Size = new System.Drawing.Size(200, 55);
+            this.btnProvider.TabIndex = 21;
+            this.btnProvider.Text = "Provider";
+            this.btnProvider.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnProvider.UseVisualStyleBackColor = true;
             // 
             // btnCallCentre
             // 
@@ -143,9 +145,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.btnProvider);
+            this.panel1.Controls.Add(this.btnClient);
             this.panel1.Controls.Add(this.btnCallCentre);
-            this.panel1.Controls.Add(this.btnProduct);
+            this.panel1.Controls.Add(this.btnProvider);
             this.panel1.Controls.Add(this.btnPolicy);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
@@ -155,9 +157,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -387,6 +391,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMedicalUI";
             this.Text = "Medical";
@@ -410,9 +415,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         #endregion
 
-        private System.Windows.Forms.Button btnProvider;
+        private System.Windows.Forms.Button btnClient;
         private System.Windows.Forms.Button btnPolicy;
-        private System.Windows.Forms.Button btnProduct;
+        private System.Windows.Forms.Button btnProvider;
         private System.Windows.Forms.Button btnCallCentre;
         private System.Windows.Forms.TextBox txtConditionName;
         private System.Windows.Forms.Label CleintSurNameMed;

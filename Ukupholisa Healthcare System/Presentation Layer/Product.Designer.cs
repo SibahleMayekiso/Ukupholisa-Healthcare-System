@@ -29,9 +29,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPolicyUI));
             this.btnClientPolicy = new System.Windows.Forms.Button();
             this.btnMedicalPolicy = new System.Windows.Forms.Button();
-            this.btnDatabasePolicy = new System.Windows.Forms.Button();
+            this.btnProviderPolicy = new System.Windows.Forms.Button();
             this.btnCallCentrePolicy = new System.Windows.Forms.Button();
             this.PolicyName = new System.Windows.Forms.Label();
             this.PolicyDetials = new System.Windows.Forms.Label();
@@ -96,16 +97,16 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnMedicalPolicy.UseVisualStyleBackColor = true;
             this.btnMedicalPolicy.Click += new System.EventHandler(this.btnMedicalPolicy_Click);
             // 
-            // btnDatabasePolicy
+            // btnProviderPolicy
             // 
-            this.btnDatabasePolicy.Location = new System.Drawing.Point(0, 290);
-            this.btnDatabasePolicy.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDatabasePolicy.Name = "btnDatabasePolicy";
-            this.btnDatabasePolicy.Size = new System.Drawing.Size(200, 80);
-            this.btnDatabasePolicy.TabIndex = 25;
-            this.btnDatabasePolicy.Text = "Database";
-            this.btnDatabasePolicy.UseVisualStyleBackColor = true;
-            this.btnDatabasePolicy.Click += new System.EventHandler(this.btnDatabasePolicy_Click);
+            this.btnProviderPolicy.Location = new System.Drawing.Point(0, 290);
+            this.btnProviderPolicy.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProviderPolicy.Name = "btnProviderPolicy";
+            this.btnProviderPolicy.Size = new System.Drawing.Size(200, 80);
+            this.btnProviderPolicy.TabIndex = 25;
+            this.btnProviderPolicy.Text = "Provider";
+            this.btnProviderPolicy.UseVisualStyleBackColor = true;
+            this.btnProviderPolicy.Click += new System.EventHandler(this.btnDatabasePolicy_Click);
             // 
             // btnCallCentrePolicy
             // 
@@ -242,7 +243,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnClientPolicy);
             this.panel1.Controls.Add(this.btnCallCentrePolicy);
-            this.panel1.Controls.Add(this.btnDatabasePolicy);
+            this.panel1.Controls.Add(this.btnProviderPolicy);
             this.panel1.Controls.Add(this.btnMedicalPolicy);
             this.panel1.Location = new System.Drawing.Point(1, -2);
             this.panel1.Name = "panel1";
@@ -252,9 +253,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -425,6 +428,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbvPolicyView);
             this.Controls.Add(this.gbxPolicyDetails);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPolicyUI";
             this.Text = "Policy";
@@ -449,7 +453,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private System.Windows.Forms.Button btnClientPolicy;
         private System.Windows.Forms.Button btnMedicalPolicy;
-        private System.Windows.Forms.Button btnDatabasePolicy;
+        private System.Windows.Forms.Button btnProviderPolicy;
         private System.Windows.Forms.Button btnCallCentrePolicy;
         private System.Windows.Forms.Label PolicyName;
         private System.Windows.Forms.Label PolicyDetials;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ukupholisa_Healthcare_System.Presentation_Layer;
 
 namespace Ukupholisa_Healthcare_System
 {
@@ -16,7 +17,7 @@ namespace Ukupholisa_Healthcare_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmClient());
+            Application.Run(new frmCallCentreUI());
         }
     }
 }

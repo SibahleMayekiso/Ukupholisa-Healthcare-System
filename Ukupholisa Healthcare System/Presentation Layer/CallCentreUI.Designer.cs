@@ -29,6 +29,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCallCentreUI));
             this.txtTimer = new System.Windows.Forms.TextBox();
             this.txtClientSurnameCen = new System.Windows.Forms.TextBox();
             this.txtClientNameCentre = new System.Windows.Forms.TextBox();
@@ -45,7 +46,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.CleintNumberCen2 = new System.Windows.Forms.Label();
             this.btnClientNavCallCentre = new System.Windows.Forms.Button();
             this.btnPolicyCallCentre = new System.Windows.Forms.Button();
-            this.btnDatabaseCallCentre = new System.Windows.Forms.Button();
+            this.btnProviderCallCentre = new System.Windows.Forms.Button();
             this.btnMedicalCallCentre = new System.Windows.Forms.Button();
             this.btnEndCallCentre = new System.Windows.Forms.Button();
             this.pnlCallCentreMenu = new System.Windows.Forms.Panel();
@@ -192,60 +193,71 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             // btnClientNavCallCentre
             // 
-            this.btnClientNavCallCentre.Location = new System.Drawing.Point(0, 86);
+            this.btnClientNavCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnClientNavCallCentre.Font = new System.Drawing.Font("Monotype Koufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientNavCallCentre.Location = new System.Drawing.Point(0, 107);
             this.btnClientNavCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientNavCallCentre.Name = "btnClientNavCallCentre";
             this.btnClientNavCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnClientNavCallCentre.TabIndex = 45;
             this.btnClientNavCallCentre.Text = "Client";
-            this.btnClientNavCallCentre.UseVisualStyleBackColor = true;
+            this.btnClientNavCallCentre.UseVisualStyleBackColor = false;
             // 
             // btnPolicyCallCentre
             // 
-            this.btnPolicyCallCentre.Location = new System.Drawing.Point(0, 149);
+            this.btnPolicyCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPolicyCallCentre.Font = new System.Drawing.Font("Monotype Koufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPolicyCallCentre.Location = new System.Drawing.Point(0, 165);
             this.btnPolicyCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnPolicyCallCentre.Name = "btnPolicyCallCentre";
             this.btnPolicyCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnPolicyCallCentre.TabIndex = 44;
             this.btnPolicyCallCentre.Text = "Policy";
-            this.btnPolicyCallCentre.UseVisualStyleBackColor = true;
+            this.btnPolicyCallCentre.UseVisualStyleBackColor = false;
             // 
-            // btnDatabaseCallCentre
+            // btnProviderCallCentre
             // 
-            this.btnDatabaseCallCentre.Location = new System.Drawing.Point(0, 212);
-            this.btnDatabaseCallCentre.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDatabaseCallCentre.Name = "btnDatabaseCallCentre";
-            this.btnDatabaseCallCentre.Size = new System.Drawing.Size(200, 55);
-            this.btnDatabaseCallCentre.TabIndex = 43;
-            this.btnDatabaseCallCentre.Text = "Database";
-            this.btnDatabaseCallCentre.UseVisualStyleBackColor = true;
+            this.btnProviderCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnProviderCallCentre.Font = new System.Drawing.Font("Monotype Koufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProviderCallCentre.Location = new System.Drawing.Point(0, 224);
+            this.btnProviderCallCentre.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProviderCallCentre.Name = "btnProviderCallCentre";
+            this.btnProviderCallCentre.Size = new System.Drawing.Size(200, 55);
+            this.btnProviderCallCentre.TabIndex = 43;
+            this.btnProviderCallCentre.Text = "Provider";
+            this.btnProviderCallCentre.UseVisualStyleBackColor = false;
             // 
             // btnMedicalCallCentre
             // 
-            this.btnMedicalCallCentre.Location = new System.Drawing.Point(0, 275);
+            this.btnMedicalCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMedicalCallCentre.Font = new System.Drawing.Font("Monotype Koufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedicalCallCentre.Location = new System.Drawing.Point(0, 282);
             this.btnMedicalCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnMedicalCallCentre.Name = "btnMedicalCallCentre";
             this.btnMedicalCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnMedicalCallCentre.TabIndex = 42;
             this.btnMedicalCallCentre.Text = "Medical";
-            this.btnMedicalCallCentre.UseVisualStyleBackColor = true;
+            this.btnMedicalCallCentre.UseVisualStyleBackColor = false;
             // 
             // btnEndCallCentre
             // 
-            this.btnEndCallCentre.Location = new System.Drawing.Point(28, 338);
+            this.btnEndCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEndCallCentre.Font = new System.Drawing.Font("Monotype Koufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEndCallCentre.Location = new System.Drawing.Point(28, 340);
             this.btnEndCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnEndCallCentre.Name = "btnEndCallCentre";
             this.btnEndCallCentre.Size = new System.Drawing.Size(135, 60);
             this.btnEndCallCentre.TabIndex = 46;
             this.btnEndCallCentre.Text = "End Call";
-            this.btnEndCallCentre.UseVisualStyleBackColor = true;
+            this.btnEndCallCentre.UseVisualStyleBackColor = false;
             // 
             // pnlCallCentreMenu
             // 
+            this.pnlCallCentreMenu.BackColor = System.Drawing.SystemColors.MenuBar;
             this.pnlCallCentreMenu.Controls.Add(this.pbxLogo);
             this.pnlCallCentreMenu.Controls.Add(this.btnEndCallCentre);
             this.pnlCallCentreMenu.Controls.Add(this.btnMedicalCallCentre);
-            this.pnlCallCentreMenu.Controls.Add(this.btnDatabaseCallCentre);
+            this.pnlCallCentreMenu.Controls.Add(this.btnProviderCallCentre);
             this.pnlCallCentreMenu.Controls.Add(this.btnPolicyCallCentre);
             this.pnlCallCentreMenu.Controls.Add(this.btnClientNavCallCentre);
             this.pnlCallCentreMenu.Location = new System.Drawing.Point(0, -3);
@@ -256,9 +268,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // pbxLogo
             // 
             this.pbxLogo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.pbxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbxLogo.Image")));
             this.pbxLogo.Location = new System.Drawing.Point(0, 4);
             this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(200, 75);
+            this.pbxLogo.Size = new System.Drawing.Size(200, 100);
+            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxLogo.TabIndex = 47;
             this.pbxLogo.TabStop = false;
             // 
@@ -300,7 +314,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.gbxCallCentreView.Controls.Add(this.dgvDetailsCallCentre);
             this.gbxCallCentreView.Location = new System.Drawing.Point(589, 12);
             this.gbxCallCentreView.Name = "gbxCallCentreView";
-            this.gbxCallCentreView.Size = new System.Drawing.Size(456, 322);
+            this.gbxCallCentreView.Size = new System.Drawing.Size(551, 322);
             this.gbxCallCentreView.TabIndex = 49;
             this.gbxCallCentreView.TabStop = false;
             this.gbxCallCentreView.Text = "Details View";
@@ -312,7 +326,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.dgvDetailsCallCentre.Name = "dgvDetailsCallCentre";
             this.dgvDetailsCallCentre.RowHeadersWidth = 51;
             this.dgvDetailsCallCentre.RowTemplate.Height = 24;
-            this.dgvDetailsCallCentre.Size = new System.Drawing.Size(444, 295);
+            this.dgvDetailsCallCentre.Size = new System.Drawing.Size(539, 295);
             this.dgvDetailsCallCentre.TabIndex = 0;
             // 
             // panel2
@@ -321,7 +335,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 408);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1067, 40);
+            this.panel2.Size = new System.Drawing.Size(1153, 40);
             this.panel2.TabIndex = 50;
             // 
             // label1
@@ -341,11 +355,12 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1067, 449);
+            this.ClientSize = new System.Drawing.Size(1152, 449);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.gbxCallCentreView);
             this.Controls.Add(this.gbxDetails);
             this.Controls.Add(this.pnlCallCentreMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCallCentreUI";
             this.Text = "Call Centre";
@@ -380,7 +395,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         private System.Windows.Forms.Label CleintNumberCen2;
         private System.Windows.Forms.Button btnClientNavCallCentre;
         private System.Windows.Forms.Button btnPolicyCallCentre;
-        private System.Windows.Forms.Button btnDatabaseCallCentre;
+        private System.Windows.Forms.Button btnProviderCallCentre;
         private System.Windows.Forms.Button btnMedicalCallCentre;
         private System.Windows.Forms.Button btnEndCallCentre;
         private System.Windows.Forms.Panel pnlCallCentreMenu;
