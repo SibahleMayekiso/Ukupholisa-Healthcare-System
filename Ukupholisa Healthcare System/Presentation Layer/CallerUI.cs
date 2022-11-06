@@ -16,5 +16,19 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         {
             InitializeComponent();
         }
+
+        private void btnRejectCall_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnAnswerCall_Click(object sender, EventArgs e)
+        {
+            frmCallCentreUI callCentreUI = new frmCallCentreUI();
+            frmCallTimerUI timer = new frmCallTimerUI();
+            callCentreUI.Show();
+            timer.Show();
+            this.Hide();
+        }
     }
 }

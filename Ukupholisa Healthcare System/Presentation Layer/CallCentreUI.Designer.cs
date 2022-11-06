@@ -48,7 +48,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnPolicyCallCentre = new System.Windows.Forms.Button();
             this.btnProviderCallCentre = new System.Windows.Forms.Button();
             this.btnMedicalCallCentre = new System.Windows.Forms.Button();
-            this.btnEndCallCentre = new System.Windows.Forms.Button();
             this.pnlCallCentreMenu = new System.Windows.Forms.Panel();
             this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.gbxDetails = new System.Windows.Forms.GroupBox();
@@ -243,23 +242,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnMedicalCallCentre.UseVisualStyleBackColor = false;
             this.btnMedicalCallCentre.Click += new System.EventHandler(this.btnMedicalCallCentre_Click);
             // 
-            // btnEndCallCentre
-            // 
-            this.btnEndCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnEndCallCentre.Font = new System.Drawing.Font("Monotype Koufi", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEndCallCentre.Location = new System.Drawing.Point(28, 340);
-            this.btnEndCallCentre.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEndCallCentre.Name = "btnEndCallCentre";
-            this.btnEndCallCentre.Size = new System.Drawing.Size(135, 60);
-            this.btnEndCallCentre.TabIndex = 46;
-            this.btnEndCallCentre.Text = "End Call";
-            this.btnEndCallCentre.UseVisualStyleBackColor = false;
-            // 
             // pnlCallCentreMenu
             // 
             this.pnlCallCentreMenu.BackColor = System.Drawing.SystemColors.MenuBar;
             this.pnlCallCentreMenu.Controls.Add(this.pbxLogo);
-            this.pnlCallCentreMenu.Controls.Add(this.btnEndCallCentre);
             this.pnlCallCentreMenu.Controls.Add(this.btnMedicalCallCentre);
             this.pnlCallCentreMenu.Controls.Add(this.btnProviderCallCentre);
             this.pnlCallCentreMenu.Controls.Add(this.btnPolicyCallCentre);
@@ -401,7 +387,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         private System.Windows.Forms.Button btnPolicyCallCentre;
         private System.Windows.Forms.Button btnProviderCallCentre;
         private System.Windows.Forms.Button btnMedicalCallCentre;
-        private System.Windows.Forms.Button btnEndCallCentre;
         private System.Windows.Forms.Panel pnlCallCentreMenu;
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.GroupBox gbxDetails;

@@ -61,6 +61,12 @@
     <Compile Include="Data Access Layer\PolicyData.cs" />
     <Compile Include="Data Access Layer\ProductData.cs" />
     <Compile Include="Data Access Layer\ProviderData.cs" />
+    <Compile Include="Presentation Layer\CallTimerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CallTimerUI.Designer.cs">
+      <DependentUpon>CallTimerUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\ClientUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation Layer\CallTimerUI.resx">
+      <DependentUpon>CallTimerUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ClientUI.resx">
       <DependentUpon>ClientUI.cs</DependentUpon>
     </EmbeddedResource>
