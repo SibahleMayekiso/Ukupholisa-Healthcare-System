@@ -106,7 +106,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnProviderPolicy.TabIndex = 25;
             this.btnProviderPolicy.Text = "Provider";
             this.btnProviderPolicy.UseVisualStyleBackColor = true;
-            this.btnProviderPolicy.Click += new System.EventHandler(this.btnDatabasePolicy_Click);
+            this.btnProviderPolicy.Click += new System.EventHandler(this.btnProviderPolicy_Click);
             // 
             // btnCallCentrePolicy
             // 
@@ -431,7 +431,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPolicyUI";
-            this.Text = "Policy";
+            this.Text = "Products";
             this.Load += new System.EventHandler(this.frmPolicyUI_Load);
             this.gbxPolicyDetails.ResumeLayout(false);
             this.gbxPolicyDetails.PerformLayout();

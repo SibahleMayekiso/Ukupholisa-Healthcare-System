@@ -20,22 +20,21 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void btnClientPolicy_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            frmClient client = new frmClient();
+            client.Show();
         }
 
         private void btnCallCentrePolicy_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDatabasePolicy_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
 
         private void btnMedicalPolicy_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            frmMedicalUI medical = new frmMedicalUI();
+            medical.Show();
         }
 
         private void frmPolicyUI_Load(object sender, EventArgs e)
@@ -44,6 +43,13 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = product.ReadAllProducts();
             dgvPolicyDetailsView.DataSource = bindingSource;
+        }
+
+        private void btnProviderPolicy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmProviderUI provider = new frmProviderUI();
+            provider.Show();
         }
     }
 }

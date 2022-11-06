@@ -131,7 +131,6 @@
             this.CleintCondition2.Size = new System.Drawing.Size(41, 16);
             this.CleintCondition2.TabIndex = 3;
             this.CleintCondition2.Text = "Email";
-            this.CleintCondition2.Click += new System.EventHandler(this.CleintCondition2_Click);
             // 
             // ClientHouseNumber2
             // 
@@ -205,6 +204,7 @@
             this.btnCallCentre.TabIndex = 16;
             this.btnCallCentre.Text = "Call Centre";
             this.btnCallCentre.UseVisualStyleBackColor = false;
+            this.btnCallCentre.Click += new System.EventHandler(this.btnCallCentre_Click);
             // 
             // btnProviderClient
             // 
@@ -217,6 +217,7 @@
             this.btnProviderClient.TabIndex = 17;
             this.btnProviderClient.Text = "Provider";
             this.btnProviderClient.UseVisualStyleBackColor = false;
+            this.btnProviderClient.Click += new System.EventHandler(this.btnProviderClient_Click);
             // 
             // btnPolicyClient
             // 
@@ -229,6 +230,7 @@
             this.btnPolicyClient.TabIndex = 18;
             this.btnPolicyClient.Text = "Policy";
             this.btnPolicyClient.UseVisualStyleBackColor = false;
+            this.btnPolicyClient.Click += new System.EventHandler(this.btnPolicyClient_Click);
             // 
             // btnMedicalClient
             // 
@@ -241,6 +243,7 @@
             this.btnMedicalClient.TabIndex = 19;
             this.btnMedicalClient.Text = "Medical";
             this.btnMedicalClient.UseVisualStyleBackColor = false;
+            this.btnMedicalClient.Click += new System.EventHandler(this.btnMedicalClient_Click);
             // 
             // panel1
             // 
@@ -561,7 +564,6 @@
             this.label6.Size = new System.Drawing.Size(41, 16);
             this.label6.TabIndex = 3;
             this.label6.Text = "Email";
-            this.label6.Click += new System.EventHandler(this.CleintCondition2_Click);
             // 
             // label7
             // 

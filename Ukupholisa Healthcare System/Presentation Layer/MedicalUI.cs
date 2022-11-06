@@ -42,5 +42,31 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             bindingSource.DataSource = medical.ReadAllMedicalTreatments();
             dgvViewMedTreatments.DataSource = bindingSource;
         }
+
+        private void btnCallCentre_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmClient client = new frmClient();
+            client.Show();
+        }
+
+        private void btnProvider_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmProviderUI provider = new frmProviderUI();
+            provider.Show();
+        }
+
+        private void btnPolicy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmPolicyUI policy = new frmPolicyUI();
+            policy.Show();
+        }
     }
 }

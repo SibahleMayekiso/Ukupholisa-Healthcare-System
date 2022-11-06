@@ -32,5 +32,24 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             client.Show();
             this.Close();
         }
+
+        private void btnCallCentreNav_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnPolicy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmPolicyUI policy = new frmPolicyUI();
+            policy.Show();
+        }
+
+        private void btnMedical_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            frmMedicalUI medical = new frmMedicalUI();
+            medical.Show();
+        }
     }
 }

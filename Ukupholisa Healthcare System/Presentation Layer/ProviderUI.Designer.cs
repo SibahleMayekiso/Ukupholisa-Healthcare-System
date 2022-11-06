@@ -105,6 +105,7 @@
             this.btnMedical.TabIndex = 4;
             this.btnMedical.Text = "Medical";
             this.btnMedical.UseVisualStyleBackColor = true;
+            this.btnMedical.Click += new System.EventHandler(this.btnMedical_Click);
             // 
             // btnPolicy
             // 
@@ -114,6 +115,7 @@
             this.btnPolicy.TabIndex = 3;
             this.btnPolicy.Text = "Policies";
             this.btnPolicy.UseVisualStyleBackColor = true;
+            this.btnPolicy.Click += new System.EventHandler(this.btnPolicy_Click);
             // 
             // btnCallCentreNav
             // 
@@ -123,6 +125,7 @@
             this.btnCallCentreNav.TabIndex = 2;
             this.btnCallCentreNav.Text = "Call Centre";
             this.btnCallCentreNav.UseVisualStyleBackColor = true;
+            this.btnCallCentreNav.Click += new System.EventHandler(this.btnCallCentreNav_Click);
             // 
             // btnClientNav
             // 

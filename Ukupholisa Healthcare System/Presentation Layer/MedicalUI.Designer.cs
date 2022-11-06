@@ -82,6 +82,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnClient.TabIndex = 23;
             this.btnClient.Text = "Client";
             this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
             // btnPolicy
             // 
@@ -92,6 +93,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnPolicy.TabIndex = 22;
             this.btnPolicy.Text = "Policies";
             this.btnPolicy.UseVisualStyleBackColor = true;
+            this.btnPolicy.Click += new System.EventHandler(this.btnPolicy_Click);
             // 
             // btnProvider
             // 
@@ -103,6 +105,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnProvider.Text = "Provider";
             this.btnProvider.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnProvider.UseVisualStyleBackColor = true;
+            this.btnProvider.Click += new System.EventHandler(this.btnProvider_Click);
             // 
             // btnCallCentre
             // 
@@ -113,6 +116,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnCallCentre.TabIndex = 20;
             this.btnCallCentre.Text = "Call Centre";
             this.btnCallCentre.UseVisualStyleBackColor = true;
+            this.btnCallCentre.Click += new System.EventHandler(this.btnCallCentre_Click);
             // 
             // txtConditionName
             // 
