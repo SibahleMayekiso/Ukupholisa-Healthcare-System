@@ -13,22 +13,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
     public partial class frmCallTimerUI : Form
     {
-        public bool end = false;
-        public frmCallTimerUI()
-        {
-            InitializeComponent();
-        }
-
-        private void btnEndCall_Click(object sender, EventArgs e)
-        {
-            end = true;
-            frmCallerUI caller = new frmCallerUI();
-            caller.Close();
-            Application.Exit();
-            
-        }
-
-        private void frmCallTimerUI_Load(object sender, EventArgs e)
+        public void timer()
         {
             int i = 900;
             while (i > 0)
@@ -48,6 +33,26 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
                 Thread.Sleep(1000);
                 i = i - 1;
             }
+        }
+        public bool end = false;
+        public frmCallTimerUI()
+        {
+            InitializeComponent();
+        }
+
+        private void btnEndCall_Click(object sender, EventArgs e)
+        {
+            end = true;
+            frmCallerUI caller = new frmCallerUI();
+            caller.Close();
+            Application.Exit();
+            
+        }
+
+        private void frmCallTimerUI_Load(object sender, EventArgs e)
+        {
+            Thread Clock = new Thread(timer);
+            Clock.Start();
         }
     }
 }
