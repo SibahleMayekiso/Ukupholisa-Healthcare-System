@@ -23,5 +23,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             caller.Close();
             Application.Exit();
         }
+
+        private void frmCallTimerUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
