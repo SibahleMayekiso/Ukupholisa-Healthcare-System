@@ -27,6 +27,10 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public string ProductName { get => productName; set => productName = value; }
         public string ProductType { get => productType; set => productType = value; }
 
+        //CRUD Operations
+
+        //Read Methods
+        #region Read
         public BindingSource GetProductPoliciesTable()
         {
             ProductData productData = new ProductData();
@@ -34,11 +38,20 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             source.DataSource = productData.ReadAllProducts();
             return source;
         }
-
-        public void UpdateProductPolicies(Product product)
+        #endregion
+        //Update Methods
+        #region Update
+        public void UpdateProductPoliciesDetails(Product product)
         {
             ProductData productData = new ProductData();
             productData.UpdateProductDetails(product);
         }
+
+        public void UpdateProductStatus(Product product)
+        {
+            ProductData productData = new ProductData();
+            productData.UpdateProductDetails(product);
+        }
+        #endregion
     }
 }
