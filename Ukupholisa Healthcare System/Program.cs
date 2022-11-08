@@ -17,7 +17,7 @@ namespace Ukupholisa_Healthcare_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCallCentreUI());
+            Application.Run(new frmCallerUI());
         }
     }
 }

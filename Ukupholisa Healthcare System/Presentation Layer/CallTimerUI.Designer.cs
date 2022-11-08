@@ -52,7 +52,7 @@
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.Location = new System.Drawing.Point(142, 47);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(102, 39);
+            this.lblTime.Size = new System.Drawing.Size(98, 38);
             this.lblTime.TabIndex = 1;
             this.lblTime.Text = "00:00";
             // 
@@ -67,6 +67,7 @@
             this.Name = "frmCallTimerUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CallTimerUI";
+            this.Load += new System.EventHandler(this.frmCallTimerUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
