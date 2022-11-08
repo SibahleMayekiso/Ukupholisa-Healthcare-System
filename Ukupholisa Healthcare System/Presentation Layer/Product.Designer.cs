@@ -55,15 +55,21 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.lblRights = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnReportGen = new System.Windows.Forms.Button();
-            this.lvwReport = new System.Windows.Forms.ListView();
             this.numProductId = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rdbUpdateUnlimited = new System.Windows.Forms.RadioButton();
             this.btnUpdateAvailability = new System.Windows.Forms.Button();
             this.dtpUpdateEnd = new System.Windows.Forms.DateTimePicker();
             this.dtpUpdateStart = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dgvReportView = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpReportStart = new System.Windows.Forms.DateTimePicker();
+            this.dtpReportEnd = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chkAlltimeDate = new System.Windows.Forms.CheckBox();
+            this.chkUpdateAvailabiltyTime = new System.Windows.Forms.CheckBox();
             this.gbxPolicyDetails.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +79,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProductId)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClientPolicy
@@ -171,7 +178,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.gbxPolicyDetails.Controls.Add(this.PolicyDetials);
             this.gbxPolicyDetails.Location = new System.Drawing.Point(208, 12);
             this.gbxPolicyDetails.Name = "gbxPolicyDetails";
-            this.gbxPolicyDetails.Size = new System.Drawing.Size(323, 279);
+            this.gbxPolicyDetails.Size = new System.Drawing.Size(323, 315);
             this.gbxPolicyDetails.TabIndex = 36;
             this.gbxPolicyDetails.TabStop = false;
             this.gbxPolicyDetails.Text = "Product details";
@@ -265,9 +272,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             this.gbvPolicyView.Controls.Add(this.btnViewAllProducts);
             this.gbvPolicyView.Controls.Add(this.dgvPolicyDetailsView);
-            this.gbvPolicyView.Location = new System.Drawing.Point(208, 297);
+            this.gbvPolicyView.Location = new System.Drawing.Point(208, 333);
             this.gbvPolicyView.Name = "gbvPolicyView";
-            this.gbvPolicyView.Size = new System.Drawing.Size(779, 264);
+            this.gbvPolicyView.Size = new System.Drawing.Size(964, 264);
             this.gbvPolicyView.TabIndex = 36;
             this.gbvPolicyView.TabStop = false;
             this.gbvPolicyView.Text = "View";
@@ -288,16 +295,16 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.dgvPolicyDetailsView.Name = "dgvPolicyDetailsView";
             this.dgvPolicyDetailsView.RowHeadersWidth = 51;
             this.dgvPolicyDetailsView.RowTemplate.Height = 24;
-            this.dgvPolicyDetailsView.Size = new System.Drawing.Size(767, 207);
+            this.dgvPolicyDetailsView.Size = new System.Drawing.Size(952, 207);
             this.dgvPolicyDetailsView.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel2.Controls.Add(this.lblRights);
-            this.panel2.Location = new System.Drawing.Point(1, 567);
+            this.panel2.Location = new System.Drawing.Point(1, 604);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(993, 40);
+            this.panel2.Size = new System.Drawing.Size(1185, 40);
             this.panel2.TabIndex = 38;
             // 
             // lblRights
@@ -311,32 +318,29 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.chkAlltimeDate);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.dtpReportEnd);
+            this.groupBox1.Controls.Add(this.dtpReportStart);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.dgvReportView);
             this.groupBox1.Controls.Add(this.btnReportGen);
-            this.groupBox1.Controls.Add(this.lvwReport);
             this.groupBox1.Location = new System.Drawing.Point(537, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(450, 135);
+            this.groupBox1.Size = new System.Drawing.Size(635, 180);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report Summary";
             // 
             // btnReportGen
             // 
-            this.btnReportGen.Location = new System.Drawing.Point(6, 45);
+            this.btnReportGen.Location = new System.Drawing.Point(89, 129);
             this.btnReportGen.Name = "btnReportGen";
             this.btnReportGen.Size = new System.Drawing.Size(104, 45);
             this.btnReportGen.TabIndex = 1;
             this.btnReportGen.Text = "Generate Report";
             this.btnReportGen.UseVisualStyleBackColor = true;
-            // 
-            // lvwReport
-            // 
-            this.lvwReport.HideSelection = false;
-            this.lvwReport.Location = new System.Drawing.Point(116, 14);
-            this.lvwReport.Name = "lvwReport";
-            this.lvwReport.Size = new System.Drawing.Size(328, 109);
-            this.lvwReport.TabIndex = 0;
-            this.lvwReport.UseCompatibleStateImageBehavior = false;
             // 
             // numProductId
             // 
@@ -347,7 +351,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.rdbUpdateUnlimited);
+            this.groupBox2.Controls.Add(this.chkUpdateAvailabiltyTime);
             this.groupBox2.Controls.Add(this.btnUpdateAvailability);
             this.groupBox2.Controls.Add(this.dtpUpdateEnd);
             this.groupBox2.Controls.Add(this.numProductId);
@@ -355,23 +359,12 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.groupBox2.Controls.Add(this.dtpUpdateStart);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(538, 160);
+            this.groupBox2.Location = new System.Drawing.Point(538, 196);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(449, 131);
+            this.groupBox2.Size = new System.Drawing.Size(634, 131);
             this.groupBox2.TabIndex = 40;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Update Product Availability";
-            // 
-            // rdbUpdateUnlimited
-            // 
-            this.rdbUpdateUnlimited.AutoSize = true;
-            this.rdbUpdateUnlimited.Location = new System.Drawing.Point(240, 59);
-            this.rdbUpdateUnlimited.Name = "rdbUpdateUnlimited";
-            this.rdbUpdateUnlimited.Size = new System.Drawing.Size(115, 20);
-            this.rdbUpdateUnlimited.TabIndex = 41;
-            this.rdbUpdateUnlimited.TabStop = true;
-            this.rdbUpdateUnlimited.Text = "Unlimited Offer";
-            this.rdbUpdateUnlimited.UseVisualStyleBackColor = true;
             // 
             // btnUpdateAvailability
             // 
@@ -416,12 +409,84 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label4.TabIndex = 29;
             this.label4.Text = "End Date";
             // 
+            // dgvReportView
+            // 
+            this.dgvReportView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReportView.Location = new System.Drawing.Point(276, 13);
+            this.dgvReportView.Name = "dgvReportView";
+            this.dgvReportView.RowHeadersWidth = 51;
+            this.dgvReportView.RowTemplate.Height = 24;
+            this.dgvReportView.Size = new System.Drawing.Size(353, 161);
+            this.dgvReportView.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 16);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Start";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 100);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 16);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "End";
+            // 
+            // dtpReportStart
+            // 
+            this.dtpReportStart.Location = new System.Drawing.Point(56, 64);
+            this.dtpReportStart.Name = "dtpReportStart";
+            this.dtpReportStart.Size = new System.Drawing.Size(200, 22);
+            this.dtpReportStart.TabIndex = 5;
+            // 
+            // dtpReportEnd
+            // 
+            this.dtpReportEnd.Location = new System.Drawing.Point(56, 96);
+            this.dtpReportEnd.Name = "dtpReportEnd";
+            this.dtpReportEnd.Size = new System.Drawing.Size(200, 22);
+            this.dtpReportEnd.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(7, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 16);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "View All-time Report";
+            // 
+            // chkAlltimeDate
+            // 
+            this.chkAlltimeDate.AutoSize = true;
+            this.chkAlltimeDate.Location = new System.Drawing.Point(150, 28);
+            this.chkAlltimeDate.Name = "chkAlltimeDate";
+            this.chkAlltimeDate.Size = new System.Drawing.Size(85, 20);
+            this.chkAlltimeDate.TabIndex = 8;
+            this.chkAlltimeDate.Text = "Unlimited";
+            this.chkAlltimeDate.UseVisualStyleBackColor = true;
+            this.chkAlltimeDate.CheckedChanged += new System.EventHandler(this.chkAlltimeDate_CheckedChanged);
+            // 
+            // chkUpdateAvailabiltyTime
+            // 
+            this.chkUpdateAvailabiltyTime.AutoSize = true;
+            this.chkUpdateAvailabiltyTime.Location = new System.Drawing.Point(240, 59);
+            this.chkUpdateAvailabiltyTime.Name = "chkUpdateAvailabiltyTime";
+            this.chkUpdateAvailabiltyTime.Size = new System.Drawing.Size(85, 20);
+            this.chkUpdateAvailabiltyTime.TabIndex = 40;
+            this.chkUpdateAvailabiltyTime.Text = "Unlimited";
+            this.chkUpdateAvailabiltyTime.UseVisualStyleBackColor = true;
+            // 
             // frmPolicyUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(990, 607);
+            this.ClientSize = new System.Drawing.Size(1184, 644);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -442,9 +507,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numProductId)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReportView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,7 +536,6 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         private System.Windows.Forms.Label lblRights;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnReportGen;
-        private System.Windows.Forms.ListView lvwReport;
         private System.Windows.Forms.RadioButton rdbUnlimited;
         private System.Windows.Forms.NumericUpDown numProductId;
         private System.Windows.Forms.DateTimePicker dtpEndDate;
@@ -479,11 +545,18 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnUpdateAvailability;
-        private System.Windows.Forms.RadioButton rdbUpdateUnlimited;
         private System.Windows.Forms.DateTimePicker dtpUpdateEnd;
         private System.Windows.Forms.DateTimePicker dtpUpdateStart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnViewAllProducts;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpReportEnd;
+        private System.Windows.Forms.DateTimePicker dtpReportStart;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvReportView;
+        private System.Windows.Forms.CheckBox chkAlltimeDate;
+        private System.Windows.Forms.CheckBox chkUpdateAvailabiltyTime;
     }
 }
