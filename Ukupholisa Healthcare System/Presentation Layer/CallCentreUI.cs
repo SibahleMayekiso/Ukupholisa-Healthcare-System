@@ -82,10 +82,5 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             
 
         }
-
-        private void btnCallCentreSubmit_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

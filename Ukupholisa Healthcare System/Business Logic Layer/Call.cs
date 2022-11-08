@@ -47,19 +47,5 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 
             return status;
         }
-
-        public string AddPersonValidation(string name, string surname, string phoneNumber, string email)
-        {
-            if (!(name == null | surname == null | phoneNumber == null | email == null | relation == null | status == null | street == null | region == null))
-            {
-                return ("Please Fill in all Fields");
-
-
-            }
-            else
-            {
-                return ("Added Succesfully");
-            }
-        }
     }
 }
