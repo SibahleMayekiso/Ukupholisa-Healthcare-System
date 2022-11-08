@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business Logic Layer\Call.cs" />
+    <Compile Include="Business Logic Layer\Claims.cs" />
     <Compile Include="Business Logic Layer\Client.cs" />
     <Compile Include="Business Logic Layer\Dependent.cs" />
     <Compile Include="Business Logic Layer\Hospital.cs" />

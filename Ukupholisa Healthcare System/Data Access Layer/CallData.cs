@@ -45,5 +45,14 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
          * update this table could potentially interfere with certain business ethics.
          */
         //Delete Methods
+        public DataTable ReadClaims(Claims claim)
+        {
+            string query = string.Format(@"Select * FROM Claims WHERE ClientPolicy = {0}", claim.Cleintid);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
     }
+
 }
