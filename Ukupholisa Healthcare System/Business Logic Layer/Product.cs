@@ -53,5 +53,31 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             productData.UpdateProductDetails(product);
         }
         #endregion
+        public string AddProductValidation(string pname, string type, DateTime startDate, bool unlimited, DateTime endDate)
+        {
+            if (pname == null | type == null | startDate == null | unlimited == false | endDate == null)
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Added Succesfully");
+            }
+
+
+        }
+        public string UpdateProductValidation(int ProductID, DateTime startDate, bool unlimited, DateTime endDate)
+        {
+            if (String.IsNullOrEmpty(ProductID.ToString()) | startDate == null | unlimited == false | endDate == null)
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Updated Succesfully");
+            }
+
+
+        }
     }
 }

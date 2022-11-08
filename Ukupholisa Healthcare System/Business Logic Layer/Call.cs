@@ -47,5 +47,21 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 
             return status;
         }
+
+        public string checkCallCenterValidation(string name, string surname, string pName, string pDetails, string DetailConditon, string clientNumber)
+        {
+            if (name == null | surname == null | pName == null | pDetails == null | DetailConditon == null | clientNumber == null)
+            {
+                return ("Please Fill in all Fields");
+
+
+            }
+            else
+            {
+                return ("Submitted Succesfully");
+            }
+
+
+        }
     }
 }

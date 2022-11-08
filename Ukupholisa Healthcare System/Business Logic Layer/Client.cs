@@ -46,5 +46,34 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             ClientData clientData = new ClientData();
             clientData.UpdateClientDetails(client);
         }
+
+        public string AddPersonValidation(string name, string surname, string phoneNumber, string email, string relation, string status, string street, string region)
+        {
+            if (!(name == null | surname == null | phoneNumber == null | email == null | relation == null | status == null | street == null | region == null))
+            {
+                return ("Please Fill in all Fields");
+
+
+            }
+            else
+            {
+                return ("Added Succesfully");
+            }
+        }
+
+        public string UpdatePersonValidation(string name, string surname, string phoneNumber, string email, string relation, string status, string street, string region)
+        {
+            if (!(name == null | surname == null | phoneNumber == null | email == null | relation == null | status == null | street == null | region == null))
+            {
+                return ("Please Fill in all Fields");
+
+
+            }
+            else
+            {
+                return ("Added Succesfully");
+            }
+
+        }
     }
 }

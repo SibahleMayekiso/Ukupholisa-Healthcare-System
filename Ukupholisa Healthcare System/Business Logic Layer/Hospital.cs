@@ -41,5 +41,63 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public int Amount_Due { get => amount_Due; set => amount_Due = value; }
         public string HospitalName { get => hospitalName; set => hospitalName = value; }
         public int RegionID { get => regionID; set => regionID = value; }
+
+
+        public string AddMedicalConditionValidation(string name, string severity, int MedicalconditionID)
+        {
+            if (name == null | severity == null | String.IsNullOrEmpty(MedicalconditionID.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Added Succesfully");
+            }
+
+
+        }
+
+        public string AddTreatmentValidation(string name, string duration, int TreatmentID)
+        {
+            if (name == null | duration == null | String.IsNullOrEmpty(TreatmentID.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Added Succesfully");
+            }
+
+
+        }
+
+        public string UpdateMedicalConditionValidation(string name, string severity, int MedicalconditionID)
+        {
+            if (name == null | severity == null | String.IsNullOrEmpty(MedicalconditionID.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("updated Succesfully");
+            }
+
+
+
+        }
+
+        public string UpdateTreatmentValidation(string name, string duration, int TreatmentID)
+        {
+            if (name == null | duration == null | String.IsNullOrEmpty(TreatmentID.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("updated Succesfully");
+            }
+
+
+        }
     }
 }

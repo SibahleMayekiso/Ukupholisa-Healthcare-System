@@ -60,6 +60,99 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             ProviderData providerData = new ProviderData();
             providerData.UpdateProviderDetails(provider);
         }
+        public string AddProviderDetailsValidation(string name, string email, int ProviderChargeRate)
+        {
+            if (name == null | email == null | String.IsNullOrEmpty(ProviderChargeRate.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Added Succesfully");
+            }
+
+
+        }
+
+        public string UpdateProviderDetailsValidation(string name, string email, int ProviderChargeRate)
+        {
+            if (name == null | email == null | String.IsNullOrEmpty(ProviderChargeRate.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Added Succesfully");
+            }
+
+
+        }
+
+        public string UpdateProviderTreatmentManagementValidation(int ProviderID, int TreatmentID)
+        {
+            if (String.IsNullOrEmpty(ProviderID.ToString()) | String.IsNullOrEmpty(TreatmentID.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("updated Succesfully");
+            }
+
+        }
+
+        public string SendNegotiationstValidation(int ProviderID, int CurrentRate, int NegotiatedRate)
+        {
+            if (String.IsNullOrEmpty(ProviderID.ToString()) | String.IsNullOrEmpty(CurrentRate.ToString()) | String.IsNullOrEmpty(NegotiatedRate.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Sent Succesfully");
+            }
+
+        }
+
+        public string SearchProviderValidation(int ProviderIDe)
+        {
+            if (String.IsNullOrEmpty(ProviderID.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Sent Succesfully");
+            }
+
+        }
+
+        public string SearchProviderTreatmentValidation(int ProviderIDs)
+        {
+            if (String.IsNullOrEmpty(ProviderID.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Sent Succesfully");
+            }
+
+        }
+
+        public string MaintainStaustValidation(int ProviderIDs, string status)
+        {
+            if (String.IsNullOrEmpty(ProviderID.ToString()) | status == null)
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Sent Succesfully");
+
+            }
+
+        }
     }
 }
 
