@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
@@ -50,6 +51,30 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Close();
             frmMedicalUI medical = new frmMedicalUI();
             medical.Show();
+        }
+
+        private void btnSendNegotiation_Click(object sender, EventArgs e)
+        {
+            if (numNegotiateRate.Value > 30)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to negotiate contract", "Some Title", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show("Negotiation Sent");
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Negotiation Not Sent");
+                }
+            }
+            else
+            {
+                string ValidOutput = "";
+                Provider negotations = new Provider();
+                ValidOutput = negotations.SendNegotiationstValidation(int.Parse(numIdSelector.Text), int.Parse(txtCurrentRate.Text), int.Parse(numNegotiateRate.Text));
+                MessageBox.Show(ValidOutput);
+
+            }
         }
     }
 }

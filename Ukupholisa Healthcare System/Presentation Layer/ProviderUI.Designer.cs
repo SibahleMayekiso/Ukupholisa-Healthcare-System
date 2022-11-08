@@ -292,6 +292,7 @@
             this.btnSendNegotiation.TabIndex = 5;
             this.btnSendNegotiation.Text = "Send";
             this.btnSendNegotiation.UseVisualStyleBackColor = true;
+            this.btnSendNegotiation.Click += new System.EventHandler(this.btnSendNegotiation_Click);
             // 
             // numNegotiateRate
             // 

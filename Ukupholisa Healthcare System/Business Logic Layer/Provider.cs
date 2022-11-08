@@ -15,6 +15,10 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         private bool provider_Status;
         private string agreement_With_Provider, type_of_Provider, type_of_Packages, criteria_for_PolicyHolders;
 
+        public Provider()
+        {
+
+        }
         public Provider(string name, string email, string rating, int providerID)
         {
             this.name = name;
@@ -59,6 +63,19 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             ProviderData providerData = new ProviderData();
             providerData.UpdateProviderDetails(provider);
+        }
+
+        public string SendNegotiationstValidation(int ProviderID, int CurrentRate, int NegotiatedRate)
+        {
+            if (String.IsNullOrEmpty(ProviderID.ToString()) | String.IsNullOrEmpty(CurrentRate.ToString()) | String.IsNullOrEmpty(NegotiatedRate.ToString()))
+            {
+                return ("Please Fill in all Fields");
+            }
+            else
+            {
+                return ("Sent Succesfully");
+            }
+
         }
     }
 }

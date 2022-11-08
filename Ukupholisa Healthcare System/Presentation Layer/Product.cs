@@ -71,5 +71,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
                 dtpReportEnd.Enabled = true;
             }
         }
+
+        private void btnReportGen_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
