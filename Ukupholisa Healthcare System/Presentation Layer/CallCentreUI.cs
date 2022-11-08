@@ -54,10 +54,33 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         private void ClaimHis_Click(object sender, EventArgs e)
         {
             Claims claim = new Claims();
-            claim.Claimid = int.Parse(txtClaimHis.Text);
+            claim.Clientid = txtClaimHis.Text;
             BindingSource bindingSource = new BindingSource();
             bindingSource.DataSource = claim.GetCliams(claim);
-            dgvDetailsCallCentre.DataSource = bindingSource;
+            dgvClaimHistory.DataSource = bindingSource;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApproveClaim_Click(object sender, EventArgs e)
+        {
+            Policy policy = new Policy();
+            Call call = new Call();
+            policy.PolicyID = txtClaimPolicyID.Text;
+            string status = call.ClaimApproval(policy, txtClaimTreatmentID.Text);
+            if (status == "APPROVED")
+            {
+                MessageBox.Show("Claim has been approved");
+            }
+            else
+            {
+                MessageBox.Show("Claim has been rejected");
+            }
+            
+
         }
     }
 }

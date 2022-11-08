@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
@@ -22,7 +23,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         #region Read Methods
         public DataTable ReadCallLogs()
         {
-            string query = @"SELECT * FROM CallCenter";
+            string query = @"SELECT * FROM Claims";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -44,14 +45,86 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
          * NOTE: Call Logs should not be updated because they act as legal records of calls. Being able to
          * update this table could potentially interfere with certain business ethics.
          */
+
+        public string InsertClaim(Claims claim)
+        {
+            string queryStateMessage = "";
+            string claimStatus = claim.Status;
+            DateTime date = DateTime.Now;
+            int id = 0;
+
+            try
+            {
+                
+                //Executing Query
+                queryString = string.Format(
+                    @"INSERT INTO Claims
+                    VALUES ('{0}', '{1}', '{2}', '{3}')", id ,date, claim.Policyid,claimStatus
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+        }
         //Delete Methods
         public DataTable ReadClaims(Claims claim)
         {
-            string query = string.Format(@"Select * FROM Claims WHERE ClientPolicy = {0}", claim.Cleintid);
+            string query = string.Format(
+                @"Select ClaimID, FirstName AS 'Client Name', LastName AS 'Client Surname', CellPhoneNum, Email, ClaimeDate, ClientPolicy.ClientPolicyID, ClaimStatus
+                FROM Claims 
+                FULL JOIN ClientPolicy
+                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
+                FULL JOIN Client
+                ON ClientPolicy.ClientID = Client.ClientID
+                WHERE Client.ClientID = '{0}'", claim.Clientid
+                );
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
             return table;
+        }
+
+        //Claim Approval Function
+        public string GetTreatmentsTable(Policy policy, string treatmentID)
+        {
+            string query = string.Format(
+                @"SELECT ClientPolicyID, Product.ProductID, Product.ProductName AS 'Product Name', Treatment.TreatmentID, Treatment.TreatmentName AS 'Treatment Name'
+                FROM ClientPolicy
+                FULL JOIN PolicyProduct
+                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+                FULL JOIN Product
+                ON PolicyProduct.Product = Product.ProductID
+                FULL JOIN TreatmentProduct
+                ON Product.ProductID = TreatmentProduct.ProductID
+                FULL JOIN Treatment
+                ON TreatmentProduct.TreatmentID = Treatment.TreatmentID
+                WHERE ClientPolicy.ClientPolicyID = '{0}'
+                ORDER BY ProductID DESC", policy.PolicyID
+                );
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            string claimStatus = "DECLINED";
+            foreach (DataRow row in table.Rows)
+            {
+                if (row["TreatmentID"].ToString() == treatmentID)
+                {
+                    claimStatus = "APPROVED";
+                }
+            }
+            return claimStatus;
         }
     }
 

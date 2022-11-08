@@ -14,6 +14,11 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         private bool answer_Call;
         private string claim_Details;
 
+        public Call()
+        {
+
+        }
+
         public Call(bool answer_Call, string claim_Details, int claim_Amount, int callID)
         {
             this.answer_Call = answer_Call;
@@ -33,6 +38,14 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             BindingSource source = new BindingSource();
             source.DataSource = callData.ReadClientCallLogs(client);
             return source;
+        }
+
+        public string ClaimApproval(Policy policy, string treatmentID)
+        {
+            CallData call = new CallData();
+            string status = call.GetTreatmentsTable(policy, treatmentID);
+
+            return status;
         }
     }
 }

@@ -52,25 +52,42 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.gbxDetails = new System.Windows.Forms.GroupBox();
             this.btnCallCentreSubmit = new System.Windows.Forms.Button();
-            this.gbxCallCentreView = new System.Windows.Forms.GroupBox();
-            this.dgvDetailsCallCentre = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtClaimHis = new System.Windows.Forms.TextBox();
+            this.tbcntrlCallCentre = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ClaimHis = new System.Windows.Forms.Button();
+            this.txtClaimHis = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.gbxCallCentreView = new System.Windows.Forms.GroupBox();
+            this.dgvDetailsCallCentre = new System.Windows.Forms.DataGridView();
+            this.dgvClaimHistory = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnApproveClaim = new System.Windows.Forms.Button();
+            this.txtClaimTreatmentID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtClaimPolicyID = new System.Windows.Forms.TextBox();
             this.pnlCallCentreMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.gbxDetails.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tbcntrlCallCentre.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.gbxCallCentreView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailsCallCentre)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClaimHistory)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTimer
             // 
             this.txtTimer.Location = new System.Drawing.Point(175, 30);
-            this.txtTimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimer.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimer.Name = "txtTimer";
             this.txtTimer.Size = new System.Drawing.Size(185, 22);
             this.txtTimer.TabIndex = 0;
@@ -78,7 +95,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtClientSurnameCen
             // 
             this.txtClientSurnameCen.Location = new System.Drawing.Point(175, 94);
-            this.txtClientSurnameCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientSurnameCen.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientSurnameCen.Name = "txtClientSurnameCen";
             this.txtClientSurnameCen.Size = new System.Drawing.Size(185, 22);
             this.txtClientSurnameCen.TabIndex = 31;
@@ -86,7 +103,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtClientNameCentre
             // 
             this.txtClientNameCentre.Location = new System.Drawing.Point(175, 62);
-            this.txtClientNameCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientNameCentre.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientNameCentre.Name = "txtClientNameCentre";
             this.txtClientNameCentre.Size = new System.Drawing.Size(185, 22);
             this.txtClientNameCentre.TabIndex = 30;
@@ -124,7 +141,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtPolicyDetialsCen
             // 
             this.txtPolicyDetialsCen.Location = new System.Drawing.Point(175, 162);
-            this.txtPolicyDetialsCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPolicyDetialsCen.Margin = new System.Windows.Forms.Padding(4);
             this.txtPolicyDetialsCen.Name = "txtPolicyDetialsCen";
             this.txtPolicyDetialsCen.Size = new System.Drawing.Size(185, 22);
             this.txtPolicyDetialsCen.TabIndex = 37;
@@ -132,7 +149,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtPolicyNameCen
             // 
             this.txtPolicyNameCen.Location = new System.Drawing.Point(175, 126);
-            this.txtPolicyNameCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPolicyNameCen.Margin = new System.Windows.Forms.Padding(4);
             this.txtPolicyNameCen.Name = "txtPolicyNameCen";
             this.txtPolicyNameCen.Size = new System.Drawing.Size(185, 22);
             this.txtPolicyNameCen.TabIndex = 36;
@@ -160,7 +177,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtConditionCen
             // 
             this.txtConditionCen.Location = new System.Drawing.Point(175, 199);
-            this.txtConditionCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConditionCen.Margin = new System.Windows.Forms.Padding(4);
             this.txtConditionCen.Name = "txtConditionCen";
             this.txtConditionCen.Size = new System.Drawing.Size(185, 22);
             this.txtConditionCen.TabIndex = 39;
@@ -178,7 +195,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // txtClientNumberCen
             // 
             this.txtClientNumberCen.Location = new System.Drawing.Point(175, 233);
-            this.txtClientNumberCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientNumberCen.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientNumberCen.Name = "txtClientNumberCen";
             this.txtClientNumberCen.Size = new System.Drawing.Size(185, 22);
             this.txtClientNumberCen.TabIndex = 41;
@@ -198,7 +215,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnClientNavCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnClientNavCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientNavCallCentre.Location = new System.Drawing.Point(0, 107);
-            this.btnClientNavCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClientNavCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnClientNavCallCentre.Name = "btnClientNavCallCentre";
             this.btnClientNavCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnClientNavCallCentre.TabIndex = 45;
@@ -211,7 +228,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnPolicyCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnPolicyCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPolicyCallCentre.Location = new System.Drawing.Point(0, 165);
-            this.btnPolicyCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPolicyCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnPolicyCallCentre.Name = "btnPolicyCallCentre";
             this.btnPolicyCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnPolicyCallCentre.TabIndex = 44;
@@ -224,7 +241,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnProviderCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnProviderCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProviderCallCentre.Location = new System.Drawing.Point(0, 224);
-            this.btnProviderCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnProviderCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnProviderCallCentre.Name = "btnProviderCallCentre";
             this.btnProviderCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnProviderCallCentre.TabIndex = 43;
@@ -237,7 +254,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnMedicalCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMedicalCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMedicalCallCentre.Location = new System.Drawing.Point(0, 282);
-            this.btnMedicalCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMedicalCallCentre.Margin = new System.Windows.Forms.Padding(4);
             this.btnMedicalCallCentre.Name = "btnMedicalCallCentre";
             this.btnMedicalCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnMedicalCallCentre.TabIndex = 42;
@@ -288,7 +305,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.gbxDetails.Controls.Add(this.txtPolicyDetialsCen);
             this.gbxDetails.Controls.Add(this.PolicyDetialsCen);
             this.gbxDetails.Controls.Add(this.txtPolicyNameCen);
-            this.gbxDetails.Location = new System.Drawing.Point(207, 12);
+            this.gbxDetails.Location = new System.Drawing.Point(17, 15);
             this.gbxDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxDetails.Name = "gbxDetails";
             this.gbxDetails.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -307,34 +324,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnCallCentreSubmit.Text = "Submit";
             this.btnCallCentreSubmit.UseVisualStyleBackColor = true;
             // 
-            // gbxCallCentreView
-            // 
-            this.gbxCallCentreView.Controls.Add(this.dgvDetailsCallCentre);
-            this.gbxCallCentreView.Location = new System.Drawing.Point(589, 12);
-            this.gbxCallCentreView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxCallCentreView.Name = "gbxCallCentreView";
-            this.gbxCallCentreView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbxCallCentreView.Size = new System.Drawing.Size(551, 322);
-            this.gbxCallCentreView.TabIndex = 49;
-            this.gbxCallCentreView.TabStop = false;
-            this.gbxCallCentreView.Text = "Details View";
-            // 
-            // dgvDetailsCallCentre
-            // 
-            this.dgvDetailsCallCentre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetailsCallCentre.Location = new System.Drawing.Point(5, 21);
-            this.dgvDetailsCallCentre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvDetailsCallCentre.Name = "dgvDetailsCallCentre";
-            this.dgvDetailsCallCentre.RowHeadersWidth = 51;
-            this.dgvDetailsCallCentre.RowTemplate.Height = 24;
-            this.dgvDetailsCallCentre.Size = new System.Drawing.Size(539, 295);
-            this.dgvDetailsCallCentre.TabIndex = 0;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 409);
+            this.panel2.Location = new System.Drawing.Point(0, 477);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1153, 39);
@@ -352,18 +346,45 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.label1.TabIndex = 0;
             this.label1.Text = "Powered by Belgium Campus Alumni";
             // 
-            // txtClaimHis
+            // tbcntrlCallCentre
             // 
-            this.txtClaimHis.Location = new System.Drawing.Point(413, 337);
-            this.txtClaimHis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtClaimHis.Name = "txtClaimHis";
-            this.txtClaimHis.Size = new System.Drawing.Size(132, 22);
-            this.txtClaimHis.TabIndex = 56;
+            this.tbcntrlCallCentre.Controls.Add(this.tabPage1);
+            this.tbcntrlCallCentre.Controls.Add(this.tabPage2);
+            this.tbcntrlCallCentre.Location = new System.Drawing.Point(207, 12);
+            this.tbcntrlCallCentre.Name = "tbcntrlCallCentre";
+            this.tbcntrlCallCentre.SelectedIndex = 0;
+            this.tbcntrlCallCentre.Size = new System.Drawing.Size(946, 460);
+            this.tbcntrlCallCentre.TabIndex = 58;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(938, 431);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Claims";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgvClaimHistory);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtClaimHis);
+            this.groupBox1.Controls.Add(this.ClaimHis);
+            this.groupBox1.Location = new System.Drawing.Point(6, 153);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(909, 272);
+            this.groupBox1.TabIndex = 58;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Claim History";
             // 
             // ClaimHis
             // 
-            this.ClaimHis.Location = new System.Drawing.Point(247, 361);
-            this.ClaimHis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClaimHis.Location = new System.Drawing.Point(13, 53);
+            this.ClaimHis.Margin = new System.Windows.Forms.Padding(4);
             this.ClaimHis.Name = "ClaimHis";
             this.ClaimHis.Size = new System.Drawing.Size(145, 28);
             this.ClaimHis.TabIndex = 55;
@@ -371,31 +392,137 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.ClaimHis.UseVisualStyleBackColor = true;
             this.ClaimHis.Click += new System.EventHandler(this.ClaimHis_Click);
             // 
+            // txtClaimHis
+            // 
+            this.txtClaimHis.Location = new System.Drawing.Point(86, 30);
+            this.txtClaimHis.Margin = new System.Windows.Forms.Padding(4);
+            this.txtClaimHis.Name = "txtClaimHis";
+            this.txtClaimHis.Size = new System.Drawing.Size(132, 22);
+            this.txtClaimHis.TabIndex = 56;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(243, 341);
+            this.label2.Location = new System.Drawing.Point(22, 33);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 16);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 54;
-            this.label2.Text = "View Client Claim History";
+            this.label2.Text = "Client ID";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.gbxCallCentreView);
+            this.tabPage1.Controls.Add(this.gbxDetails);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(938, 431);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Call Details";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // gbxCallCentreView
+            // 
+            this.gbxCallCentreView.Controls.Add(this.dgvDetailsCallCentre);
+            this.gbxCallCentreView.Location = new System.Drawing.Point(390, 15);
+            this.gbxCallCentreView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxCallCentreView.Name = "gbxCallCentreView";
+            this.gbxCallCentreView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxCallCentreView.Size = new System.Drawing.Size(539, 322);
+            this.gbxCallCentreView.TabIndex = 50;
+            this.gbxCallCentreView.TabStop = false;
+            this.gbxCallCentreView.Text = "Details View";
+            // 
+            // dgvDetailsCallCentre
+            // 
+            this.dgvDetailsCallCentre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailsCallCentre.Location = new System.Drawing.Point(5, 21);
+            this.dgvDetailsCallCentre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDetailsCallCentre.Name = "dgvDetailsCallCentre";
+            this.dgvDetailsCallCentre.RowHeadersWidth = 51;
+            this.dgvDetailsCallCentre.RowTemplate.Height = 24;
+            this.dgvDetailsCallCentre.Size = new System.Drawing.Size(528, 295);
+            this.dgvDetailsCallCentre.TabIndex = 0;
+            // 
+            // dgvClaimHistory
+            // 
+            this.dgvClaimHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClaimHistory.Location = new System.Drawing.Point(6, 88);
+            this.dgvClaimHistory.Name = "dgvClaimHistory";
+            this.dgvClaimHistory.RowHeadersWidth = 51;
+            this.dgvClaimHistory.RowTemplate.Height = 24;
+            this.dgvClaimHistory.Size = new System.Drawing.Size(897, 178);
+            this.dgvClaimHistory.TabIndex = 57;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtClaimPolicyID);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txtClaimTreatmentID);
+            this.groupBox2.Controls.Add(this.btnApproveClaim);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(7, 7);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(908, 140);
+            this.groupBox2.TabIndex = 59;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Claim Approval";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(46, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 16);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Treatment ID";
+            // 
+            // btnApproveClaim
+            // 
+            this.btnApproveClaim.Location = new System.Drawing.Point(49, 92);
+            this.btnApproveClaim.Name = "btnApproveClaim";
+            this.btnApproveClaim.Size = new System.Drawing.Size(75, 23);
+            this.btnApproveClaim.TabIndex = 1;
+            this.btnApproveClaim.Text = "Check";
+            this.btnApproveClaim.UseVisualStyleBackColor = true;
+            this.btnApproveClaim.Click += new System.EventHandler(this.btnApproveClaim_Click);
+            // 
+            // txtClaimTreatmentID
+            // 
+            this.txtClaimTreatmentID.Location = new System.Drawing.Point(149, 54);
+            this.txtClaimTreatmentID.Name = "txtClaimTreatmentID";
+            this.txtClaimTreatmentID.Size = new System.Drawing.Size(179, 22);
+            this.txtClaimTreatmentID.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(46, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 16);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Client Policy ID";
+            // 
+            // txtClaimPolicyID
+            // 
+            this.txtClaimPolicyID.Location = new System.Drawing.Point(149, 11);
+            this.txtClaimPolicyID.Name = "txtClaimPolicyID";
+            this.txtClaimPolicyID.Size = new System.Drawing.Size(179, 22);
+            this.txtClaimPolicyID.TabIndex = 4;
             // 
             // frmCallCentreUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1152, 449);
-            this.Controls.Add(this.txtClaimHis);
-            this.Controls.Add(this.ClaimHis);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1152, 516);
+            this.Controls.Add(this.tbcntrlCallCentre);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.gbxCallCentreView);
-            this.Controls.Add(this.gbxDetails);
             this.Controls.Add(this.pnlCallCentreMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCallCentreUI";
             this.Text = "Call Centre";
             this.Load += new System.EventHandler(this.frmCallCentreUI_Load);
@@ -403,12 +530,19 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.gbxDetails.ResumeLayout(false);
             this.gbxDetails.PerformLayout();
-            this.gbxCallCentreView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailsCallCentre)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tbcntrlCallCentre.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.gbxCallCentreView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailsCallCentre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClaimHistory)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -436,12 +570,23 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.GroupBox gbxDetails;
         private System.Windows.Forms.Button btnCallCentreSubmit;
-        private System.Windows.Forms.GroupBox gbxCallCentreView;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tbcntrlCallCentre;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox gbxCallCentreView;
         private System.Windows.Forms.DataGridView dgvDetailsCallCentre;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtClaimHis;
         private System.Windows.Forms.Button ClaimHis;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvClaimHistory;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtClaimTreatmentID;
+        private System.Windows.Forms.Button btnApproveClaim;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtClaimPolicyID;
     }
 }

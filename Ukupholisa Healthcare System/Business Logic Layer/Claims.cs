@@ -11,7 +11,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
     class Claims
     {
         private int claimid;
-        private string status, policyid, cleintid;
+        private string status, policyid, clientid;
         private DateTime claimdate;
 
         public Claims()
@@ -23,13 +23,13 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             this.status = status;
             this.claimid = claimid;
             this.policyid = policyid;
-            this.cleintid = cleintid;
+            this.clientid = cleintid;
             this.claimdate = claimdate;
         }
 
         public int Claimid { get => claimid; set => claimid = value; }
         public string Policyid { get => policyid; set => policyid = value; }
-        public string Cleintid { get => cleintid; set => cleintid = value; }
+        public string Clientid { get => clientid; set => clientid = value; }
         public DateTime Claimdate { get => claimdate; set => claimdate = value; }
         public string Status { get => status; set => status = value; }
 
