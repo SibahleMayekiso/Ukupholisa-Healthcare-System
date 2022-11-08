@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 {
@@ -24,5 +26,32 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public int MaxDependents { get => maxDependents; set => maxDependents = value; }
         public string ProductName { get => productName; set => productName = value; }
         public string ProductType { get => productType; set => productType = value; }
+
+        //CRUD Operations
+
+        //Read Methods
+        #region Read
+        public BindingSource GetProductPoliciesTable()
+        {
+            ProductData productData = new ProductData();
+            BindingSource source = new BindingSource();
+            source.DataSource = productData.ReadAllProducts();
+            return source;
+        }
+        #endregion
+        //Update Methods
+        #region Update
+        public void UpdateProductPoliciesDetails(Product product)
+        {
+            ProductData productData = new ProductData();
+            productData.UpdateProductDetails(product);
+        }
+
+        public void UpdateProductStatus(Product product)
+        {
+            ProductData productData = new ProductData();
+            productData.UpdateProductDetails(product);
+        }
+        #endregion
     }
 }

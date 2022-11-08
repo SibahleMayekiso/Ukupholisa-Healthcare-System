@@ -16,6 +16,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         public frmPolicyUI()
         {
             InitializeComponent();
+            
         }
 
         private void btnClientPolicy_Click(object sender, EventArgs e)
@@ -50,6 +51,25 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Close();
             frmProviderUI provider = new frmProviderUI();
             provider.Show();
+        }
+
+        private void rdbAlltimeDate_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chkAlltimeDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAlltimeDate.Checked)
+            {
+                dtpReportStart.Enabled = false;
+                dtpReportEnd.Enabled = false;
+            }
+            else
+            {
+                dtpReportStart.Enabled = true;
+                dtpReportEnd.Enabled = true;
+            }
         }
     }
 }

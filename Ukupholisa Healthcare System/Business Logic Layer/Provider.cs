@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 {
@@ -45,5 +47,19 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public string Rating { get => rating; set => rating = value; }
         public int ChargeRate { get => chargeRate; set => chargeRate = value; }
         public int ProviderID { get => providerID; set => providerID = value; }
+
+        public BindingSource GetProviderDetailsTable()
+        {
+            ProviderData providerData = new ProviderData();
+            BindingSource source = new BindingSource();
+            source.DataSource = providerData.ReadAllProviders();
+            return source;
+        }
+        public void UpdateProviderDetails(Provider provider)
+        {
+            ProviderData providerData = new ProviderData();
+            providerData.UpdateProviderDetails(provider);
+        }
     }
 }
+

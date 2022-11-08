@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 {
@@ -24,5 +26,13 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public string Claim_Details { get => claim_Details; set => claim_Details = value; }
         public int Claim_Amount { get => claim_Amount; set => claim_Amount = value; }
         public int CallID { get => callID; set => callID = value; }
+
+        public BindingSource GetClientCallLogs(Client client)
+        {
+            CallData callData = new CallData();
+            BindingSource source = new BindingSource();
+            source.DataSource = callData.ReadClientCallLogs(client);
+            return source;
+        }
     }
 }
