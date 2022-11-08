@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Data_Access_Layer;
+using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -48,6 +49,15 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         {
             frmMedicalUI medical = new frmMedicalUI();
             medical.Show();
+        }
+
+        private void ClaimHis_Click(object sender, EventArgs e)
+        {
+            Claims claim = new Claims();
+            claim.Claimid = int.Parse(txtClaimHis.Text);
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = claim.GetCliams(claim);
+            dgvDetailsCallCentre.DataSource = bindingSource;
         }
     }
 }

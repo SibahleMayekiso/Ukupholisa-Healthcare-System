@@ -69,113 +69,127 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             // txtTimer
             // 
-            this.txtTimer.Location = new System.Drawing.Point(131, 24);
+            this.txtTimer.Location = new System.Drawing.Point(175, 30);
+            this.txtTimer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTimer.Name = "txtTimer";
-            this.txtTimer.Size = new System.Drawing.Size(140, 20);
+            this.txtTimer.Size = new System.Drawing.Size(185, 22);
             this.txtTimer.TabIndex = 0;
             // 
             // txtClientSurnameCen
             // 
-            this.txtClientSurnameCen.Location = new System.Drawing.Point(131, 76);
+            this.txtClientSurnameCen.Location = new System.Drawing.Point(175, 94);
+            this.txtClientSurnameCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClientSurnameCen.Name = "txtClientSurnameCen";
-            this.txtClientSurnameCen.Size = new System.Drawing.Size(140, 20);
+            this.txtClientSurnameCen.Size = new System.Drawing.Size(185, 22);
             this.txtClientSurnameCen.TabIndex = 31;
             // 
             // txtClientNameCentre
             // 
-            this.txtClientNameCentre.Location = new System.Drawing.Point(131, 50);
+            this.txtClientNameCentre.Location = new System.Drawing.Point(175, 62);
+            this.txtClientNameCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClientNameCentre.Name = "txtClientNameCentre";
-            this.txtClientNameCentre.Size = new System.Drawing.Size(140, 20);
+            this.txtClientNameCentre.Size = new System.Drawing.Size(185, 22);
             this.txtClientNameCentre.TabIndex = 30;
             // 
             // CleintSurNameCen
             // 
             this.CleintSurNameCen.AutoSize = true;
-            this.CleintSurNameCen.Location = new System.Drawing.Point(27, 79);
+            this.CleintSurNameCen.Location = new System.Drawing.Point(36, 97);
+            this.CleintSurNameCen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CleintSurNameCen.Name = "CleintSurNameCen";
-            this.CleintSurNameCen.Size = new System.Drawing.Size(78, 13);
+            this.CleintSurNameCen.Size = new System.Drawing.Size(97, 16);
             this.CleintSurNameCen.TabIndex = 29;
             this.CleintSurNameCen.Text = "Client Surname";
             // 
             // CleintNameCen
             // 
             this.CleintNameCen.AutoSize = true;
-            this.CleintNameCen.Location = new System.Drawing.Point(27, 53);
+            this.CleintNameCen.Location = new System.Drawing.Point(36, 65);
+            this.CleintNameCen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CleintNameCen.Name = "CleintNameCen";
-            this.CleintNameCen.Size = new System.Drawing.Size(64, 13);
+            this.CleintNameCen.Size = new System.Drawing.Size(80, 16);
             this.CleintNameCen.TabIndex = 28;
             this.CleintNameCen.Text = "Client Name";
             // 
             // timer2
             // 
             this.timer2.AutoSize = true;
-            this.timer2.Location = new System.Drawing.Point(27, 27);
+            this.timer2.Location = new System.Drawing.Point(36, 33);
+            this.timer2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.timer2.Name = "timer2";
-            this.timer2.Size = new System.Drawing.Size(33, 13);
+            this.timer2.Size = new System.Drawing.Size(42, 16);
             this.timer2.TabIndex = 32;
             this.timer2.Text = "Timer";
             // 
             // txtPolicyDetialsCen
             // 
-            this.txtPolicyDetialsCen.Location = new System.Drawing.Point(131, 132);
+            this.txtPolicyDetialsCen.Location = new System.Drawing.Point(175, 162);
+            this.txtPolicyDetialsCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPolicyDetialsCen.Name = "txtPolicyDetialsCen";
-            this.txtPolicyDetialsCen.Size = new System.Drawing.Size(140, 20);
+            this.txtPolicyDetialsCen.Size = new System.Drawing.Size(185, 22);
             this.txtPolicyDetialsCen.TabIndex = 37;
             // 
             // txtPolicyNameCen
             // 
-            this.txtPolicyNameCen.Location = new System.Drawing.Point(131, 102);
+            this.txtPolicyNameCen.Location = new System.Drawing.Point(175, 126);
+            this.txtPolicyNameCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPolicyNameCen.Name = "txtPolicyNameCen";
-            this.txtPolicyNameCen.Size = new System.Drawing.Size(140, 20);
+            this.txtPolicyNameCen.Size = new System.Drawing.Size(185, 22);
             this.txtPolicyNameCen.TabIndex = 36;
             // 
             // PolicyDetialsCen
             // 
             this.PolicyDetialsCen.AutoSize = true;
-            this.PolicyDetialsCen.Location = new System.Drawing.Point(27, 135);
+            this.PolicyDetialsCen.Location = new System.Drawing.Point(36, 166);
+            this.PolicyDetialsCen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PolicyDetialsCen.Name = "PolicyDetialsCen";
-            this.PolicyDetialsCen.Size = new System.Drawing.Size(70, 13);
+            this.PolicyDetialsCen.Size = new System.Drawing.Size(89, 16);
             this.PolicyDetialsCen.TabIndex = 35;
             this.PolicyDetialsCen.Text = "Policy Detials";
             // 
             // PolicyNameCen
             // 
             this.PolicyNameCen.AutoSize = true;
-            this.PolicyNameCen.Location = new System.Drawing.Point(27, 105);
+            this.PolicyNameCen.Location = new System.Drawing.Point(36, 129);
+            this.PolicyNameCen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PolicyNameCen.Name = "PolicyNameCen";
-            this.PolicyNameCen.Size = new System.Drawing.Size(66, 13);
+            this.PolicyNameCen.Size = new System.Drawing.Size(84, 16);
             this.PolicyNameCen.TabIndex = 34;
             this.PolicyNameCen.Text = "Policy Name";
             // 
             // txtConditionCen
             // 
-            this.txtConditionCen.Location = new System.Drawing.Point(131, 162);
+            this.txtConditionCen.Location = new System.Drawing.Point(175, 199);
+            this.txtConditionCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtConditionCen.Name = "txtConditionCen";
-            this.txtConditionCen.Size = new System.Drawing.Size(140, 20);
+            this.txtConditionCen.Size = new System.Drawing.Size(185, 22);
             this.txtConditionCen.TabIndex = 39;
             // 
             // DetailsOfConditionCen
             // 
             this.DetailsOfConditionCen.AutoSize = true;
-            this.DetailsOfConditionCen.Location = new System.Drawing.Point(27, 166);
+            this.DetailsOfConditionCen.Location = new System.Drawing.Point(36, 204);
+            this.DetailsOfConditionCen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DetailsOfConditionCen.Name = "DetailsOfConditionCen";
-            this.DetailsOfConditionCen.Size = new System.Drawing.Size(98, 13);
+            this.DetailsOfConditionCen.Size = new System.Drawing.Size(122, 16);
             this.DetailsOfConditionCen.TabIndex = 38;
             this.DetailsOfConditionCen.Text = "Details of Condition";
             // 
             // txtClientNumberCen
             // 
-            this.txtClientNumberCen.Location = new System.Drawing.Point(131, 189);
+            this.txtClientNumberCen.Location = new System.Drawing.Point(175, 233);
+            this.txtClientNumberCen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClientNumberCen.Name = "txtClientNumberCen";
-            this.txtClientNumberCen.Size = new System.Drawing.Size(140, 20);
+            this.txtClientNumberCen.Size = new System.Drawing.Size(185, 22);
             this.txtClientNumberCen.TabIndex = 41;
             // 
             // CleintNumberCen2
             // 
             this.CleintNumberCen2.AutoSize = true;
-            this.CleintNumberCen2.Location = new System.Drawing.Point(27, 194);
+            this.CleintNumberCen2.Location = new System.Drawing.Point(36, 239);
+            this.CleintNumberCen2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CleintNumberCen2.Name = "CleintNumberCen2";
-            this.CleintNumberCen2.Size = new System.Drawing.Size(73, 13);
+            this.CleintNumberCen2.Size = new System.Drawing.Size(91, 16);
             this.CleintNumberCen2.TabIndex = 40;
             this.CleintNumberCen2.Text = "Client Number";
             // 
@@ -183,9 +197,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             this.btnClientNavCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnClientNavCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClientNavCallCentre.Location = new System.Drawing.Point(0, 87);
+            this.btnClientNavCallCentre.Location = new System.Drawing.Point(0, 107);
+            this.btnClientNavCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClientNavCallCentre.Name = "btnClientNavCallCentre";
-            this.btnClientNavCallCentre.Size = new System.Drawing.Size(150, 45);
+            this.btnClientNavCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnClientNavCallCentre.TabIndex = 45;
             this.btnClientNavCallCentre.Text = "Client";
             this.btnClientNavCallCentre.UseVisualStyleBackColor = false;
@@ -195,9 +210,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             this.btnPolicyCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnPolicyCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPolicyCallCentre.Location = new System.Drawing.Point(0, 134);
+            this.btnPolicyCallCentre.Location = new System.Drawing.Point(0, 165);
+            this.btnPolicyCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPolicyCallCentre.Name = "btnPolicyCallCentre";
-            this.btnPolicyCallCentre.Size = new System.Drawing.Size(150, 45);
+            this.btnPolicyCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnPolicyCallCentre.TabIndex = 44;
             this.btnPolicyCallCentre.Text = "Policy";
             this.btnPolicyCallCentre.UseVisualStyleBackColor = false;
@@ -207,9 +223,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             this.btnProviderCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnProviderCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProviderCallCentre.Location = new System.Drawing.Point(0, 182);
+            this.btnProviderCallCentre.Location = new System.Drawing.Point(0, 224);
+            this.btnProviderCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnProviderCallCentre.Name = "btnProviderCallCentre";
-            this.btnProviderCallCentre.Size = new System.Drawing.Size(150, 45);
+            this.btnProviderCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnProviderCallCentre.TabIndex = 43;
             this.btnProviderCallCentre.Text = "Provider";
             this.btnProviderCallCentre.UseVisualStyleBackColor = false;
@@ -219,9 +236,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // 
             this.btnMedicalCallCentre.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMedicalCallCentre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedicalCallCentre.Location = new System.Drawing.Point(0, 229);
+            this.btnMedicalCallCentre.Location = new System.Drawing.Point(0, 282);
+            this.btnMedicalCallCentre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMedicalCallCentre.Name = "btnMedicalCallCentre";
-            this.btnMedicalCallCentre.Size = new System.Drawing.Size(150, 45);
+            this.btnMedicalCallCentre.Size = new System.Drawing.Size(200, 55);
             this.btnMedicalCallCentre.TabIndex = 42;
             this.btnMedicalCallCentre.Text = "Medical";
             this.btnMedicalCallCentre.UseVisualStyleBackColor = false;
@@ -236,19 +254,19 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.pnlCallCentreMenu.Controls.Add(this.btnPolicyCallCentre);
             this.pnlCallCentreMenu.Controls.Add(this.btnClientNavCallCentre);
             this.pnlCallCentreMenu.Location = new System.Drawing.Point(0, -2);
-            this.pnlCallCentreMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCallCentreMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCallCentreMenu.Name = "pnlCallCentreMenu";
-            this.pnlCallCentreMenu.Size = new System.Drawing.Size(150, 329);
+            this.pnlCallCentreMenu.Size = new System.Drawing.Size(200, 405);
             this.pnlCallCentreMenu.TabIndex = 47;
             // 
             // pbxLogo
             // 
             this.pbxLogo.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.pbxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbxLogo.Image")));
-            this.pbxLogo.Location = new System.Drawing.Point(0, 3);
-            this.pbxLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxLogo.Location = new System.Drawing.Point(0, 4);
+            this.pbxLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(150, 81);
+            this.pbxLogo.Size = new System.Drawing.Size(200, 100);
             this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxLogo.TabIndex = 47;
             this.pbxLogo.TabStop = false;
@@ -270,21 +288,21 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.gbxDetails.Controls.Add(this.txtPolicyDetialsCen);
             this.gbxDetails.Controls.Add(this.PolicyDetialsCen);
             this.gbxDetails.Controls.Add(this.txtPolicyNameCen);
-            this.gbxDetails.Location = new System.Drawing.Point(155, 10);
-            this.gbxDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxDetails.Location = new System.Drawing.Point(207, 12);
+            this.gbxDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxDetails.Name = "gbxDetails";
-            this.gbxDetails.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gbxDetails.Size = new System.Drawing.Size(275, 262);
+            this.gbxDetails.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxDetails.Size = new System.Drawing.Size(367, 322);
             this.gbxDetails.TabIndex = 48;
             this.gbxDetails.TabStop = false;
             this.gbxDetails.Text = "Details";
             // 
             // btnCallCentreSubmit
             // 
-            this.btnCallCentreSubmit.Location = new System.Drawing.Point(20, 219);
-            this.btnCallCentreSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCallCentreSubmit.Location = new System.Drawing.Point(27, 270);
+            this.btnCallCentreSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCallCentreSubmit.Name = "btnCallCentreSubmit";
-            this.btnCallCentreSubmit.Size = new System.Drawing.Size(98, 37);
+            this.btnCallCentreSubmit.Size = new System.Drawing.Size(131, 46);
             this.btnCallCentreSubmit.TabIndex = 42;
             this.btnCallCentreSubmit.Text = "Submit";
             this.btnCallCentreSubmit.UseVisualStyleBackColor = true;
@@ -292,11 +310,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // gbxCallCentreView
             // 
             this.gbxCallCentreView.Controls.Add(this.dgvDetailsCallCentre);
-            this.gbxCallCentreView.Location = new System.Drawing.Point(442, 10);
-            this.gbxCallCentreView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbxCallCentreView.Location = new System.Drawing.Point(589, 12);
+            this.gbxCallCentreView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gbxCallCentreView.Name = "gbxCallCentreView";
-            this.gbxCallCentreView.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.gbxCallCentreView.Size = new System.Drawing.Size(413, 262);
+            this.gbxCallCentreView.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbxCallCentreView.Size = new System.Drawing.Size(551, 322);
             this.gbxCallCentreView.TabIndex = 49;
             this.gbxCallCentreView.TabStop = false;
             this.gbxCallCentreView.Text = "Details View";
@@ -304,22 +322,22 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             // dgvDetailsCallCentre
             // 
             this.dgvDetailsCallCentre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetailsCallCentre.Location = new System.Drawing.Point(4, 17);
-            this.dgvDetailsCallCentre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDetailsCallCentre.Location = new System.Drawing.Point(5, 21);
+            this.dgvDetailsCallCentre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDetailsCallCentre.Name = "dgvDetailsCallCentre";
             this.dgvDetailsCallCentre.RowHeadersWidth = 51;
             this.dgvDetailsCallCentre.RowTemplate.Height = 24;
-            this.dgvDetailsCallCentre.Size = new System.Drawing.Size(404, 240);
+            this.dgvDetailsCallCentre.Size = new System.Drawing.Size(539, 295);
             this.dgvDetailsCallCentre.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 332);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, 409);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(865, 32);
+            this.panel2.Size = new System.Drawing.Size(1153, 39);
             this.panel2.TabIndex = 50;
             // 
             // label1
@@ -328,44 +346,47 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(327, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(436, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 13);
+            this.label1.Size = new System.Drawing.Size(227, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Powered by Belgium Campus Alumni";
             // 
             // txtClaimHis
             // 
-            this.txtClaimHis.Location = new System.Drawing.Point(310, 274);
+            this.txtClaimHis.Location = new System.Drawing.Point(413, 337);
+            this.txtClaimHis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtClaimHis.Name = "txtClaimHis";
-            this.txtClaimHis.Size = new System.Drawing.Size(100, 20);
+            this.txtClaimHis.Size = new System.Drawing.Size(132, 22);
             this.txtClaimHis.TabIndex = 56;
             // 
             // ClaimHis
             // 
-            this.ClaimHis.Location = new System.Drawing.Point(185, 293);
+            this.ClaimHis.Location = new System.Drawing.Point(247, 361);
+            this.ClaimHis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClaimHis.Name = "ClaimHis";
-            this.ClaimHis.Size = new System.Drawing.Size(109, 23);
+            this.ClaimHis.Size = new System.Drawing.Size(145, 28);
             this.ClaimHis.TabIndex = 55;
             this.ClaimHis.Text = "View Claim History";
             this.ClaimHis.UseVisualStyleBackColor = true;
+            this.ClaimHis.Click += new System.EventHandler(this.ClaimHis_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(182, 277);
+            this.label2.Location = new System.Drawing.Point(243, 341);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(122, 13);
+            this.label2.Size = new System.Drawing.Size(154, 16);
             this.label2.TabIndex = 54;
             this.label2.Text = "View Client Claim History";
             // 
             // frmCallCentreUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(864, 365);
+            this.ClientSize = new System.Drawing.Size(1152, 449);
             this.Controls.Add(this.txtClaimHis);
             this.Controls.Add(this.ClaimHis);
             this.Controls.Add(this.label2);
@@ -374,6 +395,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Controls.Add(this.gbxDetails);
             this.Controls.Add(this.pnlCallCentreMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCallCentreUI";
             this.Text = "Call Centre";
             this.Load += new System.EventHandler(this.frmCallCentreUI_Load);

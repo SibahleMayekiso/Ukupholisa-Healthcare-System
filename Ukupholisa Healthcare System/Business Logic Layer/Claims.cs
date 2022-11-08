@@ -10,28 +10,28 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 {
     class Claims
     {
-        private int claimid, policyid, cleintid;
-        private string Staus;
-        private DateTime Claimdate;
+        private int claimid;
+        private string status, policyid, cleintid;
+        private DateTime claimdate;
 
         public Claims()
         {
 
         }
-        public Claims(int claimid, int policyid, string status, int cleintid, DateTime claimdate)
+        public Claims(int claimid, string policyid, string status, string cleintid, DateTime claimdate)
         {
-            this.Staus = status;
+            this.status = status;
             this.claimid = claimid;
             this.policyid = policyid;
             this.cleintid = cleintid;
-            Claimdate = claimdate;
+            this.claimdate = claimdate;
         }
 
         public int Claimid { get => claimid; set => claimid = value; }
-        public int Policyid { get => policyid; set => policyid = value; }
-        public int Cleintid { get => cleintid; set => cleintid = value; }
-        public DateTime Claimdate1 { get => Claimdate; set => Claimdate = value; }
-        public string Status1 { get => Status1; set => Status1 = value; }
+        public string Policyid { get => policyid; set => policyid = value; }
+        public string Cleintid { get => cleintid; set => cleintid = value; }
+        public DateTime Claimdate { get => claimdate; set => claimdate = value; }
+        public string Status { get => status; set => status = value; }
 
         public BindingSource GetCliams(Claims claims)
         {
