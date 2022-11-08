@@ -80,6 +80,34 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             return queryStateMessage;
         }
 
+        public string UpdateProductAvailability(Product product)
+        {
+            string queryStateMessage = "";
+            List<SqlParameter> parameterList = new List<SqlParameter>();
+
+            try
+            {
+                queryString = string.Format(
+                    @"UPDATE Product
+                    SET StartDate = @start, EndDate = @end
+                    WHERE ProductID = @productID"
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+        }
+
         #endregion
         //Delete Methods
     }

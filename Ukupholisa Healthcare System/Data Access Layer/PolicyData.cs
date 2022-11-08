@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,10 +18,11 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         string queryString;
 
         //CRUD Operations and Methods
+        #region CRUD Operations
         //Create Methods
         //Read Methods
         #region Read Methods
-        public SqlDataAdapter ReadAllPolicies()
+        public DataTable ReadAllPolicies()
         {
             string query = @"SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType
                 FROM Client
@@ -31,7 +33,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            return adapter;
+            return table;
         }
         /*
         public SqlDataAdapter ReadAllPolicies()
@@ -45,20 +47,20 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         */
 
-        public SqlDataAdapter ReadClientPolicy(Client client)
+        public DataTable ReadClientPolicy(Client client)
         {
             string query = string.Format(
-                @"SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType
-                FROM Client
-                INNER JOIN ClientPolicy
-                ON Client.ClientID = ClientPolicy.ClientID
-                INNER JOIN Product
-                ON ClientPolicy.Product = Product.ProductID
-                WHERE ClientPolicy.ClientID = {0}", client.ClientID);
+                "SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType"
+                 + "FROM Client" +
+                "INNER JOIN ClientPolicy" +
+                "ON Client.ClientID = ClientPolicy.ClientID" +
+                "INNER JOIN Product" +
+                "ON ClientPolicy.Product = Product.ProductID" +
+                "WHERE ClientPolicy.ClientID = " + client.ClientID );
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
-            return adapter;
+            return table;
         }
         #endregion
         //Update Methods
@@ -114,5 +116,49 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 
         #endregion
         //Delete Methods
+        #endregion
+
+        public DataTable GetPerformanceReport()
+        {
+            //This method will generate a report on all product claims since the system was created
+            string query = String.Format(
+                @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
+                FROM Claims
+                LEFT JOIN ClientPolicy
+                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
+                LEFT JOIN PolicyProduct
+                ON ClientPolicy.ClientPolicyID = PolicyProduct.Product
+                LEFT JOIN Product
+                ON PolicyProduct.Product = Product.ProductID
+                GROUP BY Product.ProductID, Product.ProductName
+                ORDER BY COUNT(Product.ProductID) DESC"
+                );
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        public DataTable GetPerformanceReportByDate(DateTime start, DateTime end)
+        {
+            //This method will generate a report on all product claims since the system was created
+            string query = String.Format(
+                @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
+                FROM Claims
+                LEFT JOIN ClientPolicy
+                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
+                LEFT JOIN PolicyProduct
+                ON ClientPolicy.ClientPolicyID = PolicyProduct.Product
+                LEFT JOIN Product
+                ON PolicyProduct.Product = Product.ProductID
+                GROUP BY Product.ProductID, Product.ProductName
+                ORDER BY COUNT(Product.ProductID) DESC
+                WHERE ClaimeDate < '{0}' AND ClaimeDate > '{1}'", start, end
+                );
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
     }
 }

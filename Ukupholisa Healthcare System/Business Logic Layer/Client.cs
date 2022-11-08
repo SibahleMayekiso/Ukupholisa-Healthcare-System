@@ -10,7 +10,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 {
     class Client
     {
-        private int clientID;
+        private string clientID;
         private string firstname, lastname, cellphoneNum, email;
         private int age;
 
@@ -26,7 +26,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             this.age = age;
         }
 
-        public int ClientID { get => clientID; set => clientID = value; }
+        public string ClientID { get => clientID; set => clientID = value; }
         public string FirstName { get => firstname; set => firstname = value; }
         public string Lastname { get => lastname; set => lastname = value; }
         public int Age { get => age; set => age = value; }
