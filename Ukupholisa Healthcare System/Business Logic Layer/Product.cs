@@ -14,11 +14,6 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         private int produtID, maxDependents;
         private string productName, productType;
 
-        public Product()
-        {
-
-        }
-
         public Product(int produtID, int maxDependents, string productName, string productType)
         {
             this.produtID = produtID;
@@ -41,21 +36,6 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             ProductData productData = new ProductData();
             BindingSource source = new BindingSource();
             source.DataSource = productData.ReadAllProducts();
-            return source;
-        }
-
-        public BindingSource GetProductReport()
-        {
-            PolicyData policyData = new PolicyData();
-            BindingSource source = new BindingSource();
-            source.DataSource = policyData.GetPerformanceReport();
-            return source;
-        }
-        public BindingSource GetProductReportByDate(DateTime start, DateTime end)
-        {
-            PolicyData policyData = new PolicyData();
-            BindingSource source = new BindingSource();
-            source.DataSource = policyData.GetPerformanceReportByDate(start, end);
             return source;
         }
         #endregion
