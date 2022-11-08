@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Data_Access_Layer;
+using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -74,7 +75,20 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void btnReportGen_Click(object sender, EventArgs e)
         {
+            Product product = new Product();
+            BindingSource bindingSource = new BindingSource();
 
+            if (chkAlltimeDate.Checked)
+            {
+                bindingSource.DataSource = product.GetProductReport();
+                dgvReportView.DataSource = bindingSource;
+            }
+            else
+            {
+                bindingSource.DataSource = product.GetProductReportByDate(dtpStartDate.Value, dtpEndDate.Value);
+                dgvReportView.DataSource = bindingSource;
+            }
+            
         }
     }
 }

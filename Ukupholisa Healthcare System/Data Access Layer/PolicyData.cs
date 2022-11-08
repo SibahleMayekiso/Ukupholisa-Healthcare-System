@@ -124,11 +124,11 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             string query = String.Format(
                 @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
                 FROM Claims
-                LEFT JOIN ClientPolicy
+                FULL JOIN ClientPolicy
                 ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
-                LEFT JOIN PolicyProduct
-                ON ClientPolicy.ClientPolicyID = PolicyProduct.Product
-                LEFT JOIN Product
+                FULL JOIN PolicyProduct
+                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+                FULL JOIN Product
                 ON PolicyProduct.Product = Product.ProductID
                 GROUP BY Product.ProductID, Product.ProductName
                 ORDER BY COUNT(Product.ProductID) DESC"
@@ -145,15 +145,15 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             string query = String.Format(
                 @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
                 FROM Claims
-                LEFT JOIN ClientPolicy
+                FULL JOIN ClientPolicy
                 ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
-                LEFT JOIN PolicyProduct
-                ON ClientPolicy.ClientPolicyID = PolicyProduct.Product
-                LEFT JOIN Product
+                FULL JOIN PolicyProduct
+                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+                FULL JOIN Product
                 ON PolicyProduct.Product = Product.ProductID
                 GROUP BY Product.ProductID, Product.ProductName
                 ORDER BY COUNT(Product.ProductID) DESC
-                WHERE ClaimeDate < '{0}' AND ClaimeDate > '{1}'", start, end
+                WHERE ClaimeDate < {0} AND ClaimeDate > {1}", end, start
                 );
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
