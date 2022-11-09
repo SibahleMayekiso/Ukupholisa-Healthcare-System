@@ -35,7 +35,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         public void timer()
         {
             int i = 900;
-            while (i > 0)
+            while (i >= 0)
             {
                 string Sec = Convert.ToString(i % 60);
                 double min = i / 60;
@@ -67,7 +67,12 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
                 }
                 Thread.Sleep(1000);
                 i = i - 1;
-            }           
+            }   
+            if (i < 0)
+            {
+                MessageBox.Show("Time has Elapsed. Call will now terminate and the application will close.");
+                Application.Exit();
+            }
         }
         public bool end = false;
         public frmCallTimerUI()

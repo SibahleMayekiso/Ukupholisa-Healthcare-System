@@ -77,7 +77,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         {
             Product product = new Product();
             BindingSource bindingSource = new BindingSource();
-
+            
             if (chkAlltimeDate.Checked)
             {
                 bindingSource.DataSource = product.GetProductReport();

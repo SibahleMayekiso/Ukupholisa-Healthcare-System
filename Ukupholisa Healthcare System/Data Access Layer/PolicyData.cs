@@ -141,6 +141,16 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 
         public DataTable GetPerformanceReportByDate(DateTime start, DateTime end)
         {
+            string dateYearStart, dateMonthStart, dateDayStart;
+            string dateYearEnd, dateMonthEnd, dateDayEnd;
+
+            dateYearStart = start.Year.ToString();
+            dateMonthStart = start.Month.ToString();
+            dateDayStart = start.Day.ToString();
+
+            dateYearEnd = end.Year.ToString();
+            dateMonthEnd = end.Month.ToString();
+            dateDayEnd = end.Day.ToString();
             //This method will generate a report on all product claims since the system was created
             string query = String.Format(
                 @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
@@ -151,9 +161,10 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
                 FULL JOIN Product
                 ON PolicyProduct.Product = Product.ProductID
+                WHERE ClaimeDate < {0} AND ClaimeDate > {1}
                 GROUP BY Product.ProductID, Product.ProductName
                 ORDER BY COUNT(Product.ProductID) DESC
-                WHERE ClaimeDate < {0} AND ClaimeDate > {1}", end, start
+                ", string.Concat(dateYearEnd,dateMonthEnd,dateDayEnd), string.Concat(dateYearStart, dateMonthStart, dateDayStart)/*end, start*/
                 );
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
