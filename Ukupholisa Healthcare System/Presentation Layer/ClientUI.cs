@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
+using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 using Ukupholisa_Healthcare_System.Presentation_Layer;
 
 namespace Ukupholisa_Healthcare_System
@@ -21,9 +21,9 @@ namespace Ukupholisa_Healthcare_System
 
         private void frmClient_Load(object sender, EventArgs e)
         {
-            ClientData client = new ClientData();
+            Client client = new Client();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = client.ReadAllClients();
+            bindingSource.DataSource = client.GetClientDetailTable();
             dgvClientView.DataSource = bindingSource;
         }
 
@@ -51,6 +51,23 @@ namespace Ukupholisa_Healthcare_System
             this.Close();
             frmMedicalUI medical = new frmMedicalUI();
             medical.Show();
+        }
+
+        private void btnViewAllClients_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = client.GetClientDetailTable();
+            dgvClientView.DataSource = bindingSource;
+        }
+
+        private void btnViewClientDependent_Click(object sender, EventArgs e)
+        {
+            Client client = new Client();
+            client.ClientID = txtClientIdDependent.Text;
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = client.GetClientDependentsTable(client);
+            dgvClientView.DataSource = bindingSource;
         }
     }
 }

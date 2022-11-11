@@ -51,10 +51,13 @@
     <Compile Include="Business Logic Layer\Client.cs" />
     <Compile Include="Business Logic Layer\Dependent.cs" />
     <Compile Include="Business Logic Layer\Hospital.cs" />
-    <Compile Include="Business Logic Layer\Medical.cs" />
+    <Compile Include="Business Logic Layer\ICondition.cs" />
+    <Compile Include="Business Logic Layer\ITreatment.cs" />
+    <Compile Include="Business Logic Layer\MedCondition.cs" />
     <Compile Include="Business Logic Layer\Policy.cs" />
     <Compile Include="Business Logic Layer\Product.cs" />
     <Compile Include="Business Logic Layer\Provider.cs" />
+    <Compile Include="Business Logic Layer\Treatment.cs" />
     <Compile Include="Data Access Layer\CallData.cs" />
     <Compile Include="Data Access Layer\ClientData.cs" />
     <Compile Include="Data Access Layer\DependentData.cs" />

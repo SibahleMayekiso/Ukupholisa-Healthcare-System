@@ -40,6 +40,13 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             source.DataSource = clientData.ReadAllClients();
             return source;
         }
+        public BindingSource GetClientDependentsTable(Client client)
+        {
+            ClientData clientData = new ClientData();
+            BindingSource source = new BindingSource();
+            source.DataSource = clientData.ReadClientDependents(client);
+            return source;
+        }
 
         public void UpdateClientDetails(Client client)
         {

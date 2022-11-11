@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -21,9 +20,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void frmProviderUI_Load(object sender, EventArgs e)
         {
-            ProviderData provider = new ProviderData();
+            Provider provider = new Provider();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = provider.ReadAllProviders();
+            bindingSource.DataSource = provider.GetProviderDetailsTable();
             dgvProviderUiView.DataSource = bindingSource;
         }
 
@@ -75,6 +74,14 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
                 MessageBox.Show(ValidOutput);
 
             }
+        }
+
+        private void btnAllProvderDetails_Click(object sender, EventArgs e)
+        {
+            Provider provider = new Provider();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = provider.GetProviderDetailsTable();
+            dgvProviderUiView.DataSource = bindingSource;
         }
     }
 }

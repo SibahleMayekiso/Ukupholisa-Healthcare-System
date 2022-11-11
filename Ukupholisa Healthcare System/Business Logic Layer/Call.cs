@@ -32,6 +32,13 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public int Claim_Amount { get => claim_Amount; set => claim_Amount = value; }
         public int CallID { get => callID; set => callID = value; }
 
+        public BindingSource GetAllCallLogs()
+        {
+            CallData callData = new CallData();
+            BindingSource source = new BindingSource();
+            source.DataSource = callData.ReadCallLogs();
+            return source;
+        }
         public BindingSource GetClientCallLogs(Client client)
         {
             CallData callData = new CallData();

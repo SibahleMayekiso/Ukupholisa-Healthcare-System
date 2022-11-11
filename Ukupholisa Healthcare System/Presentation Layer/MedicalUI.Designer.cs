@@ -337,6 +337,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnViewConditionsNTreatments.TabIndex = 2;
             this.btnViewConditionsNTreatments.Text = "View Conditions with Treatments";
             this.btnViewConditionsNTreatments.UseVisualStyleBackColor = true;
+            this.btnViewConditionsNTreatments.Click += new System.EventHandler(this.btnViewConditionsNTreatments_Click);
             // 
             // btnViewTreatments
             // 

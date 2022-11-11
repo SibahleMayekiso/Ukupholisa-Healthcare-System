@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
@@ -41,9 +40,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void frmPolicyUI_Load(object sender, EventArgs e)
         {
-            ProductData product = new ProductData();
+            Product product = new Product();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = product.ReadAllProducts();
+            bindingSource.DataSource = product.GetProductPoliciesTable();
             dgvPolicyDetailsView.DataSource = bindingSource;
         }
 
@@ -89,6 +88,14 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
                 dgvReportView.DataSource = bindingSource;
             }
             
+        }
+
+        private void btnViewAllProducts_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = product.GetProductPoliciesTable();
+            dgvPolicyDetailsView.DataSource = bindingSource;
         }
     }
 }

@@ -36,6 +36,26 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             adapter.Fill(table);
             return table;
         }
+
+        public DataTable ReadAllConditionTreatments()
+        {
+            string query = @"SELECT MedicalCondition.MedicalConditionID, MedicalCondition.MedicalConditionName, Severity, Treatment.TreatmentID, Treatment.TreatmentName, Duration
+            FROM MedicalCondition
+            FULL JOIN ConditionTreatment
+            ON MedicalCondition.MedicalConditionID = ConditionTreatment.MedicalConditionID
+            FULL JOIN Treatment
+            ON ConditionTreatment.TreatmentID = Treatment.TreatmentID
+            ORDER BY MedicalCondition.MedicalConditionID";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+        #endregion
+
+        //Update
+        #region Update methods
+
         #endregion
     }
 }

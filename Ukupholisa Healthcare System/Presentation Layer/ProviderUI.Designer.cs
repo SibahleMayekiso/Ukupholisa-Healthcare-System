@@ -370,6 +370,7 @@
             this.btnAllProvderDetails.TabIndex = 1;
             this.btnAllProvderDetails.Text = "ViewAll Providers";
             this.btnAllProvderDetails.UseVisualStyleBackColor = true;
+            this.btnAllProvderDetails.Click += new System.EventHandler(this.btnAllProvderDetails_Click);
             // 
             // dgvProviderUiView
             // 

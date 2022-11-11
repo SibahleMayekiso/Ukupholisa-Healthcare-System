@@ -23,7 +23,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         #region Read Methods
         public DataTable ReadCallLogs()
         {
-            string query = @"SELECT * FROM Claims";
+            string query = @"SELECT * FROM CallCenter";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -33,6 +33,23 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         public DataTable ReadClientCallLogs(Client client)
         {
             string query = string.Format(@"SELECT * FROM CallCenter WHERE ClientID = {0}", client.ClientID);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
+        }
+
+        public DataTable ReadClaims(Claims claim)
+        {
+            string query = string.Format(
+                @"Select ClaimID, FirstName AS 'Client Name', LastName AS 'Client Surname', CellPhoneNum, Email, ClaimeDate, ClientPolicy.ClientPolicyID, ClaimStatus
+                FROM Claims 
+                FULL JOIN ClientPolicy
+                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
+                FULL JOIN Client
+                ON ClientPolicy.ClientID = Client.ClientID
+                WHERE Client.ClientID = '{0}'", claim.Clientid
+                );
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -78,23 +95,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             return queryStateMessage;
         }
         //Delete Methods
-        public DataTable ReadClaims(Claims claim)
-        {
-            string query = string.Format(
-                @"Select ClaimID, FirstName AS 'Client Name', LastName AS 'Client Surname', CellPhoneNum, Email, ClaimeDate, ClientPolicy.ClientPolicyID, ClaimStatus
-                FROM Claims 
-                FULL JOIN ClientPolicy
-                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
-                FULL JOIN Client
-                ON ClientPolicy.ClientID = Client.ClientID
-                WHERE Client.ClientID = '{0}'", claim.Clientid
-                );
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
-        }
-
+        
         //Claim Approval Function
         public string GetTreatmentsTable(Policy policy, string treatmentID)
         {

@@ -46,7 +46,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 FROM Client
                 INNER JOIN ClientDependent
                 ON Client.ClientID = ClientDependent.ClientID
-                WHERE ClientDependent.ClientID = {0}", client.ClientID);
+                WHERE ClientDependent.ClientID = '{0}'", client.ClientID);
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);

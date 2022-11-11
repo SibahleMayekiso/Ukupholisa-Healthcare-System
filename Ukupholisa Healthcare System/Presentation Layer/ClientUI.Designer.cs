@@ -83,6 +83,8 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtClientIdDependent = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogoClient)).BeginInit();
             this.gbxClientForm.SuspendLayout();
@@ -385,7 +387,7 @@
             // dgvClientView
             // 
             this.dgvClientView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientView.Location = new System.Drawing.Point(6, 52);
+            this.dgvClientView.Location = new System.Drawing.Point(6, 88);
             this.dgvClientView.Name = "dgvClientView";
             this.dgvClientView.RowHeadersWidth = 51;
             this.dgvClientView.RowTemplate.Height = 24;
@@ -394,24 +396,27 @@
             // 
             // gbxClientView
             // 
+            this.gbxClientView.Controls.Add(this.txtClientIdDependent);
+            this.gbxClientView.Controls.Add(this.label11);
             this.gbxClientView.Controls.Add(this.btnViewClientDependent);
             this.gbxClientView.Controls.Add(this.dgvClientView);
             this.gbxClientView.Controls.Add(this.btnViewAllClients);
             this.gbxClientView.Location = new System.Drawing.Point(208, 379);
             this.gbxClientView.Name = "gbxClientView";
-            this.gbxClientView.Size = new System.Drawing.Size(762, 218);
+            this.gbxClientView.Size = new System.Drawing.Size(762, 254);
             this.gbxClientView.TabIndex = 23;
             this.gbxClientView.TabStop = false;
             this.gbxClientView.Text = "View";
             // 
             // btnViewClientDependent
             // 
-            this.btnViewClientDependent.Location = new System.Drawing.Point(153, 21);
+            this.btnViewClientDependent.Location = new System.Drawing.Point(225, 53);
             this.btnViewClientDependent.Name = "btnViewClientDependent";
-            this.btnViewClientDependent.Size = new System.Drawing.Size(141, 25);
+            this.btnViewClientDependent.Size = new System.Drawing.Size(201, 25);
             this.btnViewClientDependent.TabIndex = 24;
-            this.btnViewClientDependent.Text = "View Dependents";
+            this.btnViewClientDependent.Text = "View Client Dependents";
             this.btnViewClientDependent.UseVisualStyleBackColor = true;
+            this.btnViewClientDependent.Click += new System.EventHandler(this.btnViewClientDependent_Click);
             // 
             // btnViewAllClients
             // 
@@ -421,12 +426,13 @@
             this.btnViewAllClients.TabIndex = 23;
             this.btnViewAllClients.Text = "View All Clients";
             this.btnViewAllClients.UseVisualStyleBackColor = true;
+            this.btnViewAllClients.Click += new System.EventHandler(this.btnViewAllClients_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel2.Controls.Add(this.lblRightsClient);
-            this.panel2.Location = new System.Drawing.Point(0, 602);
+            this.panel2.Location = new System.Drawing.Point(0, 639);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(981, 40);
             this.panel2.TabIndex = 24;
@@ -654,12 +660,28 @@
             this.textBox8.Size = new System.Drawing.Size(161, 22);
             this.textBox8.TabIndex = 10;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 59);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 16);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Client ID";
+            // 
+            // txtClientIdDependent
+            // 
+            this.txtClientIdDependent.Location = new System.Drawing.Point(68, 56);
+            this.txtClientIdDependent.Name = "txtClientIdDependent";
+            this.txtClientIdDependent.Size = new System.Drawing.Size(145, 22);
+            this.txtClientIdDependent.TabIndex = 26;
+            // 
             // frmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(980, 640);
+            this.ClientSize = new System.Drawing.Size(980, 677);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.gbxClientView);
             this.Controls.Add(this.groupBox1);
@@ -676,6 +698,7 @@
             this.gbxClientForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientView)).EndInit();
             this.gbxClientView.ResumeLayout(false);
+            this.gbxClientView.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -740,6 +763,8 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtClientIdDependent;
+        private System.Windows.Forms.Label label11;
     }
 }
 

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
@@ -21,9 +20,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void frmCallCentreUI_Load(object sender, EventArgs e)
         {
-            CallData call = new CallData();
+            Call call = new Call();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = call.ReadCallLogs();
+            bindingSource.DataSource = call.GetAllCallLogs();
             dgvDetailsCallCentre.DataSource = bindingSource;
         }
 

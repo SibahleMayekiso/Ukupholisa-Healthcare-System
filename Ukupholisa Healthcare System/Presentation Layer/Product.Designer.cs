@@ -287,6 +287,7 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.btnViewAllProducts.TabIndex = 1;
             this.btnViewAllProducts.Text = "View All Products";
             this.btnViewAllProducts.UseVisualStyleBackColor = true;
+            this.btnViewAllProducts.Click += new System.EventHandler(this.btnViewAllProducts_Click);
             // 
             // dgvPolicyDetailsView
             // 

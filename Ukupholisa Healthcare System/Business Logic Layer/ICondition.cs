@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 {
-    public interface Medical
+    internal interface ICondition
     {
-        void GetMedicalConditons();
-        void GetMedicalTreatments();
+        BindingSource GetMedicalConditons();
         void UpdateMedicalConditions();
-        void UpdateMedicalTreatments();
     }
 }

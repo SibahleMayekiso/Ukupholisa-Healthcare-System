@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
+using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -21,25 +21,25 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void frmMedicalUI_Load(object sender, EventArgs e)
         {
-            MedicalData medical = new MedicalData();
+            MedCondition medical = new MedCondition();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = medical.ReadAllMedicalTreatments();
+            bindingSource.DataSource = medical.GetConditionsWithTreatment();
             dgvViewMedTreatments.DataSource = bindingSource;
         }
 
         private void btnViewMedicalConditons_Click(object sender, EventArgs e)
         {
-            MedicalData medical = new MedicalData();
+            MedCondition medical = new MedCondition();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = medical.ReadAllMedicalConditions();
+            bindingSource.DataSource = medical.GetMedicalConditons();
             dgvViewMedTreatments.DataSource = bindingSource;
         }
 
         private void btnViewTreatments_Click(object sender, EventArgs e)
         {
-            MedicalData medical = new MedicalData();
+            Treatment treatment = new Treatment();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = medical.ReadAllMedicalTreatments();
+            bindingSource.DataSource = treatment.GetMedicalTreatments();
             dgvViewMedTreatments.DataSource = bindingSource;
         }
 
@@ -67,6 +67,14 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             this.Close();
             frmPolicyUI policy = new frmPolicyUI();
             policy.Show();
+        }
+
+        private void btnViewConditionsNTreatments_Click(object sender, EventArgs e)
+        {
+            MedCondition medical = new MedCondition();
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = medical.GetConditionsWithTreatment();
+            dgvViewMedTreatments.DataSource = bindingSource;
         }
     }
 }
