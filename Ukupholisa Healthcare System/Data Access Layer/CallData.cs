@@ -128,59 +128,165 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             return claimStatus;
         }
         //All the datta adding code
-        public void InsertData(string s1, string s2, string s3, string s4,string s5)
+        public string InsertData(string s1, string s2, string s3, string s4,string s5)
         {
-
-            queryString = string.Format(
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
                     @"INSERT INTO Client(FirstName, LastName, CellPhoneNum)
                     VALUES ('{0}', '{1}', '{2}')", s1, s2, s3
                     );
-            queryString = string.Format(
+                queryString = string.Format(
                     @"INSERT INTO Product(ProductName)
                     VALUES ('{0}')", s4);
-            queryString = string.Format(
+                queryString = string.Format(
                     @"INSERT INTO MedicalCondition(MedicalConditionName)
                     VALUES ('{0}')", s5);
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
 
         }
-        public void CleintData(string s1, string s2, string s3, string s4, string s5, string s6)
+        public string CleintData(string s1, string s2, string s3, string s4, string s5, string s6)
         {
-            queryString = string.Format(
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
                     @"INSERT INTO Client(FirstName, LastName, CellPhoneNum, Email)
                     VALUES ('{0}', '{1}', '{2}', '{3}')", s1, s2, s3, s4
                     );
-            queryString = string.Format(
+                queryString = string.Format(
                     @"INSERT INTO Region(RegionID, Suburb)
                     VALUES ('{0}', '{1}')", s5, s6
                     );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+           
         }
-        public void ProductData(string s1, string s2)
+        public string ProductData(string s1, string s2)
         {
-            queryString = string.Format(
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
                     @"INSERT INTO Product(ProductName, ProductType)
                     VALUES ('{0}', '{1}')", s1, s2
                     );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+            
         }
-        public void ProviderData(string s1, string s2)
+        public string ProviderData(string s1, string s2)
         {
-            queryString = string.Format(
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
                     @"INSERT INTO Provider(ProviderName, Email)
                     VALUES ('{0}', '{1}')", s1, s2
                     );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+            
         }
-        public void ConditionData(string s1, string s2)
+        public string ConditionData(string s1, string s2)
         {
-            queryString = string.Format(
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
                     @"INSERT INTO MedicalCondition(MedicalConditionName, Severity)
                     VALUES ('{0}', '{1}')", s1, s2
                     );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+            
         }
-        public void TreatmentData(string s1)
+        public string TreatmentData(Treatment s1)
         {
-            queryString = string.Format(
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
                     @"INSERT INTO Treatment(Duration)
                     VALUES ('{0}')", s1
                     );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+            }
+            finally
+            {
+                queryStateMessage = string.Format("Update Successful");
+                conn.Close();
+            }
+            return queryStateMessage;
+            
         }
 
     }
