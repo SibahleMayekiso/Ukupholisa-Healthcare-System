@@ -127,6 +127,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             }
             return claimStatus;
         }
+        //All the datta adding code
         public void InsertData(string s1, string s2, string s3, string s4,string s5)
         {
 
@@ -151,6 +152,34 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             queryString = string.Format(
                     @"INSERT INTO Region(RegionID, Suburb)
                     VALUES ('{0}', '{1}')", s5, s6
+                    );
+        }
+        public void ProductData(string s1, string s2)
+        {
+            queryString = string.Format(
+                    @"INSERT INTO Product(ProductName, ProductType)
+                    VALUES ('{0}', '{1}')", s1, s2
+                    );
+        }
+        public void ProviderData(string s1, string s2)
+        {
+            queryString = string.Format(
+                    @"INSERT INTO Provider(ProviderName, Email)
+                    VALUES ('{0}', '{1}')", s1, s2
+                    );
+        }
+        public void ConditionData(string s1, string s2)
+        {
+            queryString = string.Format(
+                    @"INSERT INTO MedicalCondition(MedicalConditionName, Severity)
+                    VALUES ('{0}', '{1}')", s1, s2
+                    );
+        }
+        public void TreatmentData(string s1)
+        {
+            queryString = string.Format(
+                    @"INSERT INTO Treatment(Duration)
+                    VALUES ('{0}')", s1
                     );
         }
 

@@ -97,5 +97,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             bindingSource.DataSource = product.GetProductPoliciesTable();
             dgvPolicyDetailsView.DataSource = bindingSource;
         }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            string ProName = txtProductName.Text;
+            string ProType = txtProductType.Text;
+        }
     }
 }

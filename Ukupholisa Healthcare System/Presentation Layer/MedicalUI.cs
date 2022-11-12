@@ -76,5 +76,17 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             bindingSource.DataSource = medical.GetConditionsWithTreatment();
             dgvViewMedTreatments.DataSource = bindingSource;
         }
+
+        private void btnAddCondition_Click(object sender, EventArgs e)
+        {
+            string ConName = txtConditionName.Text;
+            string Sever = cmbSeverity.SelectedIndex.ToString();
+        }
+
+        private void btnAddTreatment_Click(object sender, EventArgs e)
+        {
+            string TreatName = txtTreamentName.Text;
+            string Time = numDuration.Value.ToString();
+        }
     }
 }

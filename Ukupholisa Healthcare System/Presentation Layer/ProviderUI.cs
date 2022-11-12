@@ -83,5 +83,11 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             bindingSource.DataSource = provider.GetProviderDetailsTable();
             dgvProviderUiView.DataSource = bindingSource;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            string ProvName = textBox1.Text;
+            string ProvEmail = textBox2.Text;
+        }
     }
 }
