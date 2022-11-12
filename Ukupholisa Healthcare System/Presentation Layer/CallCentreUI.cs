@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
+
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
     public partial class frmCallCentreUI : Form
@@ -81,5 +82,17 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             
 
         }
+
+        private void btnCallCentreSubmit_Click(object sender, EventArgs e)
+        {
+            string Name = txtClientNameCentre.Text;
+            string Surname = txtClientSurnameCen.Text;
+            string PolicyName = txtPolicyNameCen.Text;
+            string PolicyDetail = txtPolicyDetialsCen.Text;
+            string DetailsOfCon = txtConditionCen.Text;
+            int CleintNum = Convert.ToInt32(txtClientNumberCen.Text);
+            
+        }
+
     }
 }

@@ -127,6 +127,33 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             }
             return claimStatus;
         }
+        public void InsertData(string s1, string s2, string s3, string s4,string s5)
+        {
+
+            queryString = string.Format(
+                    @"INSERT INTO Client(FirstName, LastName, CellPhoneNum)
+                    VALUES ('{0}', '{1}', '{2}')", s1, s2, s3
+                    );
+            queryString = string.Format(
+                    @"INSERT INTO Product(ProductName)
+                    VALUES ('{0}')", s4);
+            queryString = string.Format(
+                    @"INSERT INTO MedicalCondition(MedicalConditionName)
+                    VALUES ('{0}')", s5);
+
+        }
+        public void CleintData(string s1, string s2, string s3, string s4, string s5, string s6)
+        {
+            queryString = string.Format(
+                    @"INSERT INTO Client(FirstName, LastName, CellPhoneNum, Email)
+                    VALUES ('{0}', '{1}', '{2}', '{3}')", s1, s2, s3, s4
+                    );
+            queryString = string.Format(
+                    @"INSERT INTO Region(RegionID, Suburb)
+                    VALUES ('{0}', '{1}')", s5, s6
+                    );
+        }
+
     }
 
 }

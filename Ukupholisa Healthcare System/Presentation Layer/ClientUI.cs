@@ -69,5 +69,17 @@ namespace Ukupholisa_Healthcare_System
             bindingSource.DataSource = client.GetClientDependentsTable(client);
             dgvClientView.DataSource = bindingSource;
         }
+
+        private void btnAddPerson_Click(object sender, EventArgs e)
+        {
+            string Name = txtClientName.Text;
+            string Surname = txtClientSurname.Text;
+            string email = txtClientCondition.Text;
+            string Relationship = txtClientHouseNumber.Text;
+            string Street = txtClientSuburb.Text;
+            int RegoinID = Convert.ToInt32(txtClientCity.Text);
+   
+            int CleintNum = Convert.ToInt32(txtClientNumber.Text);
+        }
     }
 }
