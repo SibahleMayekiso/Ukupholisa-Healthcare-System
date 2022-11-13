@@ -38,7 +38,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             PolicyData policyData = new PolicyData();
             BindingSource source = new BindingSource();
-            source.DataSource = policyData.ReadAllPolicies();
+            source.DataSource = policyData.sp_ReadAllPolicies();
             return source;
         }
 
@@ -46,7 +46,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             PolicyData policyData = new PolicyData();
             BindingSource source = new BindingSource();
-            source.DataSource = policyData.ReadClientPolicy(client);
+            source.DataSource = policyData.sp_ReadClientPolicy(client);
             return source;
         }
 
@@ -54,7 +54,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             PolicyData policyData = new PolicyData();
             BindingSource source = new BindingSource();
-            source.DataSource = policyData.GetPerformanceReport();
+            source.DataSource = policyData.sp_GetPerformanceReport();
             return source;
         }
 
@@ -62,7 +62,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             PolicyData policyData = new PolicyData();
             BindingSource source = new BindingSource();
-            source.DataSource = policyData.GetPerformanceReportByDate(start, end);
+            source.DataSource = policyData.sp_GetPerformanceReportByDate(start, end);
             return source;
         }
         //Insert Methods

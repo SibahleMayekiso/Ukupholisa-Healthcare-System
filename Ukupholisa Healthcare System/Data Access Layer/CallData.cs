@@ -23,39 +23,112 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //Create Methods
         //Read Methods
         #region Read Methods
-        public DataTable ReadCallLogs()
+        //public DataTable ReadCallLogs()
+        //{
+        //    string query = @"SELECT * FROM CallCenter";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadCallLogs()
         {
-            string query = @"SELECT * FROM CallCenter";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = @"EXEC sp_ReadCallLogs";
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+                
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
+            
         }
 
-        public DataTable ReadClientCallLogs(Client client)
+        //public DataTable ReadClientCallLogs(Client client)
+        //{
+        //    string query = string.Format(@"SELECT * FROM CallCenter WHERE ClientID = {0}", client.ClientID);
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadClientCallLogs(Client client)
         {
-            string query = string.Format(@"SELECT * FROM CallCenter WHERE ClientID = {0}", client.ClientID);
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = string.Format(@"EXEC sp_ReadClientCallLogs @clientID = '{0}'", client.ClientID);
+                cmd= new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
 
-        public DataTable ReadClaims(Claims claim)
+        //public DataTable ReadClaims(Claims claim)
+        //{
+        //    string query = string.Format(
+        //        @"Select ClaimID, FirstName AS 'Client Name', LastName AS 'Client Surname', CellPhoneNum, Email, ClaimeDate, ClientPolicy.ClientPolicyID, ClaimStatus
+        //        FROM Claims 
+        //        FULL JOIN ClientPolicy
+        //        ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
+        //        FULL JOIN Client
+        //        ON ClientPolicy.ClientID = Client.ClientID
+        //        WHERE Client.ClientID = '{0}'", claim.Clientid
+        //        );
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+
+        public DataTable sp_ReadClaims(Claims claim)
         {
-            string query = string.Format(
-                @"Select ClaimID, FirstName AS 'Client Name', LastName AS 'Client Surname', CellPhoneNum, Email, ClaimeDate, ClientPolicy.ClientPolicyID, ClaimStatus
-                FROM Claims 
-                FULL JOIN ClientPolicy
-                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
-                FULL JOIN Client
-                ON ClientPolicy.ClientID = Client.ClientID
-                WHERE Client.ClientID = '{0}'", claim.Clientid
+            try
+            {
+                string query = string.Format(
+                @"EXEC sp_ReadClaims @clientID = '{0}'", claim.Clientid
                 );
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
         #endregion Read Methods
         //Update Methods
@@ -65,7 +138,39 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
          * update this table could potentially interfere with certain business ethics.
          */
 
-        public string InsertClaim(Claims claim)
+        //public string InsertClaim(Claims claim)
+        //{
+        //    string queryStateMessage = "";
+        //    string claimStatus = claim.Status;
+        //    DateTime date = DateTime.Now;
+        //    int id = 0;
+
+        //    try
+        //    {
+                
+        //        //Executing Query
+        //        queryString = string.Format(
+        //            @"INSERT INTO Claims
+        //            VALUES ('{0}', '{1}', '{2}', '{3}')", id ,date, claim.Policyid,claimStatus
+        //            );
+        //        cmd = new SqlCommand(queryString, conn);
+        //        conn.Open();
+        //        cmd.ExecuteNonQuery();
+        //        queryStateMessage = string.Format("Update Successful");
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
+
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
+        //    return queryStateMessage;
+        //}
+
+        public string sp_InsertClaim(Claims claim)
         {
             string queryStateMessage = "";
             string claimStatus = claim.Status;
@@ -74,11 +179,11 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 
             try
             {
-                
+
                 //Executing Query
                 queryString = string.Format(
-                    @"INSERT INTO Claims
-                    VALUES ('{0}', '{1}', '{2}', '{3}')", id ,date, claim.Policyid,claimStatus
+                    @"EXEC sp_InsertClaim @claimID = '{0}', @claimeDate = '{1}', @clientPolicy = '{2}', 
+                    @claimStatus = '{3}'", id, date, claim.Policyid, claimStatus
                     );
                 cmd = new SqlCommand(queryString, conn);
                 conn.Open();
@@ -96,88 +201,107 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             }
             return queryStateMessage;
         }
-        //Delete Methods
-        
+
         //Claim Approval Function
-        public Dictionary<string, string> GetTreatmentsTable(Claims claim, Policy policy, string treatmentID)
+
+        //public Dictionary<string, string> GetTreatmentsTable(Claims claim, Policy policy, string treatmentID)
+        //{
+        //    //This dictionary will be used to store the codes for the approval status for the claim as well as 
+        //    //the status code for the Insert method.
+        //    Dictionary<string, string> dictClaimCodes = new Dictionary<string, string>();
+        //    CallData callData = new CallData();
+
+        //    string query = string.Format(
+        //        @"SELECT ClientPolicyID, Product.ProductID, Product.ProductName AS 'Product Name', Treatment.TreatmentID, Treatment.TreatmentName AS 'Treatment Name'
+        //        FROM ClientPolicy
+        //        FULL JOIN PolicyProduct
+        //        ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+        //        FULL JOIN Product
+        //        ON PolicyProduct.Product = Product.ProductID
+        //        FULL JOIN TreatmentProduct
+        //        ON Product.ProductID = TreatmentProduct.ProductID
+        //        FULL JOIN Treatment
+        //        ON TreatmentProduct.TreatmentID = Treatment.TreatmentID
+        //        WHERE ClientPolicy.ClientPolicyID = '{0}'
+        //        ORDER BY ProductID DESC", policy.PolicyID
+        //        );
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+
+        //    //string claimStatus = "DECLINED";
+        //    dictClaimCodes.Add("claimStatus", "DECLINED");
+        //    foreach (DataRow row in table.Rows)
+        //    {
+        //        if (row["TreatmentID"].ToString() == treatmentID)
+        //        {
+        //            dictClaimCodes["claimStatus"] = "APPROVED";
+        //            //claimStatus = "APPROVED";
+        //        }
+        //    }
+        //    string insertConfirmation = callData.InsertClaim(claim);
+        //    if (dictClaimCodes["claimStatus"] == "APPROVED")
+        //    {
+        //        dictClaimCodes.Add("statusMessage", insertConfirmation);
+        //        //string insertConfirmation = ;
+        //    }
+        //    //if(claimStatus == "APPROVED")
+        //    //{
+        //    //    //string insertConfirmation = ;
+        //    //}
+        //    return dictClaimCodes;
+        //}
+
+        public Dictionary<string, string> sp_GetTreatmentsTable(Claims claim, Policy policy, string treatmentID)
         {
             //This dictionary will be used to store the codes for the approval status for the claim as well as 
             //the status code for the Insert method.
             Dictionary<string, string> dictClaimCodes = new Dictionary<string, string>();
             CallData callData = new CallData();
 
-            string query = string.Format(
-                @"SELECT ClientPolicyID, Product.ProductID, Product.ProductName AS 'Product Name', Treatment.TreatmentID, Treatment.TreatmentName AS 'Treatment Name'
-                FROM ClientPolicy
-                FULL JOIN PolicyProduct
-                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
-                FULL JOIN Product
-                ON PolicyProduct.Product = Product.ProductID
-                FULL JOIN TreatmentProduct
-                ON Product.ProductID = TreatmentProduct.ProductID
-                FULL JOIN Treatment
-                ON TreatmentProduct.TreatmentID = Treatment.TreatmentID
-                WHERE ClientPolicy.ClientPolicyID = '{0}'
-                ORDER BY ProductID DESC", policy.PolicyID
-                );
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            //string claimStatus = "DECLINED";
-            dictClaimCodes.Add("claimStatus", "DECLINED");
-            foreach (DataRow row in table.Rows)
-            {
-                if (row["TreatmentID"].ToString() == treatmentID)
-                {
-                    dictClaimCodes["claimStatus"] = "APPROVED";
-                    //claimStatus = "APPROVED";
-                }
-            }
-            string insertConfirmation = callData.InsertClaim(claim);
-            if (dictClaimCodes["claimStatus"] == "APPROVED")
-            {
-                dictClaimCodes.Add("statusMessage", insertConfirmation);
-                //string insertConfirmation = ;
-            }
-            //if(claimStatus == "APPROVED")
-            //{
-            //    //string insertConfirmation = ;
-            //}
-            return dictClaimCodes;
-        }
-        //All the datta adding code
-        public string InsertData(string s1, string s2, int s3, string s4,string s5)
-        {
-            string queryStateMessage = "";
             try
             {
-                queryString = string.Format(
-                    @"INSERT INTO Client(FirstName, LastName, CellPhoneNum)
-                    VALUES ('{0}', '{1}', '{2}')", s1, s2, s3
-                    );
-                queryString = string.Format(
-                    @"INSERT INTO Product(ProductName)
-                    VALUES ('{0}')", s4);
-                queryString = string.Format(
-                    @"INSERT INTO MedicalCondition(MedicalConditionName)
-                    VALUES ('{0}')", s5);
-                cmd = new SqlCommand(queryString, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                queryStateMessage = string.Format("Update Successful");
+                string query = string.Format(
+                @"EXEC sp_GetTreatmentsTable @clientPolicyID = '{0}'", policy.PolicyID
+                );
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                //string claimStatus = "DECLINED";
+                dictClaimCodes.Add("claimStatus", "DECLINED");
+                foreach (DataRow row in table.Rows)
+                {
+                    if (row["TreatmentID"].ToString() == treatmentID)
+                    {
+                        dictClaimCodes["claimStatus"] = "APPROVED";
+                        //claimStatus = "APPROVED";
+                    }
+                }
+                string insertConfirmation = callData.sp_InsertClaim(claim);
+                if (dictClaimCodes["claimStatus"] == "APPROVED")
+                {
+                    dictClaimCodes.Add("statusMessage", insertConfirmation);
+                    //string insertConfirmation = ;
+                }
+                //if(claimStatus == "APPROVED")
+                //{
+                //    //string insertConfirmation = ;
+                //}
+                return dictClaimCodes;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
+
+                throw;
             }
             finally
             {
                 conn.Close();
             }
-            return queryStateMessage;
-
+                        
         }
+       
 
     }
 

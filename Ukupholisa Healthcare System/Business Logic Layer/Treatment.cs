@@ -32,7 +32,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             MedicalData medicalData = new MedicalData();
             BindingSource source = new BindingSource();
-            source.DataSource = medicalData.ReadAllMedicalTreatments();
+            source.DataSource = medicalData.sp_ReadAllMedicalTreatments();
             return source;
         }
 

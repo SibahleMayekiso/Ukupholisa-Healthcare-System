@@ -46,9 +46,17 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         //Read Methods
         #region Read Methods
-        public DataTable ReadAllProviders()
+        //public DataTable ReadAllProviders()
+        //{
+        //    string query = @"SELECT * FROM Provider";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadAllProviders()
         {
-            string query = @"SELECT * FROM Provider";
+            string query = @"EXEC sp_ReadAllProviders";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);

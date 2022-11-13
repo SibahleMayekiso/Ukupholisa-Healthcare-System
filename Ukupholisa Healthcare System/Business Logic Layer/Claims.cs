@@ -37,7 +37,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             CallData call = new CallData();
             BindingSource bindingSource = new BindingSource();
-            bindingSource.DataSource = call.ReadClaims(claims);
+            bindingSource.DataSource = call.sp_ReadClaims(claims);
             return bindingSource;
         }
 

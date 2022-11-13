@@ -83,20 +83,43 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         //Read Methods
         #region Read Methods
-        public DataTable ReadAllPolicies()
+        //public DataTable ReadAllPolicies()
+        //{
+        //    string query = @"SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType
+        //        FROM Client
+        //        INNER JOIN ClientPolicy
+        //        ON Client.ClientID = ClientPolicy.ClientID
+        //        INNER JOIN PolicyProduct
+        //        ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+        //        INNER JOIN Product
+        //        ON PolicyProduct.Product = Product.ProductID";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadAllPolicies()
         {
-            string query = @"SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType
-                FROM Client
-                INNER JOIN ClientPolicy
-                ON Client.ClientID = ClientPolicy.ClientID
-                INNER JOIN PolicyProduct
-                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
-                INNER JOIN Product
-                ON PolicyProduct.Product = Product.ProductID";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = @"EXEC sp_ReadAllPolicies";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
         /*
         public SqlDataAdapter ReadAllPolicies()
@@ -110,57 +133,112 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         */
 
-        public DataTable ReadClientPolicy(Client client)
+        //public DataTable ReadClientPolicy(Client client)
+        //{
+        //    string query = string.Format(
+        //        @"SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType
+        //        FROM Client
+        //        INNER JOIN ClientPolicy
+        //        ON Client.ClientID = ClientPolicy.ClientID
+        //        INNER JOIN PolicyProduct
+        //        ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+        //        INNER JOIN Product
+        //        ON PolicyProduct.Product = Product.ProductID
+        //        WHERE ClientPolicy.ClientID = '{0}'", client.ClientID );
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadClientPolicy(Client client)
         {
-            string query = string.Format(
-                @"SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType
-                FROM Client
-                INNER JOIN ClientPolicy
-                ON Client.ClientID = ClientPolicy.ClientID
-                INNER JOIN PolicyProduct
-                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
-                INNER JOIN Product
-                ON PolicyProduct.Product = Product.ProductID
-                WHERE ClientPolicy.ClientID = '{0}'", client.ClientID );
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = string.Format(
+                @"EXEC sp_ReadClientPolicy @clientID = '{0}'", client.ClientID);
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
         #endregion
         //Update Methods
         #region Update Methods
-        public string UpdateClientPolicyDetails(Policy policy)
+        //public string UpdateClientPolicyDetails(Policy policy)
+        //{
+        //    string queryStateMessage = "";
+        //    List<SqlParameter> parameterList = new List<SqlParameter>();
+
+        //    try
+        //    {
+        //        //Parameters here
+        //        SqlParameter policyID = new SqlParameter("@policyID", SqlDbType.Int);
+        //        parameterList.Add(policyID);
+        //        SqlParameter startDate = new SqlParameter("@startdate", SqlDbType.VarChar);
+        //        parameterList.Add(startDate);
+        //        SqlParameter endDate = new SqlParameter("@enddate", SqlDbType.VarChar);
+        //        parameterList.Add(endDate);
+        //        SqlParameter product = new SqlParameter("@productID", SqlDbType.NVarChar);
+        //        parameterList.Add(product);
+
+        //        //Setting Parameter values
+        //        policyID.Value = policy.PolicyID;
+        //        startDate.Value = policy.StartDate;
+        //        endDate.Value = policy.EndDate;
+        //        product.Value = policy.ProductID;
+
+        //        //Adding Parameter to SqlCommand
+        //        parameterList.ForEach(x => { cmd.Parameters.Add(x); });
+
+        //        //Executing Query
+        //        queryString = string.Format(
+        //            @"UPDATE ClientPolicy
+        //            SET StartDate = @startdate, EndDate = @enddate, Product = @productID
+        //            WHERE ClientPolicyID = @policyID"
+        //            );
+        //        cmd = new SqlCommand(queryString, conn);
+        //        conn.Open();
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+
+        //    }
+        //    finally
+        //    {
+        //        queryStateMessage = string.Format("Update Successful");
+        //        conn.Close();
+        //    }
+        //    return queryStateMessage;
+        //}
+
+        public string UpdateClientPolicyDetails(Policy policy, Client client)
         {
             string queryStateMessage = "";
-            List<SqlParameter> parameterList = new List<SqlParameter>();
 
             try
             {
-                //Parameters here
-                SqlParameter policyID = new SqlParameter("@policyID", SqlDbType.Int);
-                parameterList.Add(policyID);
-                SqlParameter startDate = new SqlParameter("@startdate", SqlDbType.VarChar);
-                parameterList.Add(startDate);
-                SqlParameter endDate = new SqlParameter("@enddate", SqlDbType.VarChar);
-                parameterList.Add(endDate);
-                SqlParameter product = new SqlParameter("@productID", SqlDbType.NVarChar);
-                parameterList.Add(product);
-
-                //Setting Parameter values
-                policyID.Value = policy.PolicyID;
-                startDate.Value = policy.StartDate;
-                endDate.Value = policy.EndDate;
-                product.Value = policy.ProductID;
-
-                //Adding Parameter to SqlCommand
-                parameterList.ForEach(x => { cmd.Parameters.Add(x); });
+                
 
                 //Executing Query
                 queryString = string.Format(
-                    @"UPDATE ClientPolicy
-                    SET StartDate = @startdate, EndDate = @enddate, Product = @productID
-                    WHERE ClientPolicyID = @policyID"
+                    @"EXEC sp_UpdateClientPolicy @clientID = '{0}', @clientPolicy = '{1}', @start = '{2}', 
+                    @end = '{3}', @productID = '{4}'",
+                    client.ClientID, policy.PolicyID, policy.StartDate, policy.EndDate, policy.ProductID
                     );
                 cmd = new SqlCommand(queryString, conn);
                 conn.Open();
@@ -183,58 +261,123 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //Delete Methods
         #endregion
 
-        public DataTable GetPerformanceReport()
+        //public DataTable GetPerformanceReport()
+        //{
+        //    //This method will generate a report on all product claims since the system was created
+        //    string query = String.Format(
+        //        @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
+        //        FROM Claims
+        //        FULL JOIN ClientPolicy
+        //        ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
+        //        FULL JOIN PolicyProduct
+        //        ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+        //        FULL JOIN Product
+        //        ON PolicyProduct.Product = Product.ProductID
+        //        GROUP BY Product.ProductID, Product.ProductName
+        //        ORDER BY COUNT(Product.ProductID) DESC"
+        //        );
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_GetPerformanceReport()
         {
             //This method will generate a report on all product claims since the system was created
-            string query = String.Format(
-                @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
-                FROM Claims
-                FULL JOIN ClientPolicy
-                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
-                FULL JOIN PolicyProduct
-                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
-                FULL JOIN Product
-                ON PolicyProduct.Product = Product.ProductID
-                GROUP BY Product.ProductID, Product.ProductName
-                ORDER BY COUNT(Product.ProductID) DESC"
+            try
+            {
+                string query = String.Format(
+                @"EXEC sp_GetPerformanceReport"
                 );
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
 
-        public DataTable GetPerformanceReportByDate(DateTime start, DateTime end)
+        //public DataTable GetPerformanceReportByDate(DateTime start, DateTime end)
+        //{
+        //    string dateYearStart, dateMonthStart, dateDayStart;
+        //    string dateYearEnd, dateMonthEnd, dateDayEnd;
+
+        //    dateYearStart = start.Year.ToString();
+        //    dateMonthStart = start.Month.ToString();
+        //    dateDayStart = start.Day.ToString();
+
+        //    dateYearEnd = end.Year.ToString();
+        //    dateMonthEnd = end.Month.ToString();
+        //    dateDayEnd = end.Day.ToString();
+        //    //This method will generate a report on all product claims since the system was created
+        //    string query = String.Format(
+        //        @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
+        //        FROM Claims
+        //        FULL JOIN ClientPolicy
+        //        ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
+        //        FULL JOIN PolicyProduct
+        //        ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+        //        FULL JOIN Product
+        //        ON PolicyProduct.Product = Product.ProductID
+        //        WHERE ClaimeDate < {0} AND ClaimeDate > {1}
+        //        GROUP BY Product.ProductID, Product.ProductName
+        //        ORDER BY COUNT(Product.ProductID) DESC
+        //        ", string.Concat(dateYearEnd,dateMonthEnd,dateDayEnd), string.Concat(dateYearStart, dateMonthStart, dateDayStart)/*end, start*/
+        //        );
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+
+        public DataTable sp_GetPerformanceReportByDate(DateTime start, DateTime end)
         {
             string dateYearStart, dateMonthStart, dateDayStart;
             string dateYearEnd, dateMonthEnd, dateDayEnd;
+            try
+            {
+                dateYearStart = start.Year.ToString();
+                dateMonthStart = start.Month.ToString();
+                dateDayStart = start.Day.ToString();
 
-            dateYearStart = start.Year.ToString();
-            dateMonthStart = start.Month.ToString();
-            dateDayStart = start.Day.ToString();
+                dateYearEnd = end.Year.ToString();
+                dateMonthEnd = end.Month.ToString();
+                dateDayEnd = end.Day.ToString();
+                //This method will generate a report on all product claims since the system was created
+                string query = String.Format(
+                    @"EXEC sp_GetPerformanceReportByDate @start = '{0}', @end = '{1}'
+                ", string.Concat(dateYearStart, dateMonthStart, dateDayStart), string.Concat(dateYearEnd, dateMonthEnd, dateDayEnd)/*end, start*/
+                    );
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
 
-            dateYearEnd = end.Year.ToString();
-            dateMonthEnd = end.Month.ToString();
-            dateDayEnd = end.Day.ToString();
-            //This method will generate a report on all product claims since the system was created
-            string query = String.Format(
-                @"SELECT Product.ProductID AS 'Product ID', Product.ProductName AS 'Product Name', COUNT(Product.ProductID) AS 'Total Claims'
-                FROM Claims
-                FULL JOIN ClientPolicy
-                ON Claims.ClientPolicy = ClientPolicy.ClientPolicyID
-                FULL JOIN PolicyProduct
-                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
-                FULL JOIN Product
-                ON PolicyProduct.Product = Product.ProductID
-                WHERE ClaimeDate < {0} AND ClaimeDate > {1}
-                GROUP BY Product.ProductID, Product.ProductName
-                ORDER BY COUNT(Product.ProductID) DESC
-                ", string.Concat(dateYearEnd,dateMonthEnd,dateDayEnd), string.Concat(dateYearStart, dateMonthStart, dateDayStart)/*end, start*/
-                );
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
+
+            
         }
         //Policy ID Generation
         public static string GeneratePolicyID(Policy policy, string importanceLevel)

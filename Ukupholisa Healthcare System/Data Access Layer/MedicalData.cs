@@ -70,37 +70,106 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         //Read Methods
         #region Read methods
-        public DataTable ReadAllMedicalConditions()
+        //public DataTable ReadAllMedicalConditions()
+        //{
+        //    string query = @"SELECT * FROM MedicalCondition";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadAllMedicalConditions()
         {
-            string query = @"SELECT * FROM MedicalCondition";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = @"EXEC sp_ReadAllMedicalConditions";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
 
-        public DataTable ReadAllMedicalTreatments()
+        //public DataTable ReadAllMedicalTreatments()
+        //{
+        //    string query = @"SELECT * FROM Treatment";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadAllMedicalTreatments()
         {
-            string query = @"SELECT * FROM Treatment";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = @"EXEC sp_ReadAllMedicalTreatments";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
 
-        public DataTable ReadAllConditionTreatments()
+        //public DataTable ReadAllConditionTreatments()
+        //{
+        //    string query = @"SELECT MedicalCondition.MedicalConditionID, MedicalCondition.MedicalConditionName, Severity, Treatment.TreatmentID, Treatment.TreatmentName, Duration
+        //    FROM MedicalCondition
+        //    FULL JOIN ConditionTreatment
+        //    ON MedicalCondition.MedicalConditionID = ConditionTreatment.MedicalConditionID
+        //    FULL JOIN Treatment
+        //    ON ConditionTreatment.TreatmentID = Treatment.TreatmentID
+        //    ORDER BY MedicalCondition.MedicalConditionID";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+        public DataTable sp_ReadAllConditionTreatments()
         {
-            string query = @"SELECT MedicalCondition.MedicalConditionID, MedicalCondition.MedicalConditionName, Severity, Treatment.TreatmentID, Treatment.TreatmentName, Duration
-            FROM MedicalCondition
-            FULL JOIN ConditionTreatment
-            ON MedicalCondition.MedicalConditionID = ConditionTreatment.MedicalConditionID
-            FULL JOIN Treatment
-            ON ConditionTreatment.TreatmentID = Treatment.TreatmentID
-            ORDER BY MedicalCondition.MedicalConditionID";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = @"EXEC sp_ReadAllConditionTreatments";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
         #endregion
 

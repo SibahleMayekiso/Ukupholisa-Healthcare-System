@@ -37,14 +37,14 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             CallData callData = new CallData();
             BindingSource source = new BindingSource();
-            source.DataSource = callData.ReadCallLogs();
+            source.DataSource = callData.sp_ReadCallLogs();
             return source;
         }
         public BindingSource GetClientCallLogs(Client client)
         {
             CallData callData = new CallData();
             BindingSource source = new BindingSource();
-            source.DataSource = callData.ReadClientCallLogs(client);
+            source.DataSource = callData.sp_ReadClientCallLogs(client);
             return source;
         }
 
@@ -52,7 +52,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             CallData call = new CallData();
             Claims claim = new Claims();
-            Dictionary<string, string> dictStatus = call.GetTreatmentsTable(claim, policy, treatmentID);
+            Dictionary<string, string> dictStatus = call.sp_GetTreatmentsTable(claim, policy, treatmentID);
 
             return dictStatus;
         }
@@ -62,7 +62,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public string InsertClaimDetails(Claims claim)
         {
             CallData callData = new CallData();
-            string status = callData.InsertClaim(claim);
+            string status = callData.sp_InsertClaim(claim);
             return status;
         }
         //Validation

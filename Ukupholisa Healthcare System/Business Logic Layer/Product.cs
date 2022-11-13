@@ -50,7 +50,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             ProductData productData = new ProductData();
             BindingSource source = new BindingSource();
-            source.DataSource = productData.ReadAllProducts();
+            source.DataSource = productData.sp_ReadAllProducts();
             return source;
         }
 
@@ -58,14 +58,14 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             PolicyData policyData = new PolicyData();
             BindingSource source = new BindingSource();
-            source.DataSource = policyData.GetPerformanceReport();
+            source.DataSource = policyData.sp_GetPerformanceReport();
             return source;
         }
         public BindingSource GetProductReportByDate(DateTime start, DateTime end)
         {
             PolicyData policyData = new PolicyData();
             BindingSource source = new BindingSource();
-            source.DataSource = policyData.GetPerformanceReportByDate(start, end);
+            source.DataSource = policyData.sp_GetPerformanceReportByDate(start, end);
             return source;
         }
         #endregion
@@ -74,13 +74,13 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public void UpdateProductPoliciesDetails(Product product)
         {
             ProductData productData = new ProductData();
-            productData.UpdateProductDetails(product);
+            productData.sp_UpdateProductDetails(product);
         }
 
         public void UpdateProductStatus(Product product)
         {
             ProductData productData = new ProductData();
-            productData.UpdateProductDetails(product);
+            productData.sp_UpdateProductDetails(product);
         }
         #endregion
     }

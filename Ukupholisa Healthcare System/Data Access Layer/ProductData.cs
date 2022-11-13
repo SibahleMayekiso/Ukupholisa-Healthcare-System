@@ -57,48 +57,54 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         //Read Methods
         #region Read Methods
-        public DataTable ReadAllProducts()
+        //public DataTable ReadAllProducts()
+        //{
+        //    string query = @"SELECT * FROM Product";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+        //    DataTable table = new DataTable();
+        //    adapter.Fill(table);
+        //    return table;
+        //}
+
+        public DataTable sp_ReadAllProducts()
         {
-            string query = @"SELECT * FROM Product";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-            return table;
+            try
+            {
+                string query = @"EXEC sp_ReadAllProducts";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                cmd = new SqlCommand(query, conn);
+                conn.Open();
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
         }
         #endregion
         //Update Methods
         #region Update Methods
-        public string UpdateProductDetails(Product product)
+        public string sp_UpdateProductDetails(Product product)
         {
             string queryStateMessage = "";
-            List<SqlParameter> parameterList = new List<SqlParameter>();
+
 
             try
             {
-                //Parameters here
-                SqlParameter productID = new SqlParameter("@productID", SqlDbType.Int);
-                parameterList.Add(productID);
-                SqlParameter prodName = new SqlParameter("@productName", SqlDbType.VarChar);
-                parameterList.Add(prodName);
-                SqlParameter prodType = new SqlParameter("@prodType", SqlDbType.VarChar);
-                parameterList.Add(prodType);
-                SqlParameter maxDependents = new SqlParameter("@maxDependents", SqlDbType.NVarChar);
-                parameterList.Add(maxDependents);
-
-                //Setting Parameter values
-                productID.Value = product.ProdutID;
-                prodName.Value = product.ProductName;
-                prodType.Value = product.ProductType;
-                maxDependents.Value = product.MaxDependents;
-
-                //Adding Parameter to SqlCommand
-                parameterList.ForEach(x => { cmd.Parameters.Add(x); });
-
+                
                 //Executing Query
                 queryString = string.Format(
-                    @"UPDATE Product
-                    SET ProductName = @productName, ProductType = @prodType, MaxDependents = @maxDependents
-                    WHERE ProductID = @productID"
+                    @"EXEC sp_UpdateProductDetails @productID = '{0}', @productName = '{1}', 
+                    @prodType = '{2}', @maxDependents = '{3}'",
+                    product.ProdutID, product.ProductName, product.ProductType, product.MaxDependents
                     );
                 cmd = new SqlCommand(queryString, conn);
                 conn.Open();
@@ -116,18 +122,44 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             }
             return queryStateMessage;
         }
+
+        //public string UpdateProductAvailability(Product product)
+        //{
+        //    string queryStateMessage = "";
+        //    List<SqlParameter> parameterList = new List<SqlParameter>();
+
+        //    try
+        //    {
+        //        queryString = string.Format(
+        //            @"UPDATE Product
+        //            SET StartDate = @start, EndDate = @end
+        //            WHERE ProductID = @productID"
+        //            );
+        //        cmd = new SqlCommand(queryString, conn);
+        //        conn.Open();
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+        //    }
+        //    finally
+        //    {
+        //        queryStateMessage = string.Format("Update Successful");
+        //        conn.Close();
+        //    }
+        //    return queryStateMessage;
+        //}
 
         public string UpdateProductAvailability(Product product)
         {
             string queryStateMessage = "";
-            List<SqlParameter> parameterList = new List<SqlParameter>();
 
             try
             {
                 queryString = string.Format(
-                    @"UPDATE Product
-                    SET StartDate = @start, EndDate = @end
-                    WHERE ProductID = @productID"
+                    @"EXEC sp_UpdateProductAvailability @productID = '{0}', @start = ''{1}, @end = '{2}'",
+                    product.ProdutID, product.DateStart, product.DateEnd
                     );
                 cmd = new SqlCommand(queryString, conn);
                 conn.Open();
@@ -144,7 +176,6 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             }
             return queryStateMessage;
         }
-
         #endregion
         //Delete Methods
     }

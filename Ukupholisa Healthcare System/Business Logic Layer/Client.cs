@@ -37,7 +37,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             ClientData clientData = new ClientData();
             BindingSource source = new BindingSource();
-            source.DataSource = clientData.ReadAllClients();
+            source.DataSource = clientData.sp_ReadAllClients();
             return source;
         }
         public BindingSource GetClientDependentsTable(Client client)

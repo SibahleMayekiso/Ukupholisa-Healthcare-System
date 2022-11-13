@@ -33,14 +33,14 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         {
             MedicalData medicalData = new MedicalData();
             BindingSource source = new BindingSource();
-            source.DataSource = medicalData.ReadAllConditionTreatments();
+            source.DataSource = medicalData.sp_ReadAllConditionTreatments();
             return source;
         }
         public BindingSource GetMedicalConditons()
         {
             MedicalData medicalData = new MedicalData();
             BindingSource source = new BindingSource();
-            source.DataSource = medicalData.ReadAllMedicalConditions();
+            source.DataSource = medicalData.sp_ReadAllMedicalConditions();
             return source;
         }
         #endregion
