@@ -24,8 +24,8 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             try
             {
                 queryString = string.Format(
-                    @"INSERT INTO Client(FirstName, LastName, CellPhoneNum, Email)
-                    VALUES ('{0}', '{1}', '{2}', '{3}')", client.FirstName, client.Lastname, client.CellphoneNum, client.Email
+                    @"INSERT INTO Client(FirstName, LastName, CellPhoneNum, Email, ClientID)
+                    VALUES ('{0}', '{1}', '{2}', '{3}')", client.FirstName, client.Lastname, client.CellphoneNum, client.Email, client.ClientID
                     );
                 //queryString = string.Format(
                 //    @"INSERT INTO Region(RegionID, Suburb)
@@ -154,23 +154,9 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 Number = "0" + Number;
             }
             string Complete = Let + Number;
+            return Complete;
 
-
-            string StateMesage = "";
-            try
-            {
-                StateMesage = string.Format(@"INSERT iNTO Client(CleintID)
-                VALUES('{0}')", Complete);
-            }
-            catch (Exception e)
-            {
-                StateMesage = string.Format("an error occured", e.Message);
-            }
-            finally
-            {
-                StateMesage = string.Format("Updated Sucsefully");
-            }
-            return StateMesage;
+           
         }
 }
 }

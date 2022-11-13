@@ -57,6 +57,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public string InsertClientDetails(Client client)
         {
             ClientData clientData = new ClientData();
+            client.ClientID = clientData.GenerateClientID(client);
             return clientData.InsertClientData(client);
         }
     }

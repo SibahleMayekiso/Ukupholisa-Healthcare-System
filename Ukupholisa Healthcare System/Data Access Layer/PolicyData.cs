@@ -174,6 +174,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //Policy ID Generation
         public string GeneratePolicyID(Policy policy)
         {
+            int Year = Convert.ToInt32(policy.StartDate.Year);
             string[] Letters = { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
             string[] Importatnt = { "A", "B", "C", "D" };
             Random ran = new Random();
@@ -188,24 +189,10 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             {
                 Lett = "0" + Lett; 
             }
-            string complete = j + k + Lett;
+            string complete = Year + j + k + Lett;
+            return complete;
 
-
-            string StateMesage = "";
-            try
-            {
-                StateMesage = string.Format(@"INSERT iNTO Policy(PolicyID)
-                VALUES('{0}')", complete);
-            }
-            catch (Exception e)
-            {
-                StateMesage = string.Format("an error occured", e.Message);
-            }
-            finally
-            {
-                StateMesage = string.Format("Updated Sucsefully");
-            }
-            return StateMesage;
+            
         }
     }
 }
