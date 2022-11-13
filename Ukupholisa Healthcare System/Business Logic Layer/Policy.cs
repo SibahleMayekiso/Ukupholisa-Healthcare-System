@@ -65,5 +65,19 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             source.DataSource = policyData.GetPerformanceReportByDate(start, end);
             return source;
         }
+        //Insert Methods
+        #region Insert methods
+        public string InsertClientDetails(Client client)
+        {
+            ClientData clientData = new ClientData();
+            client.ClientID = clientData.GenerateClientID(client);
+            return clientData.InsertClientData(client);
+        }
+        public string InsertClientPolicyDetails(Policy policy, string importanceLevel, string clientID)
+        {
+            PolicyData policyData = new PolicyData();
+            return policyData.InsertPolicyData(policy, importanceLevel, clientID);
+        }
+        #endregion
     }
 }

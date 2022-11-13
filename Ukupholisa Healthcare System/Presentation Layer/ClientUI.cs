@@ -98,5 +98,32 @@ namespace Ukupholisa_Healthcare_System
           
             dgvClientView.Refresh();
         }
+
+        private void btnIssuePolicy_Click(object sender, EventArgs e)
+        {
+            Policy policy = new Policy();
+            Client client = new Client();
+            string message = "";
+
+            client.ClientID = txtClientIDIssue.Text;
+            string importance = cmbImportance.GetItemText(cmbImportance.SelectedIndex);
+            policy.EndDate = dtpEndDate.Value;
+
+            try
+            {
+                message = policy.InsertClientPolicyDetails(policy, importance, client.ClientID);
+                MessageBox.Show(message);
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(String.Format("{0}: \n{1}", message, err));
+            }
+
+            BindingSource bindingSource = new BindingSource();
+            bindingSource.DataSource = policy.GetClientPolicies(client);
+            dgvClientPolicyView.DataSource = bindingSource;
+        }
     }
 }

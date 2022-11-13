@@ -21,11 +21,42 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         public string InsertClientData(Client client)
         {
             string queryStateMessage = "";
+
+            #region Client ID Checker
+            //This section will check to see if there is an already existing Policy ID int the database
+            DataTable clientDataTable = ReadAllClients();
+            bool bFound = false;
+            string uniqueID = "";
+
+            //while (bFound == false)
+            //{
+            //    uniqueID = GenerateClientID(client);
+
+            //    foreach (DataRow row in clientDataTable.Rows)
+            //    {
+            //        uniqueID = GenerateClientID(client);
+            //        if (row["ClientID"].ToString() == uniqueID)
+            //        {
+            //            bFound = true;
+            //        }
+            //    }
+            //}
+
+            foreach (DataRow row in clientDataTable.Rows)
+            {
+                uniqueID = GenerateClientID(client);
+                if (row["ClientID"].ToString() == uniqueID)
+                {
+                    bFound = true;
+                }
+            }
+            #endregion
+
             try
             {
                 queryString = string.Format(
                     @"INSERT INTO Client(FirstName, LastName, CellPhoneNum, Email, ClientID)
-                    VALUES ('{0}', '{1}', '{2}', '{3}')", client.FirstName, client.Lastname, client.CellphoneNum, client.Email, client.ClientID
+                    VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')", client.FirstName, client.Lastname, client.CellphoneNum, client.Email, client.ClientID
                     );
                 //queryString = string.Format(
                 //    @"INSERT INTO Region(RegionID, Suburb)
@@ -137,7 +168,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         }
         
         #endregion
-    //Delete Methods
+        //Delete Methods
 
         //Cleint ID Generation
         public string GenerateClientID(Client client)
@@ -151,7 +182,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             string Let = Letters[l];
             while (Length != 8)
             {
-                Number = "0" + Number;
+                Number = string.Concat("0", Number);
             }
             string Complete = Let + Number;
             return Complete;

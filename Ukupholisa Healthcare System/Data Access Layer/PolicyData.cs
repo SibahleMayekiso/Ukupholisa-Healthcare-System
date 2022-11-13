@@ -20,6 +20,67 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //CRUD Operations and Methods
         #region CRUD Operations
         //Create Methods
+        public string InsertPolicyData(Policy policy, string importanceLevel, string clientID)
+        {
+            string queryStateMessage = "";
+
+            #region Policy ID Checker
+            //This section will check to see if there is an already existing Policy ID int the database
+            DataTable policyDataTable = ReadAllPolicies();
+            bool bFound = false;
+            string uniqueID = "";
+
+            //while (bFound != true)
+            //{
+            //    uniqueID = GeneratePolicyID(policy, importanceLevel);
+
+            //    foreach (DataRow row in policyDataTable.Rows)
+            //    {
+            //        if (row["ClientPolicyID"].ToString() == uniqueID)
+            //        {
+            //            bFound = true;
+            //        }
+            //    }
+            //}        
+
+            foreach (DataRow row in policyDataTable.Rows)
+            {
+                uniqueID = GeneratePolicyID(policy, importanceLevel);
+                if (row["ClientPolicyID"].ToString() == uniqueID)
+                {
+                    bFound = true;
+                }
+            }
+            #endregion
+
+
+            try
+            {
+                queryString = string.Format(
+                    @"INSERT INTO ClientPolicy(ClientPolicyID, StartDate, EndDate, ClientID)
+                    VALUES ('{0}', '{1}', '{2}', '{3}')", uniqueID, DateTime.Now.Year.ToString(), 
+                    policy.EndDate.Year.ToString(), clientID
+                    );
+                //queryString = string.Format(
+                //    @"INSERT INTO Region(RegionID, Suburb)
+                //    VALUES ('{0}', '{1}')", s5, s6
+                //    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                queryStateMessage = string.Format("Update Successful");
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return queryStateMessage;
+
+        }
         //Read Methods
         #region Read Methods
         public DataTable ReadAllPolicies()
@@ -28,8 +89,10 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 FROM Client
                 INNER JOIN ClientPolicy
                 ON Client.ClientID = ClientPolicy.ClientID
+                INNER JOIN PolicyProduct
+                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
                 INNER JOIN Product
-                ON ClientPolicy.Product = Product.ProductID";
+                ON PolicyProduct.Product = Product.ProductID";
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -50,13 +113,15 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         public DataTable ReadClientPolicy(Client client)
         {
             string query = string.Format(
-                "SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType"
-                 + "FROM Client" +
-                "INNER JOIN ClientPolicy" +
-                "ON Client.ClientID = ClientPolicy.ClientID" +
-                "INNER JOIN Product" +
-                "ON ClientPolicy.Product = Product.ProductID" +
-                "WHERE ClientPolicy.ClientID = " + client.ClientID );
+                @"SELECT ClientPolicy.ClientPolicyID, ClientPolicy.ClientID,  Client.FirstName, Client.LastName, ClientPolicy.StartDate, ClientPolicy.EndDate,Product.ProductName, Product.ProductType
+                FROM Client
+                INNER JOIN ClientPolicy
+                ON Client.ClientID = ClientPolicy.ClientID
+                INNER JOIN PolicyProduct
+                ON ClientPolicy.ClientPolicyID = PolicyProduct.ClientPolicy
+                INNER JOIN Product
+                ON PolicyProduct.Product = Product.ProductID
+                WHERE ClientPolicy.ClientID = '{0}'", client.ClientID );
             SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -172,27 +237,28 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             return table;
         }
         //Policy ID Generation
-        public string GeneratePolicyID(Policy policy)
+        public static string GeneratePolicyID(Policy policy, string importanceLevel)
         {
             int Year = Convert.ToInt32(policy.StartDate.Year);
             string[] Letters = { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-            string[] Importatnt = { "A", "B", "C", "D" };
+            //string[] Importatnt = { "A", "B", "C", "D" };
             Random ran = new Random();
+
             int l = ran.Next(23);
             int i = ran.Next(999999);
-            int k = ran.Next(3);
+            //int k = ran.Next(3);
             int len = Convert.ToString(i).Length;
-            string Lett = i.ToString();
+            string numCode = i.ToString();
             string j = Letters[l];
-            string Imp = Importatnt[k];
-            while (len != 6)
-            {
-                Lett = "0" + Lett; 
-            }
-            string complete = Year + j + k + Lett;
-            return complete;
+            //string Imp = Importatnt[k];
 
-            
+            while (numCode.Length != 6)
+            {
+                //Lett = "0" + Lett; 
+                numCode = string.Concat("0", numCode);
+            }
+            string complete = Year + j + importanceLevel + numCode;
+            return complete;          
         }
     }
 }
