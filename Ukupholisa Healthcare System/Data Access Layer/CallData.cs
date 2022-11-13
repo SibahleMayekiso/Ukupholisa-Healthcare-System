@@ -83,15 +83,15 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 cmd = new SqlCommand(queryString, conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                queryStateMessage = string.Format("Update Successful");
             }
             catch (Exception e)
             {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
 
             }
             finally
             {
-                queryStateMessage = string.Format("Update Successful");
                 conn.Close();
             }
             return queryStateMessage;
@@ -99,8 +99,13 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         //Delete Methods
         
         //Claim Approval Function
-        public string GetTreatmentsTable(Policy policy, string treatmentID)
+        public Dictionary<string, string> GetTreatmentsTable(Claims claim, Policy policy, string treatmentID)
         {
+            //This dictionary will be used to store the codes for the approval status for the claim as well as 
+            //the status code for the Insert method.
+            Dictionary<string, string> dictClaimCodes = new Dictionary<string, string>();
+            CallData callData = new CallData();
+
             string query = string.Format(
                 @"SELECT ClientPolicyID, Product.ProductID, Product.ProductName AS 'Product Name', Treatment.TreatmentID, Treatment.TreatmentName AS 'Treatment Name'
                 FROM ClientPolicy
@@ -119,15 +124,27 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             DataTable table = new DataTable();
             adapter.Fill(table);
 
-            string claimStatus = "DECLINED";
+            //string claimStatus = "DECLINED";
+            dictClaimCodes.Add("claimStatus", "DECLINED");
             foreach (DataRow row in table.Rows)
             {
                 if (row["TreatmentID"].ToString() == treatmentID)
                 {
-                    claimStatus = "APPROVED";
+                    dictClaimCodes["claimStatus"] = "APPROVED";
+                    //claimStatus = "APPROVED";
                 }
             }
-            return claimStatus;
+            string insertConfirmation = callData.InsertClaim(claim);
+            if (dictClaimCodes["claimStatus"] == "APPROVED")
+            {
+                dictClaimCodes.Add("statusMessage", insertConfirmation);
+                //string insertConfirmation = ;
+            }
+            //if(claimStatus == "APPROVED")
+            //{
+            //    //string insertConfirmation = ;
+            //}
+            return dictClaimCodes;
         }
         //All the datta adding code
         public string InsertData(string s1, string s2, int s3, string s4,string s5)
@@ -148,147 +165,18 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
                 cmd = new SqlCommand(queryString, conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                queryStateMessage = string.Format("Update Successful");
             }
             catch (Exception e)
             {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
+                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
             }
             finally
             {
-                queryStateMessage = string.Format("Update Successful");
                 conn.Close();
             }
             return queryStateMessage;
 
-        }
-        public string CleintData(string s1, string s2, string s3, string s4, int s5, string s6)
-        {
-            string queryStateMessage = "";
-            try
-            {
-                queryString = string.Format(
-                    @"INSERT INTO Client(FirstName, LastName, CellPhoneNum, Email)
-                    VALUES ('{0}', '{1}', '{2}', '{3}')", s1, s2, s3, s4
-                    );
-                queryString = string.Format(
-                    @"INSERT INTO Region(RegionID, Suburb)
-                    VALUES ('{0}', '{1}')", s5, s6
-                    );
-                cmd = new SqlCommand(queryString, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
-            }
-            finally
-            {
-                queryStateMessage = string.Format("Update Successful");
-                conn.Close();
-            }
-            return queryStateMessage;
-           
-        }
-        public string ProductData(string s1, string s2)
-        {
-            string queryStateMessage = "";
-            try
-            {
-                queryString = string.Format(
-                    @"INSERT INTO Product(ProductName, ProductType)
-                    VALUES ('{0}', '{1}')", s1, s2
-                    );
-                cmd = new SqlCommand(queryString, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
-            }
-            finally
-            {
-                queryStateMessage = string.Format("Update Successful");
-                conn.Close();
-            }
-            return queryStateMessage;
-            
-        }
-        public string ProviderData(string s1, string s2)
-        {
-            string queryStateMessage = "";
-            try
-            {
-                queryString = string.Format(
-                    @"INSERT INTO Provider(ProviderName, Email)
-                    VALUES ('{0}', '{1}')", s1, s2
-                    );
-                cmd = new SqlCommand(queryString, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
-            }
-            finally
-            {
-                queryStateMessage = string.Format("Update Successful");
-                conn.Close();
-            }
-            return queryStateMessage;
-            
-        }
-        public string ConditionData(string s1, string s2)
-        {
-            string queryStateMessage = "";
-            try
-            {
-                queryString = string.Format(
-                    @"INSERT INTO MedicalCondition(MedicalConditionName, Severity)
-                    VALUES ('{0}', '{1}')", s1, s2
-                    );
-                cmd = new SqlCommand(queryString, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
-            }
-            finally
-            {
-                queryStateMessage = string.Format("Update Successful");
-                conn.Close();
-            }
-            return queryStateMessage;
-            
-        }
-        public string TreatmentData(string s1)
-        {
-            string queryStateMessage = "";
-            try
-            {
-                queryString = string.Format(
-                    @"INSERT INTO Treatment(Duration)
-                    VALUES ('{0}')", s1
-                    );
-                cmd = new SqlCommand(queryString, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception e)
-            {
-                queryStateMessage = string.Format("An error occured:\n{0}", e.Message);
-            }
-            finally
-            {
-                queryStateMessage = string.Format("Update Successful");
-                conn.Close();
-            }
-            return queryStateMessage;
-            
         }
 
     }

@@ -10,6 +10,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
     internal interface ICondition
     {
         BindingSource GetMedicalConditons();
-        void UpdateMedicalConditions();
+        void UpdateMedicalConditionsDetails();
+        string InsertConditionDetails(MedCondition condition);
     }
 }

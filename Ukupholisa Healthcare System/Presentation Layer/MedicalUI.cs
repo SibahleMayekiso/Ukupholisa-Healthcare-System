@@ -80,19 +80,46 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void btnAddCondition_Click(object sender, EventArgs e)
         {
-            string ConName = txtConditionName.Text;
-            string Sever = cmbSeverity.SelectedIndex.ToString();
-            CallData call = new CallData();
-            call.ConditionData(ConName, Sever);
+            MedCondition condition = new MedCondition();
+            string message = "";
+
+            condition.ConditionName = txtConditionName.Text;
+            condition.Severity = cmbSeverity.SelectedIndex.ToString();
+            try
+            {
+                message = condition.InsertConditionDetails(condition);
+                MessageBox.Show(message);
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(String.Format("{0}: \n{1}", message, err));
+            }
+
             dgvViewMedTreatments.Refresh();
         }
 
         private void btnAddTreatment_Click(object sender, EventArgs e)
         {
-            string TreatName = txtTreamentName.Text;
-            string Time = Convert.ToString(numDuration.Value);
-            CallData call = new CallData();
-            call.TreatmentData(Time);
+            Treatment treatment = new Treatment();
+            string message = "";
+
+            treatment.TreatmentName = txtTreamentName.Text;
+            treatment.Duration = Convert.ToInt32(numDuration.Value);
+            try
+            {
+                message = treatment.InsertTreatmentDetails(treatment);
+                MessageBox.Show(message);
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(String.Format("{0}: \n{1}", message, err));
+            }
+            
+            dgvViewMedTreatments.Refresh();
         }
     }
 }

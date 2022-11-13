@@ -13,27 +13,37 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
     {
         private int produtID, maxDependents;
         private string productName, productType;
+        private DateTime dateStart, dateEnd;
 
         public Product()
         {
 
         }
 
-        public Product(int produtID, int maxDependents, string productName, string productType)
+        public Product(int produtID, int maxDependents, string productName, string productType, DateTime dateStart, DateTime dateEnd)
         {
             this.produtID = produtID;
             this.maxDependents = maxDependents;
             this.productName = productName;
             this.productType = productType;
+            this.dateStart = dateStart;
+            this.dateEnd = dateEnd;
         }
 
         public int ProdutID { get => produtID; set => produtID = value; }
         public int MaxDependents { get => maxDependents; set => maxDependents = value; }
         public string ProductName { get => productName; set => productName = value; }
         public string ProductType { get => productType; set => productType = value; }
+        public DateTime DateStart { get => dateStart; set => dateStart = value; }
+        public DateTime DateEnd { get => dateEnd; set => dateEnd = value; }
 
         //CRUD Operations
-
+        //Insert Methods
+        public string InsertProductDetails(Product product)
+        {
+            ProductData productData = new ProductData();
+            return productData.InsertProductData(product);
+        }
         //Read Methods
         #region Read
         public BindingSource GetProductPoliciesTable()

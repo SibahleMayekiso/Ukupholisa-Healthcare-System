@@ -36,9 +36,14 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             return source;
         }
 
-        public void UpdateMedicalTreatments()
+        public void UpdateMedicalTreatmentsDetails()
         {
 
+        }
+        public string InsertTreatmentDetails(Treatment treatment)
+        {
+            MedicalData medical = new MedicalData();
+            return medical.InsertTreatmentData(treatment);
         }
     }
 }

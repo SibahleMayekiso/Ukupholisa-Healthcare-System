@@ -87,10 +87,31 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string ProvName = textBox1.Text;
-            string ProvEmail = textBox2.Text;
-            CallData call = new CallData();
-            call.ProviderData(ProvName, ProvEmail);
+            Provider provider = new Provider();
+            string message = "";
+
+            provider.Name = txtProviderName.Text;
+            provider.Email = txtProviderEmail.Text;
+            provider.ChargeRate = Convert.ToInt32(numChargeRate.Value);
+            provider.Rating = txtProviderRating.Text;
+            provider.Provider_Status = cmbProviderStatus.GetItemText(cmbProviderStatus.SelectedItem);
+            try
+            {
+                message = provider.InsertProviderDetails(provider);
+                MessageBox.Show(message);
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(String.Format("{0}: \n{1}", message, err));
+            }
+                
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

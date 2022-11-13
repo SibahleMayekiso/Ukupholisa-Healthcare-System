@@ -4,12 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 using Ukupholisa_Healthcare_System.Presentation_Layer;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System
 {
@@ -73,15 +74,28 @@ namespace Ukupholisa_Healthcare_System
 
         private void btnAddPerson_Click(object sender, EventArgs e)
         {
-            string Name = txtClientName.Text;
-            string Surname = txtClientSurname.Text;
-            string email = txtClientCondition.Text;
-            string Relationship = txtClientHouseNumber.Text;
-            string Street = txtClientSuburb.Text;
-            int RegoinID = Convert.ToInt32(txtClientCity.Text);
-            string CleintNum = txtClientNumber.Text;
-            CallData call = new CallData();
-            call.CleintData(Name, Surname, CleintNum, email, RegoinID, Street);
+            Client client = new Client();
+            string message = "";
+
+            client.FirstName = txtClientName.Text;
+            client.Lastname = txtClientSurname.Text;
+            //client. = txtClientCondition.Text;
+            //client. = txtClientHouseNumber.Text;
+            //client. = txtClientSuburb.Text;
+            //client. = Convert.ToInt32(txtClientCity.Text);
+            client.CellphoneNum = txtClientNumber.Text;
+            try
+            {
+                message = client.InsertClientDetails(client);
+                MessageBox.Show(message);
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(String.Format("{0}: \n{1}", message, err));
+            }
+          
             dgvClientView.Refresh();
         }
     }

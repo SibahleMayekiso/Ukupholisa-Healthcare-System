@@ -10,6 +10,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
     internal interface ITreatment
     {
         BindingSource GetMedicalTreatments();
-        void UpdateMedicalTreatments();
+        void UpdateMedicalTreatmentsDetails();
+        string InsertTreatmentDetails(Treatment treatment);
     }
 }

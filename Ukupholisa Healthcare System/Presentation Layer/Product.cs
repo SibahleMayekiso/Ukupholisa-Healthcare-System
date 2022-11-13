@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -101,11 +100,42 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-            string ProName = txtProductName.Text;
-            string ProType = txtProductType.Text;
-            CallData call = new CallData();
-            call.ProductData(ProName, ProType);
+            Product product = new Product();
+            string message = "";
+
+            product.ProductName = txtProductName.Text;
+            product.ProductType = cmbProductType.GetItemText(cmbProductType.SelectedItem);
+            product.MaxDependents = Convert.ToInt32(numMaxDependents.Value);
+            product.DateStart = dtpStartDate.Value;
+            if (!chkProductAvailability.Checked)
+            {
+                product.DateEnd = dtpEndDate.Value;
+            }
+            try
+            {
+                message = product.InsertProductDetails(product);
+                MessageBox.Show(message);
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(String.Format("{0}: \n{1}", message, err));
+            }
+
             dgvPolicyDetailsView.Refresh();
+        }
+
+        private void chkProductAvailability_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkProductAvailability.Checked)
+            {
+                dtpEndDate.Enabled = false;
+            }
+            else
+            {
+                dtpEndDate.Enabled = true;
+            }
         }
     }
 }

@@ -18,6 +18,32 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 
         //CRUD Operations and Methods
         //Create Methods
+        public string InsertProviderData(Provider provider)
+        {
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
+                    @"INSERT INTO Provider(ProviderName, Email, Rating, Chargerate, ProviderStatus)
+                    VALUES ('{0}', '{1}', '{2}', '{3}', {4}, '{5}')", provider.Name, provider.Email, provider.Rating, provider.Rating, 
+                    provider.ChargeRate, provider.Provider_Status
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                queryStateMessage = string.Format("Update Successful");
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return queryStateMessage;
+
+        }
         //Read Methods
         #region Read Methods
         public DataTable ReadAllProviders()

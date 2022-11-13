@@ -32,6 +32,7 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
         public int Claim_Amount { get => claim_Amount; set => claim_Amount = value; }
         public int CallID { get => callID; set => callID = value; }
 
+        //GET Methods
         public BindingSource GetAllCallLogs()
         {
             CallData callData = new CallData();
@@ -47,14 +48,24 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
             return source;
         }
 
-        public string ClaimApproval(Policy policy, string treatmentID)
+        public Dictionary<string, string> ClaimApproval(Policy policy, string treatmentID)
         {
             CallData call = new CallData();
-            string status = call.GetTreatmentsTable(policy, treatmentID);
+            Claims claim = new Claims();
+            Dictionary<string, string> dictStatus = call.GetTreatmentsTable(claim, policy, treatmentID);
 
-            return status;
+            return dictStatus;
         }
 
+        //POST Methods
+        #region POST Methods
+        public string InsertClaimDetails(Claims claim)
+        {
+            CallData callData = new CallData();
+            string status = callData.InsertClaim(claim);
+            return status;
+        }
+        //Validation
         public string AddPersonValidation(string name, string surname, string phoneNumber, string email)
         {
             if (!(name == null | surname == null | phoneNumber == null | email == null))
@@ -68,6 +79,6 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
                 return ("Added Succesfully");
             }
         }
-
+        #endregion
     }
 }

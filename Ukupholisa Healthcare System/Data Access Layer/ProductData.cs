@@ -18,6 +18,43 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 
         //CRUD Operations and Methods
         //Create Methods
+        public string InsertProductData(Product product)
+        {
+            string queryStateMessage = "";
+
+            string dateYearStart, dateMonthStart, dateDayStart;
+            string dateYearEnd, dateMonthEnd, dateDayEnd;
+
+            dateYearStart = product.DateStart.Year.ToString();
+            dateMonthStart = product.DateStart.Month.ToString();
+            dateDayStart = product.DateStart.Day.ToString();
+
+            dateYearEnd = product.DateEnd.Year.ToString();
+            dateMonthEnd = product.DateEnd.Month.ToString();
+            dateDayEnd = product.DateEnd.Day.ToString();
+            try
+            {
+                queryString = string.Format(
+                    @"INSERT INTO Product(ProductName, ProductType, MaxDependents, StartDate, EndDate)
+                    VALUES ('{0}', '{1}', {2}, '{3}', '{4}')", product.ProductName, product.ProductType, product.MaxDependents,
+                    string.Concat(dateYearStart, dateMonthStart, dateDayStart), string.Concat(dateYearEnd, dateMonthEnd, dateDayEnd)
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                queryStateMessage = string.Format("Update Successful");
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return queryStateMessage;
+
+        }
         //Read Methods
         #region Read Methods
         public DataTable ReadAllProducts()

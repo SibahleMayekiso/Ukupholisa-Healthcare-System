@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
-using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -69,9 +68,10 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         {
             Policy policy = new Policy();
             Call call = new Call();
+            
             policy.PolicyID = txtClaimPolicyID.Text;
-            string status = call.ClaimApproval(policy, txtClaimTreatmentID.Text);
-            if (status == "APPROVED")
+            Dictionary<string, string> dictStatus = call.ClaimApproval(policy, txtClaimTreatmentID.Text);
+            if (dictStatus["claimStatus"] == "APPROVED")
             {
                 MessageBox.Show("Claim has been approved");
             }
@@ -85,14 +85,30 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
 
         private void btnCallCentreSubmit_Click(object sender, EventArgs e)
         {
-            string Name = txtClientNameCentre.Text;
-            string Surname = txtClientSurnameCen.Text;
-            string PolicyName = txtPolicyNameCen.Text;
-            string PolicyDetail = txtPolicyDetialsCen.Text;
-            string DetailsOfCon = txtConditionCen.Text;
-            int CleintNum = Convert.ToInt32(txtClientNumberCen.Text);
-            CallData call = new CallData();
-            call.InsertData(Name, Surname, CleintNum,PolicyDetail,DetailsOfCon);
+            Call call = new Call();
+            Client client = new Client();
+            Policy policy = new Policy();
+            Claims claim = new Claims();
+            string message = "";
+
+            client.FirstName = txtClientNameCentre.Text;
+            client.Lastname = txtClientSurnameCen.Text;
+            //policy. = txtPolicyNameCen.Text;
+            //string PolicyDetail = txtPolicyDetialsCen.Text;
+            //string DetailsOfCon = txtConditionCen.Text;
+            client.ClientID = txtClientNumberCen.Text;
+            try
+            {
+                message = call.InsertClaimDetails(claim);
+                MessageBox.Show(message);
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(String.Format("{0}: \n{1}", message, err));
+            }
+
+            
             dgvDetailsCallCentre.Refresh();
         }
 

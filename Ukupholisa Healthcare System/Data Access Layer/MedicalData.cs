@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 {
@@ -17,6 +18,56 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 
         //CRUD Operations and Methods
         //Create Methods
+        public string InsertConditionData(MedCondition medical)
+        {
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
+                    @"INSERT INTO MedicalCondition(MedicalConditionName, Severity)
+                    VALUES ('{0}', '{1}')", medical.ConditionName, medical.Severity
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                queryStateMessage = string.Format("Update Successful");
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return queryStateMessage;
+
+        }
+        public string InsertTreatmentData(Treatment treatment)
+        {
+            string queryStateMessage = "";
+            try
+            {
+                queryString = string.Format(
+                    @"INSERT INTO Treatment(Duration, TreatmentName)
+                    VALUES ('{0}')", treatment.Duration, treatment.TreatmentName
+                    );
+                cmd = new SqlCommand(queryString, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                queryStateMessage = string.Format("Update Successful");
+            }
+            catch (Exception e)
+            {
+                queryStateMessage = string.Format("An error occured and the data could not be processsed:\n{0}", e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return queryStateMessage;
+
+        }
         //Read Methods
         #region Read methods
         public DataTable ReadAllMedicalConditions()

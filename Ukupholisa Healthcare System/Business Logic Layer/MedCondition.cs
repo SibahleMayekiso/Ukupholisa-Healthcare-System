@@ -47,9 +47,14 @@ namespace Ukupholisa_Healthcare_System.Business_Logic_Layer
 
         //Update
         #region Update methods
-        public void UpdateMedicalConditions()
+        public void UpdateMedicalConditionsDetails()
         {
 
+        }
+        public string InsertConditionDetails(MedCondition condition)
+        {
+            MedicalData medical = new MedicalData();
+            return medical.InsertConditionData(condition);
         }
         #endregion
     }
