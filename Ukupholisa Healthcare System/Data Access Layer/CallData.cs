@@ -10,8 +10,10 @@ using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 
 namespace Ukupholisa_Healthcare_System.Data_Access_Layer
 {
+    
     class CallData
     {
+
         //Connection to a local Database that will be used by the application
         SqlConnection conn = new SqlConnection(@"Data Source=.; Initial Catalog = UkupholisaHealthcareDB; Integrated Security = SSPI");
         SqlCommand cmd;
@@ -128,7 +130,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             return claimStatus;
         }
         //All the datta adding code
-        public string InsertData(string s1, string s2, string s3, string s4,string s5)
+        public string InsertData(string s1, string s2, int s3, string s4,string s5)
         {
             string queryStateMessage = "";
             try

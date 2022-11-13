@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
-
+using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -91,7 +91,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
             string PolicyDetail = txtPolicyDetialsCen.Text;
             string DetailsOfCon = txtConditionCen.Text;
             int CleintNum = Convert.ToInt32(txtClientNumberCen.Text);
-            
+            CallData call = new CallData();
+            call.InsertData(Name, Surname, CleintNum,PolicyDetail,DetailsOfCon);
+            dgvDetailsCallCentre.Refresh();
         }
 
     }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
+using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System.Presentation_Layer
 {
@@ -81,6 +82,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         {
             string ConName = txtConditionName.Text;
             string Sever = cmbSeverity.SelectedIndex.ToString();
+            CallData call = new CallData();
+            call.ConditionData(ConName, Sever);
+            dgvViewMedTreatments.Refresh();
         }
 
         private void btnAddTreatment_Click(object sender, EventArgs e)
