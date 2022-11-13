@@ -90,7 +90,9 @@ namespace Ukupholisa_Healthcare_System.Presentation_Layer
         private void btnAddTreatment_Click(object sender, EventArgs e)
         {
             string TreatName = txtTreamentName.Text;
-            string Time = numDuration.Value.ToString();
+            string Time = Convert.ToString(numDuration.Value);
+            CallData call = new CallData();
+            call.TreatmentData(Time);
         }
     }
 }

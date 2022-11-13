@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ukupholisa_Healthcare_System.Business_Logic_Layer;
 using Ukupholisa_Healthcare_System.Presentation_Layer;
+using Ukupholisa_Healthcare_System.Data_Access_Layer;
 
 namespace Ukupholisa_Healthcare_System
 {
@@ -78,8 +79,10 @@ namespace Ukupholisa_Healthcare_System
             string Relationship = txtClientHouseNumber.Text;
             string Street = txtClientSuburb.Text;
             int RegoinID = Convert.ToInt32(txtClientCity.Text);
-   
-            int CleintNum = Convert.ToInt32(txtClientNumber.Text);
+            string CleintNum = txtClientNumber.Text;
+            CallData call = new CallData();
+            call.CleintData(Name, Surname, CleintNum, email, RegoinID, Street);
+            dgvClientView.Refresh();
         }
     }
 }

@@ -161,7 +161,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             return queryStateMessage;
 
         }
-        public string CleintData(string s1, string s2, string s3, string s4, string s5, string s6)
+        public string CleintData(string s1, string s2, string s3, string s4, int s5, string s6)
         {
             string queryStateMessage = "";
             try
@@ -265,7 +265,7 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             return queryStateMessage;
             
         }
-        public string TreatmentData(Treatment s1)
+        public string TreatmentData(string s1)
         {
             string queryStateMessage = "";
             try
