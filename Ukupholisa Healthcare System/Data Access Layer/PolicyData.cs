@@ -171,5 +171,41 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
             adapter.Fill(table);
             return table;
         }
+        //Policy ID Generation
+        public string GeneratePolicyID(Policy policy)
+        {
+            string[] Letters = { "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+            string[] Importatnt = { "A", "B", "C", "D" };
+            Random ran = new Random();
+            int l = ran.Next(23);
+            int i = ran.Next(999999);
+            int k = ran.Next(3);
+            int len = Convert.ToString(i).Length;
+            string Lett = i.ToString();
+            string j = Letters[l];
+            string Imp = Importatnt[k];
+            while (len != 6)
+            {
+                Lett = "0" + Lett; 
+            }
+            string complete = j + k + Lett;
+
+
+            string StateMesage = "";
+            try
+            {
+                StateMesage = string.Format(@"INSERT iNTO Policy(PolicyID)
+                VALUES('{0}')", complete);
+            }
+            catch (Exception e)
+            {
+                StateMesage = string.Format("an error occured", e.Message);
+            }
+            finally
+            {
+                StateMesage = string.Format("Updated Sucsefully");
+            }
+            return StateMesage;
+        }
     }
 }

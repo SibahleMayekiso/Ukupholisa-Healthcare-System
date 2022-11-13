@@ -138,5 +138,39 @@ namespace Ukupholisa_Healthcare_System.Data_Access_Layer
         
         #endregion
     //Delete Methods
+
+        //Cleint ID Generation
+        public string GenerateClientID(Client client)
+        {
+            Random random = new Random();
+            int i = random.Next(99999999);
+            int Length = i.ToString().Length;
+            string Number = i.ToString();
+            string[] Letters = { "G", "H", "j", "K", "L" };
+            int l = random.Next(4);
+            string Let = Letters[l];
+            while (Length != 8)
+            {
+                Number = "0" + Number;
+            }
+            string Complete = Let + Number;
+
+
+            string StateMesage = "";
+            try
+            {
+                StateMesage = string.Format(@"INSERT iNTO Client(CleintID)
+                VALUES('{0}')", Complete);
+            }
+            catch (Exception e)
+            {
+                StateMesage = string.Format("an error occured", e.Message);
+            }
+            finally
+            {
+                StateMesage = string.Format("Updated Sucsefully");
+            }
+            return StateMesage;
+        }
 }
 }
